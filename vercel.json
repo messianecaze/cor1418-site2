@@ -1,0 +1,11 @@
+{
+  "cleanUrls": true,
+  "trailingSlash": false,
+  "redirects": [
+    {
+      "source": "/questionnaire",
+      "destination": "https://enquetecor1418.fillout.com/reponses",
+      "permanent": false
+    }
+  ]
+}

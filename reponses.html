@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Questionnaire COR 14-18</title>
+    
+    <!-- Métadonnées pour WhatsApp / réseaux sociaux -->
+    <meta property="og:title" content="Enquête COR 14-18">
+    <meta property="og:description" content="Une enquête pour mieux comprendre ce que vivent les adolescents">
+    <meta property="og:type" content="website">
+    <meta property="og:url" content="https://cor1418.org/reponses">
+    
+    <!-- Twitter Card -->
+    <meta name="twitter:card" content="summary_large_image">
+    <meta name="twitter:title" content="Enquête COR 14-18">
+    <meta name="twitter:description" content="Une enquête pour mieux comprendre ce que vivent les adolescents">
+    
+    <!-- Redirection automatique vers Fillout -->
+    <meta http-equiv="refresh" content="0;url=https://enquetecor1418.fillout.com/reponses">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+        
+        body {
+            font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', sans-serif;
+            background: linear-gradient(135deg, #667eea 0%, #764ba2 100%);
+            min-height: 100vh;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            color: white;
+        }
+        
+        .container {
+            text-align: center;
+            padding: 2rem;
+            max-width: 500px;
+        }
+        
+        .spinner {
+            width: 50px;
+            height: 50px;
+            border: 4px solid rgba(255, 255, 255, 0.3);
+            border-top-color: white;
+            border-radius: 50%;
+            animation: spin 1s linear infinite;
+            margin: 0 auto 2rem;
+        }
+        
+        @keyframes spin {
+            to { transform: rotate(360deg); }
+        }
+        
+        h1 {
+            font-size: 1.5rem;
+            margin-bottom: 1rem;
+            font-weight: 300;
+            line-height: 1.4;
+        }
+        
+        p {
+            font-size: 1rem;
+            opacity: 0.9;
+            margin-bottom: 1rem;
+            line-height: 1.6;
+        }
+        
+        .link-container {
+            margin-top: 2rem;
+        }
+        
+        a {
+            display: inline-block;
+            color: white;
+            text-decoration: none;
+            background: rgba(255, 255, 255, 0.2);
+            padding: 0.75rem 1.5rem;
+            border-radius: 50px;
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(10px);
+        }
+        
+        a:hover {
+            background: rgba(255, 255, 255, 0.3);
+            transform: translateY(-2px);
+        }
+        
+        @media (max-width: 640px) {
+            h1 {
+                font-size: 1.25rem;
+            }
+            
+            p {
+                font-size: 0.9rem;
+            }
+        }
+    </style>
+    
+    <script>
+        // Redirection JavaScript (backup si la meta refresh ne fonctionne pas)
+        setTimeout(function() {
+            window.location.replace('https://enquetecor1418.fillout.com/reponses');
+        }, 100);
+    </script>
+</head>
+<body>
+    <div class="container">
+        <div class="spinner"></div>
+        <h1>Redirection vers le questionnaire...</h1>
+        <p>Vous allez être redirigé automatiquement vers le formulaire.</p>
+        <div class="link-container">
+            <a href="https://enquetecor1418.fillout.com/reponses">
+                Cliquez ici si la redirection ne fonctionne pas
+            </a>
+        </div>
+    </div>
+</body>
+</html>
