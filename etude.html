@@ -1,0 +1,522 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Étude COR 14-18 | Données et Contexte</title>
+    <meta name="description" content="Les données qui ont motivé l'enquête COR 14-18 sur les adolescents">
+    
+    <!-- Google Fonts -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 50%, #fef3c7 100%);
+            min-height: 100vh;
+            line-height: 1.6;
+            color: #334155;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Crimson Pro', Georgia, serif;
+            color: #1e293b;
+        }
+
+        /* Header */
+        header {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-bottom: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 1.5rem;
+            position: sticky;
+            top: 0;
+            z-index: 100;
+        }
+
+        .header-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.5rem;
+            font-weight: 600;
+            color: #2563eb;
+            text-decoration: none;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .nav-link {
+            color: #64748b;
+            text-decoration: none;
+            font-size: 0.9rem;
+            transition: color 0.3s;
+        }
+
+        .nav-link:hover {
+            color: #2563eb;
+        }
+
+        /* Hero section */
+        .hero {
+            padding: 4rem 1.5rem;
+            text-align: center;
+            max-width: 900px;
+            margin: 0 auto;
+        }
+
+        .hero h1 {
+            font-size: 2.5rem;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        @media (min-width: 768px) {
+            .hero h1 {
+                font-size: 3.5rem;
+            }
+        }
+
+        .hero-subtitle {
+            font-size: 1.25rem;
+            color: #64748b;
+            font-weight: 300;
+            margin-bottom: 2rem;
+        }
+
+        .context-box {
+            background: rgba(37, 99, 235, 0.05);
+            border-left: 4px solid #2563eb;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin-top: 2rem;
+            text-align: left;
+        }
+
+        .context-box p {
+            font-size: 1.1rem;
+            color: #475569;
+            line-height: 1.7;
+        }
+
+        /* Main content */
+        .container {
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 3rem 1.5rem;
+        }
+
+        /* Section styling */
+        .section {
+            margin-bottom: 4rem;
+        }
+
+        .section-title {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+            color: #1e293b;
+            display: flex;
+            align-items: center;
+            gap: 1rem;
+        }
+
+        .section-title::before {
+            content: '';
+            width: 4px;
+            height: 2rem;
+            background: linear-gradient(to bottom, #2563eb, #7c3aed);
+            border-radius: 2px;
+        }
+
+        .section-intro {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+            line-height: 1.7;
+        }
+
+        /* Stats grid */
+        .stats-grid {
+            display: grid;
+            gap: 1.5rem;
+            margin-bottom: 3rem;
+        }
+
+        @media (min-width: 768px) {
+            .stats-grid {
+                grid-template-columns: repeat(2, 1fr);
+            }
+        }
+
+        @media (min-width: 1024px) {
+            .stats-grid {
+                grid-template-columns: repeat(3, 1fr);
+            }
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: 1rem;
+            padding: 2rem;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s, box-shadow 0.3s;
+        }
+
+        .stat-card:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 10px 25px rgba(0, 0, 0, 0.1);
+        }
+
+        .stat-number {
+            font-size: 3rem;
+            font-weight: 700;
+            background: linear-gradient(135deg, #2563eb, #7c3aed);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+            margin-bottom: 0.5rem;
+            font-family: 'Crimson Pro', serif;
+        }
+
+        .stat-label {
+            font-size: 1rem;
+            color: #64748b;
+            line-height: 1.5;
+        }
+
+        .stat-source {
+            font-size: 0.75rem;
+            color: #94a3b8;
+            margin-top: 0.5rem;
+            font-style: italic;
+        }
+
+        /* Key insight boxes */
+        .insight-box {
+            background: linear-gradient(135deg, rgba(251, 191, 36, 0.1), rgba(245, 158, 11, 0.1));
+            border-left: 4px solid #f59e0b;
+            padding: 1.5rem;
+            border-radius: 0.5rem;
+            margin: 2rem 0;
+        }
+
+        .insight-box h3 {
+            color: #92400e;
+            margin-bottom: 0.5rem;
+            font-size: 1.25rem;
+        }
+
+        .insight-box p {
+            color: #78350f;
+            line-height: 1.7;
+        }
+
+        /* List styling */
+        .data-list {
+            list-style: none;
+            margin: 1.5rem 0;
+        }
+
+        .data-list li {
+            padding: 1rem;
+            margin-bottom: 0.75rem;
+            background: white;
+            border-radius: 0.5rem;
+            border-left: 3px solid #2563eb;
+            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
+        }
+
+        .data-list li strong {
+            color: #2563eb;
+            font-weight: 600;
+        }
+
+        /* CTA section */
+        .cta-section {
+            background: white;
+            border-radius: 1.5rem;
+            padding: 3rem 2rem;
+            text-align: center;
+            margin-top: 4rem;
+            box-shadow: 0 10px 40px rgba(0, 0, 0, 0.1);
+        }
+
+        .cta-section h2 {
+            font-size: 2rem;
+            margin-bottom: 1rem;
+        }
+
+        .cta-section p {
+            font-size: 1.1rem;
+            color: #64748b;
+            margin-bottom: 2rem;
+        }
+
+        .cta-button {
+            display: inline-flex;
+            align-items: center;
+            gap: 0.75rem;
+            padding: 1.25rem 2.5rem;
+            background: linear-gradient(to right, #2563eb, #1e40af);
+            color: white;
+            border-radius: 9999px;
+            text-decoration: none;
+            font-weight: 500;
+            font-size: 1.125rem;
+            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.3);
+            transition: all 0.3s;
+        }
+
+        .cta-button:hover {
+            transform: scale(1.05);
+            box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.4);
+        }
+
+        /* Footer */
+        footer {
+            background: rgba(255, 255, 255, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(226, 232, 240, 0.8);
+            padding: 2rem 1.5rem;
+            margin-top: 4rem;
+        }
+
+        .footer-content {
+            max-width: 1200px;
+            margin: 0 auto;
+            text-align: center;
+            font-size: 0.875rem;
+            color: #64748b;
+        }
+
+        /* Scroll animations */
+        @keyframes fadeInUp {
+            from {
+                opacity: 0;
+                transform: translateY(30px);
+            }
+            to {
+                opacity: 1;
+                transform: translateY(0);
+            }
+        }
+
+        .animate-in {
+            animation: fadeInUp 0.6s ease-out;
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="header-content">
+            <a href="/" class="logo">COR 14–18</a>
+            <a href="/" class="nav-link">← Retour à l'accueil</a>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero animate-in">
+        <h1>Les données qui motivent cette enquête</h1>
+        <p class="hero-subtitle">
+            Comprendre le contexte de fragilisation des adolescents
+        </p>
+        
+        <div class="context-box">
+            <p>
+                Les études récentes convergent vers un constat préoccupant : 
+                les adolescents traversent une période de fragilisation profonde et multifactorielle, 
+                marquée par des défis relationnels, affectifs et identitaires sans précédent.
+            </p>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        
+        <!-- Section 1: Santé mentale -->
+        <section class="section">
+            <h2 class="section-title">Santé mentale et bien-être</h2>
+            <p class="section-intro">
+                La santé mentale des adolescents s'est considérablement fragilisée depuis 2018, 
+                avec des chiffres alarmants qui touchent particulièrement les jeunes filles.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">22%</div>
+                    <div class="stat-label">des 15-19 ans en Europe vivent avec un trouble psychique</div>
+                    <div class="stat-source">OMS Europe, 2025</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">24%</div>
+                    <div class="stat-label">des lycéens ont eu des pensées suicidaires (31% des filles)</div>
+                    <div class="stat-source">EnCLASS, 2024</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">55%</div>
+                    <div class="stat-label">des 18-24 ans en France ont été affectés par un problème de santé mentale</div>
+                    <div class="stat-source">Odoxa, 2024</div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <h3>📊 Point clé</h3>
+                <p>
+                    Le suicide reste la 3e cause de décès chez les 15-29 ans à l'échelle mondiale. 
+                    Les 15-17 ans sont la classe d'âge la plus touchée par les conduites auto-agressives.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 2: Isolement et solitude -->
+        <section class="section">
+            <h2 class="section-title">L'épidémie de solitude</h2>
+            <p class="section-intro">
+                Contrairement aux idées reçues, ce sont les jeunes qui souffrent le plus de solitude, 
+                et non les personnes âgées.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">40%</div>
+                    <div class="stat-label">des moins de 25 ans déclarent une solitude chronique (vs 7% des +65 ans)</div>
+                    <div class="stat-source">IFOP pour Astrée, 2024</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">62%</div>
+                    <div class="stat-label">des 18-24 ans se sentent régulièrement seuls</div>
+                    <div class="stat-source">IFOP/Goodflair, 2024</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">13%</div>
+                    <div class="stat-label">des 18-29 ans sont socialement isolés (vs 2% il y a 10 ans)</div>
+                    <div class="stat-source">Fondation de France, 2020</div>
+                </div>
+            </div>
+
+            <ul class="data-list">
+                <li>
+                    <strong>76%</strong> des personnes chroniquement seules ont déjà évité des situations sociales 
+                    par peur du jugement ou du rejet
+                </li>
+                <li>
+                    <strong>65%</strong> des personnes chroniquement seules ont envisagé de mettre fin à leurs jours
+                </li>
+                <li>
+                    <strong>45%</strong> des jeunes de 15-25 ans se sentent seuls en période estivale
+                </li>
+            </ul>
+        </section>
+
+        <!-- Section 3: Exposition à la pornographie -->
+        <section class="section">
+            <h2 class="section-title">Exposition précoce à la pornographie</h2>
+            <p class="section-intro">
+                L'un des facteurs les plus préoccupants est l'exposition massive et précoce des adolescents 
+                à des contenus pornographiques en ligne, qui déforme leur compréhension de la sexualité et des relations.
+            </p>
+
+            <div class="stats-grid">
+                <div class="stat-card">
+                    <div class="stat-number">2,3M</div>
+                    <div class="stat-label">de mineurs consultent chaque mois des sites pornographiques en France</div>
+                    <div class="stat-source">Arcom, 2024</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">10-11</div>
+                    <div class="stat-label">ans : âge moyen de première exposition à la pornographie</div>
+                    <div class="stat-source">Arcom, 2024</div>
+                </div>
+
+                <div class="stat-card">
+                    <div class="stat-number">51%</div>
+                    <div class="stat-label">des garçons de 12-13 ans sont consommateurs réguliers (vs 31% des filles)</div>
+                    <div class="stat-source">Arcom, 2023</div>
+                </div>
+            </div>
+
+            <div class="insight-box">
+                <h3>⚠️ Impact majeur</h3>
+                <p>
+                    Cette exposition précoce crée des normes irréalistes, banalise la violence, 
+                    et déforme profondément la compréhension de la sexualité, de l'affectivité et de la relation chez les jeunes.
+                </p>
+            </div>
+        </section>
+
+        <!-- Section 4: Le besoin d'accompagnement -->
+        <section class="section">
+            <h2 class="section-title">Une crise du sens, du lien et de la relation</h2>
+            <p class="section-intro">
+                Les rapports institutionnels (OMS, CESE, HCFEA) convergent vers un même constat : 
+                <strong>la crise actuelle est avant tout une crise du sens, du lien et de la relation</strong>, 
+                et non simplement une crise psychologique.
+            </p>
+
+            <ul class="data-list">
+                <li>
+                    L'OMS note un <strong>besoin accru de sens, de soutien relationnel</strong> et d'environnements éducatifs stables
+                </li>
+                <li>
+                    Le CESE met en lumière un <strong>déficit d'éducation affective et relationnelle</strong>, 
+                    trop centrée sur la sexualité et pas assez sur les émotions, la relation et le discernement
+                </li>
+                <li>
+                    Les jeunes demandent des <strong>clés pour comprendre leur corps, leurs émotions, l'amitié, 
+                    l'amour et leurs choix de vie</strong>
+                </li>
+                <li>
+                    88% des collégiens estiment qu'il est important que l'éducation affective et relationnelle 
+                    fasse partie du programme de classe
+                </li>
+            </ul>
+        </section>
+
+        <!-- CTA Section -->
+        <section class="cta-section">
+            <h2>Participez à l'enquête</h2>
+            <p>
+                Votre voix compte. Aidez-nous à mieux comprendre les réalités vécues par les adolescents 
+                pour proposer des accompagnements plus ajustés.
+            </p>
+            <a href="/enquete" class="cta-button">
+                Répondre au questionnaire
+                <svg width="20" height="20" fill="none" viewBox="0 0 24 24" stroke="currentColor">
+                    <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
+                </svg>
+            </a>
+            <p style="margin-top: 1rem; font-size: 0.9rem; color: #94a3b8;">
+                100% anonyme • 4-5 minutes
+            </p>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer>
+        <div class="footer-content">
+            <p>© 2026 Enquête COR 14–18 | Données issues d'études françaises et européennes récentes</p>
+            <p style="margin-top: 0.5rem;">
+                <a href="/" style="color: #2563eb; text-decoration: none;">Retour à l'accueil</a>
+            </p>
+        </div>
+    </footer>
+</body>
+</html>
