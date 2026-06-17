@@ -1,525 +1,832 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Relations. Cœur. Vraie vie. Enquête COR 1418</title>
-    <meta name="description" content="Relations. Cœur. Vraie vie. Une enquête anonyme pour donner la parole aux 14-18 ans">
-    
-    <!-- Google Fonts -->
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Crimson+Pro:wght@300;400;500;600&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet">
-    
-    <style>
-        * {
-            margin: 0;
-            padding: 0;
-            box-sizing: border-box;
-        }
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>COR 14-18 · True Love / Aimer en Vrai</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Georgia&family=IM+Fell+English+SC&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --encre: #2D1F0E;
+    --terre: #6B3520;
+    --terra: #C4673A;
+    --peche: #E8A882;
+    --abricot: #F5DCC8;
+    --lin: #FAF0E6;
+    --blanc: #FFFFFF;
+    --corps-sec: #5C4030;
+    --corps-ter: #8B7A6A;
+  }
 
-        body {
-            font-family: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
-            background: linear-gradient(135deg, #f8fafc 0%, #f0f9ff 50%, #fef3c7 100%);
-            min-height: 100vh;
-            overflow-x: hidden;
-        }
+  * { margin: 0; padding: 0; box-sizing: border-box; }
 
-        h1, h2, h3 {
-            font-family: 'Crimson Pro', Georgia, serif;
-        }
+  body {
+    background: var(--lin);
+    color: var(--encre);
+    font-family: Georgia, 'Times New Roman', serif;
+    font-size: 17px;
+    line-height: 1.7;
+    -webkit-font-smoothing: antialiased;
+  }
 
-        /* Animated background */
-        .background-pattern {
-            position: fixed;
-            inset: 0;
-            background-image: radial-gradient(circle at 2px 2px, rgba(30, 58, 138, 0.02) 1px, transparent 0);
-            background-size: 48px 48px;
-            z-index: 0;
-        }
+  a { color: var(--terra); text-decoration: none; }
+  a:hover { text-decoration: underline; }
 
-        .gradient-orb-1 {
-            position: fixed;
-            top: 0;
-            right: 0;
-            width: 400px;
-            height: 400px;
-            background: linear-gradient(135deg, rgba(191, 219, 254, 0.2), rgba(221, 214, 254, 0.2));
-            border-radius: 50%;
-            filter: blur(60px);
-            animation: float 20s ease-in-out infinite;
-            z-index: 0;
-        }
+  /* ── NAV ── */
+  nav {
+    background: var(--lin);
+    border-bottom: 1.5px solid var(--abricot);
+    padding: 0 2.5rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 13px;
+    letter-spacing: 0.12em;
+    color: var(--encre);
+    text-transform: uppercase;
+  }
+  .nav-logo span { color: var(--terra); }
+  .nav-links {
+    display: flex;
+    gap: 2rem;
+    list-style: none;
+  }
+  .nav-links a {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: var(--corps-sec);
+    letter-spacing: 0.04em;
+  }
+  .nav-links a:hover { color: var(--terra); text-decoration: none; }
+  .nav-cta {
+    background: var(--terra);
+    color: var(--blanc) !important;
+    padding: 8px 18px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    transition: background 0.2s;
+  }
+  .nav-cta:hover { background: var(--terre) !important; }
 
-        .gradient-orb-2 {
-            position: fixed;
-            bottom: 0;
-            left: 0;
-            width: 320px;
-            height: 320px;
-            background: linear-gradient(135deg, rgba(254, 215, 170, 0.2), rgba(254, 205, 211, 0.2));
-            border-radius: 50%;
-            filter: blur(60px);
-            animation: floatDelayed 25s ease-in-out infinite;
-            z-index: 0;
-        }
+  /* ── HERO ── */
+  .hero {
+    background: var(--encre);
+    padding: 7rem 2.5rem 6rem;
+    text-align: center;
+    position: relative;
+    overflow: hidden;
+  }
+  .hero::before {
+    content: '';
+    position: absolute;
+    top: 0; left: 0; right: 0; bottom: 0;
+    background: radial-gradient(ellipse at 60% 40%, rgba(196,103,58,0.12) 0%, transparent 65%);
+    pointer-events: none;
+  }
+  .hero-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 2rem;
+  }
+  .hero h1 {
+    font-size: clamp(2.2rem, 5vw, 3.8rem);
+    font-weight: normal;
+    color: var(--blanc);
+    line-height: 1.15;
+    max-width: 820px;
+    margin: 0 auto 1.8rem;
+    letter-spacing: -0.01em;
+  }
+  .hero h1 em {
+    font-style: italic;
+    color: var(--peche);
+  }
+  .hero-sub {
+    font-size: 1.15rem;
+    color: var(--peche);
+    max-width: 580px;
+    margin: 0 auto 3rem;
+    line-height: 1.65;
+    opacity: 0.9;
+  }
+  .hero-actions {
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+    flex-wrap: wrap;
+  }
+  .btn-primary {
+    background: var(--terra);
+    color: var(--blanc);
+    padding: 14px 32px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    transition: background 0.2s;
+    cursor: pointer;
+    border: none;
+  }
+  .btn-primary:hover { background: #B05A30; }
+  .btn-outline {
+    background: transparent;
+    color: var(--peche);
+    padding: 13px 32px;
+    border-radius: 4px;
+    border: 1.5px solid rgba(232,168,130,0.5);
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    transition: border-color 0.2s, color 0.2s;
+    cursor: pointer;
+  }
+  .btn-outline:hover { border-color: var(--peche); color: var(--blanc); }
 
-        @keyframes float {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(30px, -30px) rotate(2deg); }
-            66% { transform: translate(-20px, 20px) rotate(-2deg); }
-        }
+  /* ── STATS BAND ── */
+  .stats-band {
+    background: var(--blanc);
+    border-top: 3px solid var(--terra);
+    border-bottom: 1px solid var(--abricot);
+    padding: 3rem 2.5rem;
+  }
+  .stats-inner {
+    max-width: 1000px;
+    margin: 0 auto;
+  }
+  .stats-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terra);
+    text-align: center;
+    margin-bottom: 2.5rem;
+  }
+  .stats-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(180px, 1fr));
+    gap: 2rem;
+    text-align: center;
+  }
+  .stat-item {}
+  .stat-num {
+    font-size: 3rem;
+    font-weight: normal;
+    color: var(--terre);
+    line-height: 1;
+    margin-bottom: 0.5rem;
+  }
+  .stat-desc {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: var(--corps-sec);
+    line-height: 1.5;
+  }
+  .stat-source {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    color: var(--corps-ter);
+    margin-top: 4px;
+  }
+  .stat-divider {
+    width: 1px;
+    background: var(--abricot);
+    align-self: stretch;
+  }
 
-        @keyframes floatDelayed {
-            0%, 100% { transform: translate(0, 0) rotate(0deg); }
-            33% { transform: translate(-30px, 30px) rotate(-2deg); }
-            66% { transform: translate(20px, -20px) rotate(2deg); }
-        }
+  /* ── SECTION GÉNÉRIQUE ── */
+  .section {
+    padding: 6rem 2.5rem;
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .section-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: var(--terra);
+    margin-bottom: 1.2rem;
+  }
+  .section h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: normal;
+    color: var(--terre);
+    line-height: 1.25;
+    max-width: 680px;
+    margin-bottom: 1.5rem;
+  }
+  .section-intro {
+    font-size: 1.05rem;
+    color: var(--corps-sec);
+    max-width: 640px;
+    margin-bottom: 3rem;
+    line-height: 1.75;
+  }
 
-        @keyframes fadeIn {
-            from { opacity: 0; }
-            to { opacity: 1; }
-        }
+  /* ── DIAGNOSTIC ── */
+  .diagnostic-wrap { background: var(--abricot); }
+  .diagnostic-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 6rem 2.5rem;
+  }
+  .diagnostic-grid {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 4rem;
+    margin-top: 3rem;
+  }
+  .diag-col h3 {
+    font-size: 1.1rem;
+    color: var(--terre);
+    font-weight: normal;
+    margin-bottom: 1.2rem;
+    padding-bottom: 0.8rem;
+    border-bottom: 1.5px solid var(--terra);
+  }
+  .diag-item {
+    display: flex;
+    gap: 1rem;
+    margin-bottom: 1.2rem;
+    align-items: flex-start;
+  }
+  .diag-dot {
+    width: 8px;
+    height: 8px;
+    border-radius: 50%;
+    background: var(--terra);
+    margin-top: 8px;
+    flex-shrink: 0;
+  }
+  .diag-text {
+    font-family: Arial, sans-serif;
+    font-size: 14px;
+    color: var(--encre);
+    line-height: 1.6;
+  }
+  .diag-text strong {
+    font-weight: 700;
+    color: var(--terre);
+  }
 
-        @keyframes slideUp {
-            from { 
-                opacity: 0;
-                transform: translateY(30px);
-            }
-            to { 
-                opacity: 1;
-                transform: translateY(0);
-            }
-        }
+  /* ── ENQUÊTE ── */
+  .enquete-wrap {
+    background: var(--lin);
+    padding: 6rem 2.5rem;
+  }
+  .enquete-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .findings-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+  }
+  .finding-card {
+    background: var(--blanc);
+    border: 1.5px solid var(--abricot);
+    border-top: 3px solid var(--terra);
+    padding: 2rem;
+    border-radius: 2px;
+  }
+  .finding-num {
+    font-size: 3.5rem;
+    color: var(--terra);
+    font-weight: normal;
+    line-height: 1;
+    margin-bottom: 0.8rem;
+  }
+  .finding-title {
+    font-size: 1.05rem;
+    color: var(--encre);
+    margin-bottom: 0.8rem;
+    font-weight: normal;
+    font-style: italic;
+  }
+  .finding-body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: var(--corps-sec);
+    line-height: 1.65;
+  }
 
-        @keyframes slideRight {
-            from { width: 0; }
-            to { width: 96px; }
-        }
+  /* ── CITATION ── */
+  .citation-block {
+    border-left: 3px solid var(--terra);
+    padding: 1.2rem 2rem;
+    margin: 3rem 0;
+    background: var(--blanc);
+  }
+  .citation-text {
+    font-size: 1.15rem;
+    font-style: italic;
+    color: var(--encre);
+    line-height: 1.65;
+    margin-bottom: 0.6rem;
+  }
+  .citation-source {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    font-weight: 700;
+    color: var(--terra);
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+  }
 
-        /* Container */
-        .container {
-            position: relative;
-            z-index: 10;
-            min-height: 100vh;
-            display: flex;
-            flex-direction: column;
-        }
+  /* ── LEVIERS ── */
+  .leviers-wrap {
+    background: var(--encre);
+    padding: 6rem 2.5rem;
+  }
+  .leviers-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .leviers-inner .section-label { color: var(--terra); }
+  .leviers-inner h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: normal;
+    color: var(--blanc);
+    max-width: 700px;
+    margin-bottom: 1rem;
+    line-height: 1.25;
+  }
+  .leviers-inner .section-intro { color: var(--peche); opacity: 0.85; }
+  .leviers-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .levier-card {
+    border: 1px solid rgba(232,168,130,0.25);
+    padding: 2rem;
+    border-radius: 2px;
+    position: relative;
+  }
+  .levier-num {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    color: var(--terra);
+    letter-spacing: 0.15em;
+    text-transform: uppercase;
+    margin-bottom: 1rem;
+  }
+  .levier-title {
+    font-size: 1.1rem;
+    color: var(--blanc);
+    font-weight: normal;
+    margin-bottom: 0.8rem;
+    line-height: 1.3;
+  }
+  .levier-body {
+    font-family: Arial, sans-serif;
+    font-size: 13px;
+    color: var(--peche);
+    line-height: 1.65;
+    opacity: 0.85;
+  }
 
-        /* Header */
-        header {
-            padding: 3rem 1.5rem;
-            animation: fadeIn 1s ease-out;
-        }
+  /* ── PARCOURS ── */
+  .parcours-wrap {
+    background: var(--blanc);
+    padding: 6rem 2.5rem;
+    border-top: 1px solid var(--abricot);
+  }
+  .parcours-inner {
+    max-width: 1100px;
+    margin: 0 auto;
+  }
+  .sessions-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1.2rem;
+    margin-top: 3rem;
+  }
+  .session-card {
+    background: var(--lin);
+    border: 1px solid var(--abricot);
+    padding: 1.5rem;
+    border-radius: 2px;
+  }
+  .session-num {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.15em;
+    color: var(--terra);
+    margin-bottom: 0.8rem;
+    text-transform: uppercase;
+  }
+  .session-title {
+    font-size: 1rem;
+    color: var(--encre);
+    font-weight: normal;
+    margin-bottom: 0.6rem;
+    line-height: 1.3;
+  }
+  .session-intuit {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: var(--corps-ter);
+    font-style: italic;
+    line-height: 1.5;
+  }
 
-        .header-content {
-            max-width: 80rem;
-            margin: 0 auto;
-        }
+  /* ── CONTACT ── */
+  .contact-wrap {
+    background: var(--terra);
+    padding: 6rem 2.5rem;
+    text-align: center;
+  }
+  .contact-inner {
+    max-width: 700px;
+    margin: 0 auto;
+  }
+  .contact-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.18em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.65);
+    margin-bottom: 1.5rem;
+  }
+  .contact-wrap h2 {
+    font-size: clamp(1.7rem, 3vw, 2.4rem);
+    font-weight: normal;
+    color: var(--blanc);
+    margin-bottom: 1.2rem;
+    line-height: 1.25;
+  }
+  .contact-wrap p {
+    color: rgba(255,255,255,0.8);
+    margin-bottom: 2.5rem;
+    font-size: 1.05rem;
+    line-height: 1.7;
+  }
+  .contact-cards {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+    gap: 1rem;
+    margin-bottom: 3rem;
+    text-align: left;
+  }
+  .contact-card {
+    background: rgba(255,255,255,0.12);
+    border: 1px solid rgba(255,255,255,0.25);
+    padding: 1.5rem;
+    border-radius: 2px;
+  }
+  .contact-card-label {
+    font-family: Arial, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    letter-spacing: 0.12em;
+    text-transform: uppercase;
+    color: rgba(255,255,255,0.55);
+    margin-bottom: 0.5rem;
+  }
+  .contact-card-value {
+    font-size: 1rem;
+    color: var(--blanc);
+    word-break: break-all;
+  }
+  .contact-card-sub {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: rgba(255,255,255,0.65);
+    margin-top: 3px;
+  }
+  .btn-white {
+    background: var(--blanc);
+    color: var(--terre);
+    padding: 14px 36px;
+    border-radius: 4px;
+    font-family: Arial, sans-serif;
+    font-weight: 700;
+    font-size: 14px;
+    letter-spacing: 0.05em;
+    border: none;
+    cursor: pointer;
+    transition: background 0.2s;
+    display: inline-block;
+  }
+  .btn-white:hover { background: var(--abricot); }
 
-        .header-label {
-            font-size: 0.875rem;
-            font-weight: 300;
-            letter-spacing: 0.3em;
-            color: #64748b;
-            text-transform: uppercase;
-            margin-bottom: 0.5rem;
-        }
+  /* ── FOOTER ── */
+  footer {
+    background: var(--encre);
+    padding: 2.5rem;
+    text-align: center;
+  }
+  footer p {
+    font-family: Arial, sans-serif;
+    font-size: 12px;
+    color: var(--corps-ter);
+    line-height: 1.8;
+  }
+  footer a { color: var(--terra); }
 
-        .header-line {
-            height: 1px;
-            background: linear-gradient(to right, #60a5fa, #a78bfa, transparent);
-            width: 96px;
-            animation: slideRight 1s ease-out 0.3s both;
-        }
+  /* ── SEPARATEUR ── */
+  .sep {
+    width: 48px;
+    height: 2px;
+    background: var(--terra);
+    margin: 2rem 0;
+  }
 
-        /* Main */
-        main {
-            flex: 1;
-            display: flex;
-            align-items: center;
-            padding: 3rem 1.5rem;
-        }
-
-        .main-content {
-            max-width: 80rem;
-            margin: 0 auto;
-            width: 100%;
-        }
-
-        .grid {
-            display: grid;
-            gap: 3rem;
-            align-items: center;
-        }
-
-        @media (min-width: 768px) {
-            .grid {
-                grid-template-columns: repeat(2, 1fr);
-                gap: 4rem;
-            }
-        }
-
-        /* Left column */
-        .title-section {
-            animation: slideUp 0.8s ease-out 0.2s both;
-        }
-
-        .main-title {
-            font-size: 3.5rem;
-            line-height: 1.1;
-            color: #1e293b;
-            letter-spacing: -0.02em;
-        }
-
-        @media (min-width: 768px) {
-            .main-title {
-                font-size: 4.5rem;
-            }
-        }
-
-        .title-accent {
-            display: block;
-            color: #2563eb;
-            margin-top: 0.25rem;
-        }
-
-        .title-divider {
-            display: flex;
-            align-items: center;
-            gap: 0.75rem;
-            margin-top: 1rem;
-        }
-
-        .divider-line {
-            height: 2px;
-            width: 48px;
-            background-color: #fbbf24;
-        }
-
-        .divider-text {
-            font-size: 0.875rem;
-            font-weight: 300;
-            color: #64748b;
-            letter-spacing: 0.05em;
-        }
-
-        /* Right column */
-        .content-section {
-            animation: slideUp 0.8s ease-out 0.4s both;
-        }
-
-        .lead-text {
-            font-size: 1.25rem;
-            line-height: 1.6;
-            color: #334155;
-            font-weight: 300;
-            margin-bottom: 1.5rem;
-        }
-
-        @media (min-width: 768px) {
-            .lead-text {
-                font-size: 1.375rem;
-            }
-        }
-
-        .lead-text .highlight {
-            font-weight: 500;
-            color: #1e293b;
-        }
-
-        .body-text {
-            font-size: 1rem;
-            line-height: 1.6;
-            color: #475569;
-            margin-bottom: 1.5rem;
-        }
-
-        .info-box {
-            background: rgba(255, 255, 255, 0.6);
-            backdrop-filter: blur(10px);
-            border: 1px solid rgba(226, 232, 240, 0.5);
-            border-radius: 1rem;
-            padding: 1.5rem;
-            box-shadow: 0 1px 3px rgba(0, 0, 0, 0.05);
-            margin-bottom: 2rem;
-        }
-
-        .info-box p {
-            font-size: 0.875rem;
-            color: #475569;
-            line-height: 1.6;
-        }
-
-        /* Anonymous badge */
-        .anonymous-badge {
-            display: inline-flex;
-            align-items: center;
-            gap: 0.5rem;
-            background: linear-gradient(135deg, #10b981 0%, #059669 100%);
-            color: white;
-            padding: 0.75rem 1.25rem;
-            border-radius: 9999px;
-            font-size: 0.875rem;
-            font-weight: 500;
-            margin-bottom: 1.5rem;
-            box-shadow: 0 4px 12px rgba(16, 185, 129, 0.2);
-        }
-
-        .anonymous-badge svg {
-            width: 20px;
-            height: 20px;
-        }
-
-        /* CTA Section */
-        .cta-section {
-            padding-top: 1rem;
-        }
-
-        .cta-button {
-            display: inline-flex;
-            align-items: center;
-            justify-content: center;
-            gap: 0.75rem;
-            padding: 1.25rem 2.5rem;
-            background: linear-gradient(to right, #2563eb, #1e40af);
-            color: white;
-            border-radius: 9999px;
-            font-weight: 500;
-            font-size: 1.125rem;
-            text-decoration: none;
-            box-shadow: 0 10px 25px -5px rgba(37, 99, 235, 0.2);
-            transition: all 0.3s ease;
-            border: none;
-            cursor: pointer;
-            width: 100%;
-            position: relative;
-            overflow: hidden;
-        }
-
-        @media (min-width: 768px) {
-            .cta-button {
-                width: auto;
-            }
-        }
-
-        .cta-button:hover {
-            transform: scale(1.02);
-            box-shadow: 0 20px 40px -10px rgba(37, 99, 235, 0.3);
-        }
-
-        .cta-button svg {
-            width: 20px;
-            height: 20px;
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover svg {
-            transform: translateX(4px);
-        }
-
-        .button-overlay {
-            position: absolute;
-            inset: 0;
-            background: linear-gradient(to right, #1e40af, #1e3a8a);
-            transform: translateY(100%);
-            transition: transform 0.3s ease;
-        }
-
-        .cta-button:hover .button-overlay {
-            transform: translateY(0);
-        }
-
-        .button-content {
-            position: relative;
-            z-index: 10;
-        }
-
-        /* Meta info */
-        .meta-info {
-            display: flex;
-            flex-direction: column;
-            gap: 1rem;
-            margin-top: 1rem;
-            font-size: 0.875rem;
-            color: #64748b;
-        }
-
-        @media (min-width: 640px) {
-            .meta-info {
-                flex-direction: row;
-            }
-        }
-
-        .meta-item {
-            display: flex;
-            align-items: center;
-            gap: 0.5rem;
-        }
-
-        .meta-item svg {
-            width: 16px;
-            height: 16px;
-        }
-
-        .meta-link {
-            margin-top: 0.5rem;
-        }
-
-        .meta-link p {
-            font-size: 0.75rem;
-            color: #94a3b8;
-            font-family: 'Courier New', monospace;
-        }
-
-        /* Footer */
-        footer {
-            padding: 2rem 1.5rem;
-            position: relative;
-            z-index: 10;
-        }
-
-        .footer-content {
-            max-width: 80rem;
-            margin: 0 auto;
-            display: flex;
-            flex-direction: column;
-            align-items: center;
-            justify-content: space-between;
-            gap: 1rem;
-            font-size: 0.75rem;
-            color: #94a3b8;
-            border-top: 1px solid #e2e8f0;
-            padding-top: 1.5rem;
-        }
-
-        @media (min-width: 640px) {
-            .footer-content {
-                flex-direction: row;
-            }
-        }
-
-        .footer-right {
-            font-weight: 300;
-            text-align: center;
-        }
-
-        @media (min-width: 640px) {
-            .footer-right {
-                text-align: right;
-            }
-        }
-    </style>
+  /* ── MOBILE ── */
+  @media (max-width: 680px) {
+    nav { padding: 0 1.2rem; }
+    .nav-links { display: none; }
+    .hero { padding: 5rem 1.5rem 4rem; }
+    .stats-band, .enquete-wrap, .diagnostic-inner,
+    .leviers-wrap, .parcours-wrap, .contact-wrap { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .section { padding-left: 1.5rem; padding-right: 1.5rem; }
+    .diagnostic-grid { grid-template-columns: 1fr; gap: 2rem; }
+    .hero-actions { flex-direction: column; align-items: center; }
+  }
+</style>
 </head>
 <body>
-    <!-- Background elements -->
-    <div class="background-pattern"></div>
-    <div class="gradient-orb-1"></div>
-    <div class="gradient-orb-2"></div>
 
-    <!-- Main container -->
-    <div class="container">
-        <!-- Header -->
-        <header>
-            <div class="header-content">
-                <div>
-                    <h1 class="header-label">Enquête anonyme</h1>
-                    <div class="header-line"></div>
-                </div>
-            </div>
-        </header>
+<!-- NAV -->
+<nav>
+  <div class="nav-logo">COR <span>14-18</span> · True Love</div>
+  <ul class="nav-links">
+    <li><a href="#diagnostic">Le constat</a></li>
+    <li><a href="#enquete">L'enquête</a></li>
+    <li><a href="#leviers">Les leviers</a></li>
+    <li><a href="#parcours">Le parcours</a></li>
+    <li><a href="#contact" class="nav-cta">Rejoindre le projet →</a></li>
+  </ul>
+</nav>
 
-        <!-- Main content -->
-        <main>
-            <div class="main-content">
-                <div class="grid">
-                    <!-- Left column - Title -->
-                    <div class="title-section">
-                        <h2 class="main-title">
-                            COR
-                            <span class="title-accent">14–18</span>
-                        </h2>
-                        <div class="title-divider">
-                            <div class="divider-line"></div>
-                            <p class="divider-text">Relations, affectivité, vie intérieure</p>
-                        </div>
-                    </div>
+<!-- HERO -->
+<section class="hero">
+  <p class="hero-label">COR 14-18 · True Love / Aimer en Vrai · 2026</p>
+  <h1>Les jeunes cherchent des <em>relations vraies</em><br>Nous avons décidé d'en faire une priorité</h1>
+  <p class="hero-sub">365 adolescents entendus. Des données claires. Un parcours pour agir sur ce qui compte vraiment - la vie affective, relationnelle et intérieure des 14-18 ans.</p>
+  <div class="hero-actions">
+    <a href="#enquete" class="btn-primary">Découvrir les données →</a>
+    <a href="#contact" class="btn-outline">Rejoindre le projet</a>
+  </div>
+</section>
 
-                    <!-- Right column - Content -->
-                    <div class="content-section">
-                        <!-- Anonymous badge prominent -->
-                        <div class="anonymous-badge">
-                            <svg fill="currentColor" viewBox="0 0 20 20">
-                                <path fill-rule="evenodd" d="M2.166 4.999A11.954 11.954 0 0010 1.944 11.954 11.954 0 0017.834 5c.11.65.166 1.32.166 2.001 0 5.225-3.34 9.67-8 11.317C5.34 16.67 2 12.225 2 7c0-.682.057-1.35.166-2.001zm11.541 3.708a1 1 0 00-1.414-1.414L9 10.586 7.707 9.293a1 1 0 00-1.414 1.414l2 2a1 1 0 001.414 0l4-4z" clip-rule="evenodd" />
-                            </svg>
-                            <span>100% Anonyme et confidentiel</span>
-                        </div>
-
-                        <p class="lead-text">
-                            Une enquête pour mieux comprendre ce que vivent les adolescents 
-                            autour des <span class="highlight">relations</span>, 
-                            de <span class="highlight">l'affectivité</span> et 
-                            de la <span class="highlight">vie intérieure</span>.
-                        </p>
-                        
-                        <p class="body-text">
-                            Dans un contexte marqué par de profondes mutations relationnelles et cultures, cette enquête vise à donner la parole aux jeunes de 14 à 18 ans, 
-                         pour écouter leurs questions, leurs attentes et leurs défis
-                        </p>
-
-                        <div class="info-box">
-                            <p>
-                                Les résultats de cette enquête nous permettront de co-construire une série de vidéo sur les sujets qui comptent vraiment, en partant du vécu, pas de la théorie
-                            </p>
-                        </div>
-
-                        <!-- CTA Section -->
-                        <div class="cta-section">
-                            <!-- ✅ Pointe vers /enquete qui redirige vers Fillout -->
-                            <a href="/enquete" class="cta-button">
-                                <div class="button-overlay"></div>
-                                <span class="button-content">
-                                    Accéder au questionnaire
-                                    <svg fill="none" viewBox="0 0 24 24" stroke="currentColor">
-                                        <path stroke-linecap="round" stroke-linejoin="round" stroke-width="2" d="M13 7l5 5m0 0l-5 5m5-5H6" />
-                                    </svg>
-                                </span>
-                            </a>
-                            
-                            <div class="meta-info">
-                                <div class="meta-item">
-                                    <svg style="color: #3b82f6;" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M10 18a8 8 0 100-16 8 8 0 000 16zm1-12a1 1 0 10-2 0v4a1 1 0 00.293.707l2.828 2.829a1 1 0 101.415-1.415L11 9.586V6z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>4-5 minutes seulement</span>
-                                </div>
-                                <div class="meta-item">
-                                    <svg style="color: #10b981;" fill="currentColor" viewBox="0 0 20 20">
-                                        <path fill-rule="evenodd" d="M18 8a6 6 0 01-7.743 5.743L10 14l-1 1-1 1H6v2H2v-4l4.257-4.257A6 6 0 1118 8zm-6-4a1 1 0 100 2 2 2 0 012 2 1 1 0 102 0 4 4 0 00-4-4z" clip-rule="evenodd" />
-                                    </svg>
-                                    <span>Aucune donnée personnelle</span>
-                                </div>
-                            </div>
-
-                            <div class="meta-link">
-                                <p>Lien direct : cor1418.org/enquete</p>
-                            </div>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </main>
-
-        <!-- Footer -->
-        <footer>
-            <div class="footer-content">
-                <p>© 2026 Enquête COR 14–18</p>
-                <p class="footer-right">
-                    Toutes les réponses sont anonymes et confidentielles • 
-                    <a href="/etude" style="color: #2563eb; text-decoration: none;">En savoir plus sur l'étude</a>
-                </p>
-            </div>
-        </footer>
+<!-- STATS BAND -->
+<div class="stats-band" id="diagnostic">
+  <div class="stats-inner">
+    <p class="stats-label">Ce que disent les données - Europe francophone 2024-2026</p>
+    <div class="stats-grid">
+      <div class="stat-item">
+        <div class="stat-num">1/3</div>
+        <div class="stat-desc">des adolescents vivent avec des troubles psychiques en France et en Suisse</div>
+        <div class="stat-source">OMS Europe / UNICEF-Unisanté, 2024</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">40 %</div>
+        <div class="stat-desc">des moins de 25 ans déclarent une solitude chronique - contre 7 % chez les plus de 65 ans</div>
+        <div class="stat-source">IFOP / Astrée, 2024</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">62 %</div>
+        <div class="stat-desc">des 18-24 ans se sentent régulièrement seuls tout en passant 5h+ par jour devant un écran</div>
+        <div class="stat-source">IFOP / Goodflair, 2024</div>
+      </div>
+      <div class="stat-divider"></div>
+      <div class="stat-item">
+        <div class="stat-num">50 %</div>
+        <div class="stat-desc">des jeunes recourent désormais à l'IA pour des questionnements strictement personnels</div>
+        <div class="stat-source">Ipsos France, mai 2026</div>
+      </div>
     </div>
+  </div>
+</div>
+
+<!-- DIAGNOSTIC -->
+<div class="diagnostic-wrap">
+  <div class="diagnostic-inner">
+    <p class="section-label">Pourquoi agir maintenant</p>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);font-weight:normal;color:var(--terre);max-width:680px;margin-bottom:1rem;line-height:1.25;">Ce n'est pas une crise psychologique<br>C'est une crise du lien</h2>
+    <p style="font-family:Arial,sans-serif;font-size:15px;color:var(--corps-sec);max-width:640px;margin-bottom:2.5rem;line-height:1.75;">Les rapports institutionnels convergent - OMS, CESE, HCFEA - vers un même diagnostic : les adolescents ne manquent pas d'informations sur l'amour ou la sexualité. Ils manquent d'adultes pour les accompagner, de repères relationnels, et d'espaces sécurisants pour comprendre ce qu'ils vivent.</p>
+
+    <div class="diagnostic-grid">
+      <div class="diag-col">
+        <h3>Les facteurs convergents</h3>
+        <div class="diag-item"><div class="diag-dot"></div><div class="diag-text"><strong>Isolement relationnel</strong> - 1 jeune sur 3 se sent souvent seul, dans un paradoxe d'hyperconnexion numérique</div></div>
+        <div class="diag-item"><div class="diag-dot"></div><div class="diag-text"><strong>Exposition précoce à la pornographie</strong> - âge moyen de première exposition : 10-11 ans en France (Arcom, 2024)</div></div>
+        <div class="diag-item"><div class="diag-dot"></div><div class="diag-text"><strong>IA comme substitut relationnel</strong> - 38 % confient régulièrement leurs états d'âme à une IA face à la solitude</div></div>
+        <div class="diag-item"><div class="diag-dot"></div><div class="diag-text"><strong>Pression corporelle</strong> - 53 % des filles insatisfaites de leur image corporelle ; impératif de muscularité chez les garçons</div></div>
+      </div>
+      <div class="diag-col">
+        <h3>Ce que les études demandent</h3>
+        <div class="diag-item"><div class="diag-dot"></div><div class="diag-text">Un <strong>espace sécurisant</strong> où l'expérience relationnelle peut être vécue, nommée et éclairée</div></div>
+        <div class="diag-item"><div class="diag-dot"></div><div class="diag-text">Des <strong>adultes disponibles</strong> - présences incarnées, capables d'accueillir la vulnérabilité sans jugement</div></div>
+        <div class="diag-item"><div class="diag-dot"></div><div class="diag-text">Un <strong>contre-discours clair</strong> face aux modèles relationnels dominants qui normalisent la performance et l'instrumentalisation</div></div>
+        <div class="diag-item"><div class="diag-dot"></div><div class="diag-text">Non pas moins d'écrans - mais <strong>une alternative relationnelle de qualité</strong> qui réhabilite la réciprocité humaine</div></div>
+      </div>
+    </div>
+
+    <div class="citation-block" style="margin-top:3rem;">
+      <p class="citation-text">« Ce n'est pas tant la souffrance seule qui domine le tableau que la complexité croissante d'expérimenter le lien : les codes relationnels, qui s'acquièrent dans l'épreuve du temps, de la friction et de la réciprocité, se retrouvent court-circuités par l'hyperconnexion. »</p>
+      <p class="citation-source">Enquête COR 14-18 · Partie 1 · État des lieux</p>
+    </div>
+  </div>
+</div>
+
+<!-- ENQUÊTE -->
+<div class="enquete-wrap" id="enquete">
+  <div class="enquete-inner">
+    <p class="section-label">Enquête COR 14-18 · 365 jeunes entendus</p>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);font-weight:normal;color:var(--terre);max-width:680px;margin-bottom:1rem;line-height:1.25;">Nous avons demandé aux jeunes ce qu'ils cherchent<br>Les réponses ont surpris tout le monde</h2>
+    <p style="font-family:Arial,sans-serif;font-size:15px;color:var(--corps-sec);max-width:640px;margin-bottom:0.5rem;line-height:1.75;">365 répondants · 84,7 % de 14 à 18 ans · France, Suisse, Luxembourg · Mars-juin 2026</p>
+    <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--corps-ter);max-width:640px;margin-bottom:2rem;line-height:1.6;">Questionnaire digital Fillout (n=315) + questionnaire papier en face-à-face (n=50, garçons). L'enquête ne prétend pas à la représentativité nationale - elle est un exercice d'écoute.</p>
+
+    <div class="findings-grid">
+      <div class="finding-card">
+        <div class="finding-num">79 %</div>
+        <p class="finding-title">L'amitié avant l'amour romantique</p>
+        <p class="finding-body">79,3 % citent l'amitié comme thème qui les touche - devant l'amour (69,8 %) et très loin devant la sexualité (20,4 %). C'est le résultat le plus contre-intuitif de l'enquête et le plus structurant pour la conception du parcours.</p>
+      </div>
+      <div class="finding-card">
+        <div class="finding-num">68 %</div>
+        <p class="finding-title">La confiance comme question prioritaire</p>
+        <p class="finding-body">« À qui je peux vraiment faire confiance ? » obtient 68,2 % de réponses "très important" - le score le plus élevé de toute la section. Ce n'est pas une question abstraite. C'est une urgence pratique et vécue.</p>
+      </div>
+      <div class="finding-card">
+        <div class="finding-num">53 %</div>
+        <p class="finding-title">Le tête-à-tête, pas la vidéo</p>
+        <p class="finding-body">85,8 % consomment des vidéos courtes chaque semaine. Pourtant, seuls 15 % citent ce format comme vecteur d'un vrai déclic. Ce qui transforme : le tête-à-tête avec quelqu'un de confiance (53 %) et le témoignage authentique (43 %).</p>
+      </div>
+      <div class="finding-card">
+        <div class="finding-num">76 %</div>
+        <p class="finding-title">La sécurité émotionnelle avant tout</p>
+        <p class="finding-body">« Que les personnes soient honnêtes » (76 %) et « ne pas être jugé·e » (75 %) dominent les conditions pour parler. La confidentialité et la liberté de ne pas parler viennent ensuite. La durée courte ne joue qu'un rôle marginal (26 %).</p>
+      </div>
+    </div>
+
+    <div class="citation-block" style="margin-top:3rem;">
+      <p class="citation-text">« Les jeunes ne formulent pas leurs besoins depuis le manque. Ils ne se décrivent pas comme seuls, blessés ou perdus. Ils formulent leurs besoins depuis le désir : ils veulent des relations vraies, des interlocuteurs honnêtes, un espace où la parole ne coûte pas trop cher. »</p>
+      <p class="citation-source">Enquête COR 14-18 · Partie 2 · Résultats</p>
+    </div>
+  </div>
+</div>
+
+<!-- LEVIERS -->
+<div class="leviers-wrap" id="leviers">
+  <div class="leviers-inner">
+    <p class="section-label">Ce que les données nous demandent de construire</p>
+    <h2>Des leviers identifiés<br>Une méthode ajustée</h2>
+    <p class="section-intro" style="margin-bottom:0.5rem;">L'enquête et l'état des lieux européen convergent vers des implications concrètes. Il ne s'agit pas de produire plus de contenu - les jeunes en sont saturés. Il s'agit de créer les conditions d'une expérience relationnelle réelle.</p>
+
+    <div class="leviers-grid">
+      <div class="levier-card">
+        <p class="levier-num">Levier 01</p>
+        <p class="levier-title">L'amitié comme porte d'entrée</p>
+        <p class="levier-body">Partir de ce que les jeunes vivent en premier - l'amitié, le désir d'appartenance, la question de la confiance - plutôt que d'aborder la sexualité ou l'amour romantique d'emblée. C'est un choix pédagogique fondé sur les données.</p>
+      </div>
+      <div class="levier-card">
+        <p class="levier-num">Levier 02</p>
+        <p class="levier-title">La présence incarnée d'un adulte</p>
+        <p class="levier-body">Ce qui produit des déclics, ce n'est pas le contenu : c'est la présence d'un être humain dont l'engagement est suspendu à un choix libre d'être là. Les animateurs sont le nerf de la guerre - leur formation et leur accompagnement sont non-négociables.</p>
+      </div>
+      <div class="levier-card">
+        <p class="levier-num">Levier 03</p>
+        <p class="levier-title">Le micro-groupe comme laboratoire</p>
+        <p class="levier-body">76 % des jeunes préfèrent le tête-à-tête ou le trinôme pour aborder des sujets personnels. Les temps de partage en binôme ou trinôme, intégrés à chaque session, sont la structure minimale de toute transformation intérieure.</p>
+      </div>
+      <div class="levier-card">
+        <p class="levier-num">Levier 04</p>
+        <p class="levier-title">Partir de l'expérience, pas de la doctrine</p>
+        <p class="levier-body">Le ton expert arrive systématiquement dernier dans les préférences des jeunes (3,22/5). Chaque séquence doit partir d'une expérience vécue - nommée, reconnue, prise au sérieux - avant de proposer un éclairage anthropologique.</p>
+      </div>
+      <div class="levier-card">
+        <p class="levier-num">Levier 05</p>
+        <p class="levier-title">Différencier les approches filles / garçons</p>
+        <p class="levier-body">Les données dessinent deux profils distincts : les filles ont besoin d'un cadre protégé (84 % citent "ne pas être jugée") ; les garçons ont besoin d'interlocuteurs authentiques et d'une entrée par l'action concrète avant toute demande de parole.</p>
+      </div>
+      <div class="levier-card">
+        <p class="levier-num">Levier 06</p>
+        <p class="levier-title">Un ancrage théologique solide</p>
+        <p class="levier-body">La Théologie du Corps de Jean-Paul II suit le même mouvement que les données : partir de l'expérience concrète pour progresser vers le sens. Ce n'est pas une doctrine plaquée sur la réalité - c'est une lecture de la réalité pour y découvrir une vérité déjà inscrite.</p>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- PARCOURS -->
+<div class="parcours-wrap" id="parcours">
+  <div class="parcours-inner">
+    <p class="section-label">Le parcours True Love / Aimer en Vrai</p>
+    <h2 style="font-size:clamp(1.7rem,3vw,2.4rem);font-weight:normal;color:var(--terre);max-width:680px;margin-bottom:1rem;line-height:1.25;">Six sessions - Une progression<br>De l'amitié jusqu'au don de soi</h2>
+    <p style="font-family:Arial,sans-serif;font-size:15px;color:var(--corps-sec);max-width:640px;margin-bottom:0.5rem;line-height:1.75;">Le parcours suit un mouvement constant : partir de l'expérience vécue, la reconnaître, l'éclairer, et permettre un choix libre. Format 90-120 min par session, ou week-end intensif.</p>
+    <p style="font-family:Arial,sans-serif;font-size:13px;color:var(--corps-ter);max-width:640px;margin-bottom:2.5rem;line-height:1.6;">Ancré dans la Théologie du Corps de Jean-Paul II · Adapté aux 14-18 ans</p>
+
+    <div class="sessions-grid">
+      <div class="session-card">
+        <p class="session-num">Session 01</p>
+        <p class="session-title">L'amitié : première école du don</p>
+        <p class="session-intuit">Qu'est-ce que rencontrer vraiment quelqu'un ? La confiance, le discernement, la différence entre relation et connexion.</p>
+      </div>
+      <div class="session-card">
+        <p class="session-num">Session 02</p>
+        <p class="session-title">Le corps : lieu de présence, pas d'évaluation</p>
+        <p class="session-intuit">Je suis mon corps. Il dit quelque chose de vrai sur la personne, sa capacité à donner, à recevoir, à entrer en relation.</p>
+      </div>
+      <div class="session-card">
+        <p class="session-num">Session 03</p>
+        <p class="session-title">Les émotions et la liberté intérieure</p>
+        <p class="session-intuit">Apprendre à lire les émotions comme des signaux, les intégrer dans un mouvement vers le bien choisi librement.</p>
+      </div>
+      <div class="session-card">
+        <p class="session-num">Session 04</p>
+        <p class="session-title">Aimer librement : la rencontre de l'altérité</p>
+        <p class="session-intuit">La différence entre désir et don, entre attraction et engagement. On ne peut donner qu'à quelqu'un qui n'est pas soi.</p>
+      </div>
+      <div class="session-card">
+        <p class="session-num">Session 05</p>
+        <p class="session-title">L'amour en vérité</p>
+        <p class="session-intuit">L'amour comme choix qui demande vérité, liberté et maturité - face aux modèles de consommation relationnelle.</p>
+      </div>
+      <div class="session-card">
+        <p class="session-num">Session 06</p>
+        <p class="session-title">Se donner : la découverte de la vocation</p>
+        <p class="session-intuit">Non pas « que vais-je faire de ma vie ? » mais « pour qui suis-je prêt·e à m'engager, à quel appel répondre ? »</p>
+      </div>
+    </div>
+
+    <div style="margin-top:3.5rem;background:var(--abricot);padding:2rem;border-left:3px solid var(--terra);">
+      <p style="font-family:Arial,sans-serif;font-size:13px;font-weight:700;letter-spacing:0.12em;text-transform:uppercase;color:var(--terra);margin-bottom:0.6rem;">Déploiement en cours</p>
+      <p style="font-family:Arial,sans-serif;font-size:14px;color:var(--corps-sec);line-height:1.7;">Pilote lancé à <strong>Lausanne</strong> (retraite en montagne, janvier 2027 · deux groupes par tranche d'âge). Réseau international de mentors TOB (Theology of the Body Educators) en cours de constitution.</p>
+    </div>
+  </div>
+</div>
+
+<!-- CONTACT -->
+<div class="contact-wrap" id="contact">
+  <div class="contact-inner">
+    <p class="contact-label">Rejoindre le projet</p>
+    <h2>Vous voulez agir ?<br>Nous cherchons des personnes qui osent être là</h2>
+    <p>Que vous soyez catéchiste, éducateur, animateur de jeunes, responsable pastoral ou simplement convaincu que les 14-18 ans méritent mieux que ce que le monde leur propose - il y a une place pour vous dans ce projet.</p>
+
+    <div class="contact-cards">
+      <div class="contact-card">
+        <p class="contact-card-label">Email</p>
+        <p class="contact-card-value"><a href="mailto:enquetecor1418@gmail.com" style="color:var(--blanc);">enquetecor1418@gmail.com</a></p>
+        <p class="contact-card-sub">Pour toute demande d'information ou de partenariat</p>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-label">Site</p>
+        <p class="contact-card-value"><a href="https://www.cor1418.org" style="color:var(--blanc);">www.cor1418.org</a></p>
+        <p class="contact-card-sub">Ressources, enquête et actualités du programme</p>
+      </div>
+      <div class="contact-card">
+        <p class="contact-card-label">Coordination</p>
+        <p class="contact-card-value" style="color:var(--blanc);">Messiane Cazé</p>
+        <p class="contact-card-sub">Master Théologie du Corps · Institut de Théologie du Corps, Lyon</p>
+      </div>
+    </div>
+
+    <a href="mailto:enquetecor1418@gmail.com" class="btn-white">Écrire pour en savoir plus →</a>
+
+    <p style="margin-top:2rem;font-family:Arial,sans-serif;font-size:12px;color:rgba(255,255,255,0.5);line-height:1.7;">Animateur · Porteur de projet local · Mentor TOB · Chercheur · Journaliste<br>Toutes les formes d'engagement sont les bienvenues.</p>
+  </div>
+</div>
+
+<!-- FOOTER -->
+<footer>
+  <p>
+    <strong style="color:var(--terra);">COR 14-18 · True Love / Aimer en Vrai</strong><br>
+    Programme d'éducation affective et relationnelle · 2026<br>
+    Fondé sur la Théologie du Corps de Jean-Paul II · <a href="https://www.cor1418.org">cor1418.org</a> · <a href="mailto:enquetecor1418@gmail.com">enquetecor1418@gmail.com</a>
+  </p>
+</footer>
+
 </body>
 </html>
