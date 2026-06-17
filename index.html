@@ -22,7 +22,7 @@
   * { margin: 0; padding: 0; box-sizing: border-box; }
 
   body {
-    background: var(--blanc);
+    background: var(--lin);
     color: var(--encre);
     font-family: 'IM Fell English', Georgia, serif;
     font-size: 17px;
@@ -68,21 +68,25 @@
   .nav-cta:hover { background: var(--terre) !important; text-decoration: none; }
 
   /* ── HERO ── */
-  .hero {
+  .hero-wrap {
     background: var(--lin);
-    padding: 6rem 3rem 5rem;
-    max-width: 960px;
-    margin: 0 auto;
     position: relative;
     overflow: hidden;
+    width: 100%;
   }
   .hero-beams {
     position: absolute;
     top: 0; right: 0;
-    width: 480px;
+    width: 55%;
     height: 100%;
     pointer-events: none;
-    opacity: 0.18;
+    opacity: 0.22;
+  }
+  .hero {
+    padding: 6rem 3rem 5rem;
+    max-width: 960px;
+    margin: 0 auto;
+    position: relative;
   }
   .hero-label {
     font-family: Arial, sans-serif;
@@ -153,6 +157,10 @@
   }
 
   /* ── CHIFFRES ── */
+  .chiffres-wrap {
+    background: var(--blanc);
+    width: 100%;
+  }
   .chiffres {
     padding: 4rem 3rem;
     max-width: 960px;
@@ -193,6 +201,7 @@
   }
 
   /* ── SECTION ── */
+  .section-wrap { background: var(--blanc); width: 100%; }
   .section {
     padding: 5rem 3rem;
     max-width: 960px;
@@ -522,27 +531,30 @@
 <nav>
   <a href="/" class="nav-logo">
     <!-- LOGO INLINE SVG -->
-    <svg width="180" height="36" viewBox="0 0 540 108" role="img" xmlns="http://www.w3.org/2000/svg">
+    <!-- viewBox: 540 wide, 130 tall — faisceaux haut, texte milieu, filet bas -->
+    <svg width="200" height="48" viewBox="0 0 540 130" role="img" xmlns="http://www.w3.org/2000/svg">
       <title>Aimer en Grand</title>
-      <!-- Faisceaux depuis x=119, y=36 (au-dessus du I de AIMER) -->
+      <!-- Faisceaux depuis x=119, y=22 — bien au-dessus du texte -->
       <!-- Gauche -->
-      <line x1="119" y1="36" x2="60" y2="36" stroke="#C4673A" stroke-width="5" stroke-linecap="round"/>
-      <line x1="119" y1="36" x2="54" y2="19" stroke="#C4673A" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
-      <line x1="119" y1="36" x2="54" y2="53" stroke="#C4673A" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
-      <line x1="119" y1="36" x2="46" y2="2"  stroke="#C4673A" stroke-width="2.5" stroke-linecap="round" opacity="0.28"/>
-      <line x1="119" y1="36" x2="46" y2="70" stroke="#C4673A" stroke-width="2.5" stroke-linecap="round" opacity="0.28"/>
+      <line x1="119" y1="22" x2="60"  y2="22" stroke="#C4673A" stroke-width="5" stroke-linecap="round"/>
+      <line x1="119" y1="22" x2="54"  y2="8"  stroke="#C4673A" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+      <line x1="119" y1="22" x2="54"  y2="36" stroke="#C4673A" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+      <line x1="119" y1="22" x2="46"  y2="0"  stroke="#C4673A" stroke-width="2.5" stroke-linecap="round" opacity="0.28"/>
+      <line x1="119" y1="22" x2="46"  y2="44" stroke="#C4673A" stroke-width="2.5" stroke-linecap="round" opacity="0.28"/>
       <!-- Droite -->
-      <line x1="119" y1="36" x2="480" y2="36" stroke="#C4673A" stroke-width="5" stroke-linecap="round"/>
-      <line x1="119" y1="36" x2="474" y2="17" stroke="#C4673A" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
-      <line x1="119" y1="36" x2="474" y2="55" stroke="#C4673A" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
-      <line x1="119" y1="36" x2="466" y2="0"  stroke="#C4673A" stroke-width="2.5" stroke-linecap="round" opacity="0.28"/>
-      <line x1="119" y1="36" x2="466" y2="72" stroke="#C4673A" stroke-width="2.5" stroke-linecap="round" opacity="0.28"/>
+      <line x1="119" y1="22" x2="480" y2="22" stroke="#C4673A" stroke-width="5" stroke-linecap="round"/>
+      <line x1="119" y1="22" x2="474" y2="6"  stroke="#C4673A" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+      <line x1="119" y1="22" x2="474" y2="38" stroke="#C4673A" stroke-width="4" stroke-linecap="round" opacity="0.6"/>
+      <line x1="119" y1="22" x2="466" y2="0"  stroke="#C4673A" stroke-width="2.5" stroke-linecap="round" opacity="0.28"/>
+      <line x1="119" y1="22" x2="466" y2="44" stroke="#C4673A" stroke-width="2.5" stroke-linecap="round" opacity="0.28"/>
       <!-- Point -->
-      <circle cx="119" cy="36" r="8" fill="#C4673A"/>
-      <!-- Texte -->
-      <text x="270" y="82" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-size="52" fill="#2D1F0E" letter-spacing="1">
+      <circle cx="119" cy="22" r="8" fill="#C4673A"/>
+      <!-- Texte — bien en dessous des faisceaux -->
+      <text x="270" y="90" text-anchor="middle" font-family="'IM Fell English', Georgia, serif" font-size="52" fill="#2D1F0E" letter-spacing="1">
         <tspan font-variant="small-caps" letter-spacing="4">Aimer</tspan><tspan> en Grand</tspan>
       </text>
+      <!-- Filet terracotta sous le texte -->
+      <line x1="150" y1="104" x2="390" y2="104" stroke="#C4673A" stroke-width="1.5" opacity="0.6"/>
     </svg>
   </a>
   <ul class="nav-links">
@@ -555,25 +567,30 @@
 </nav>
 
 <!-- HERO -->
+<div class="hero-wrap">
 <div class="hero">
-  <!-- Faisceaux décoratifs hero — coin supérieur droit -->
-  <svg class="hero-beams" viewBox="0 0 480 500" preserveAspectRatio="xMaxYMin meet" xmlns="http://www.w3.org/2000/svg">
-    <line x1="480" y1="80"  x2="0"   y2="80"  stroke="#C4673A" stroke-width="3" stroke-linecap="round"/>
-    <line x1="480" y1="80"  x2="20"  y2="40"  stroke="#C4673A" stroke-width="2" stroke-linecap="round"/>
-    <line x1="480" y1="80"  x2="20"  y2="120" stroke="#C4673A" stroke-width="2" stroke-linecap="round"/>
-    <line x1="480" y1="80"  x2="40"  y2="0"   stroke="#C4673A" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="480" y1="80"  x2="40"  y2="160" stroke="#C4673A" stroke-width="1.5" stroke-linecap="round"/>
-    <line x1="480" y1="80"  x2="60"  y2="220" stroke="#C4673A" stroke-width="1" stroke-linecap="round"/>
-    <circle cx="480" cy="80" r="7" fill="#C4673A"/>
+  <!-- Faisceaux hero: point à droite, rayonnent vers l'extérieur droit -->
+  <svg class="hero-beams" viewBox="0 0 480 600" preserveAspectRatio="xMaxYMin meet" xmlns="http://www.w3.org/2000/svg">
+    <!-- Point source à x=10 (bord droit du SVG = bord droit de la page) -->
+    <!-- Faisceaux s'évasent vers la GAUCHE (intérieur de la page, visible) -->
+    <line x1="10" y1="120" x2="480" y2="120" stroke="#C4673A" stroke-width="3" stroke-linecap="round"/>
+    <line x1="10" y1="120" x2="480" y2="50"  stroke="#C4673A" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="10" y1="120" x2="480" y2="190" stroke="#C4673A" stroke-width="2.5" stroke-linecap="round"/>
+    <line x1="10" y1="120" x2="480" y2="0"   stroke="#C4673A" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="10" y1="120" x2="480" y2="270" stroke="#C4673A" stroke-width="1.8" stroke-linecap="round"/>
+    <line x1="10" y1="120" x2="480" y2="380" stroke="#C4673A" stroke-width="1.2" stroke-linecap="round"/>
+    <line x1="10" y1="120" x2="480" y2="500" stroke="#C4673A" stroke-width="0.8" stroke-linecap="round"/>
+    <circle cx="10" cy="120" r="8" fill="#C4673A"/>
   </svg>
 
   <p class="hero-label">COR 14-18 · 2026</p>
   <h1>Les jeunes cherchent des <em>relations vraies</em><br>Nous avons décidé d'en faire une priorité</h1>
-  <p class="hero-sub">1 jeune sur 3 souffre de troubles psychiques. 40 % des moins de 25 ans vivent une solitude chronique. La relation humaine se virtualise à une vitesse inédite. Nous avons écouté 365 adolescents - et entendu un désir puissant : construire des relations vraies, faire confiance, vivre en grand.</p>
+  <p class="hero-sub"><strong>1 jeune sur 3</strong> souffre de troubles psychiques. <strong>40 %</strong> des moins de 25 ans vivent une solitude chronique. La relation humaine se virtualise à une vitesse inédite.<br><br>Nous avons écouté <strong>365 adolescents</strong> - et entendu un désir puissant : construire des relations vraies, faire confiance, vivre en grand.</p>
   <div class="hero-actions">
     <a href="#enquete" class="btn-primary">Découvrir les données →</a>
     <a href="#contact" class="btn-outline">Rejoindre le projet</a>
   </div>
+</div>
 </div>
 
 <!-- SEPARATEUR FAISCEAU -->
@@ -808,14 +825,19 @@
 <!-- CONTACT -->
 <div class="contact" id="contact">
   <div class="contact-inner">
-    <!-- Faisceaux décoratifs contact -->
+    <!-- Faisceaux décoratifs contact — point bord gauche, rayonnent vers l'extérieur gauche -->
     <svg class="contact-beams" viewBox="0 0 400 400" preserveAspectRatio="xMinYMin meet" xmlns="http://www.w3.org/2000/svg">
-      <line x1="0" y1="120" x2="400" y2="120" stroke="#C4673A" stroke-width="3" stroke-linecap="round"/>
-      <line x1="0" y1="120" x2="380" y2="60"  stroke="#C4673A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="0" y1="120" x2="380" y2="180" stroke="#C4673A" stroke-width="2" stroke-linecap="round"/>
-      <line x1="0" y1="120" x2="360" y2="0"   stroke="#C4673A" stroke-width="1.5" stroke-linecap="round"/>
-      <line x1="0" y1="120" x2="360" y2="240" stroke="#C4673A" stroke-width="1.5" stroke-linecap="round"/>
-      <circle cx="0" cy="120" r="6" fill="#C4673A"/>
+      <line x1="20" y1="120" x2="0"   y2="120" stroke="#C4673A" stroke-width="3" stroke-linecap="round"/>
+      <line x1="20" y1="120" x2="0"   y2="70"  stroke="#C4673A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="120" x2="0"   y2="170" stroke="#C4673A" stroke-width="2" stroke-linecap="round"/>
+      <line x1="20" y1="120" x2="0"   y2="20"  stroke="#C4673A" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="120" x2="0"   y2="220" stroke="#C4673A" stroke-width="1.5" stroke-linecap="round"/>
+      <line x1="20" y1="120" x2="0"   y2="300" stroke="#C4673A" stroke-width="1" stroke-linecap="round"/>
+      <!-- Quelques faisceaux vers l'intérieur, très transparents -->
+      <line x1="20" y1="120" x2="400" y2="120" stroke="#C4673A" stroke-width="1.5" stroke-linecap="round" opacity="0.12"/>
+      <line x1="20" y1="120" x2="300" y2="0"   stroke="#C4673A" stroke-width="1" stroke-linecap="round" opacity="0.08"/>
+      <line x1="20" y1="120" x2="300" y2="280" stroke="#C4673A" stroke-width="1" stroke-linecap="round" opacity="0.08"/>
+      <circle cx="20" cy="120" r="6" fill="#C4673A"/>
     </svg>
     <p class="section-label">Rejoindre le projet</p>
     <h2>Vous voulez agir ?<br>Il y a une place pour vous</h2>
