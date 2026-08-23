@@ -62,6 +62,12 @@
     padding: 9px 18px; border-radius: 3px;
   }
   .nav-cta:hover { background: #E5491F !important; }
+  .nav-ghost {
+    border: 1.5px solid var(--ligne); border-radius: 20px;
+    padding: 7px 14px !important; font-size: 11px !important;
+    color: var(--nuit) !important;
+  }
+  .nav-ghost:hover { border-color: var(--nuit); color: var(--nuit) !important; }
 
   /* ===== HERO ===== */
   .hero {
@@ -233,6 +239,32 @@
   .contact-actions { display:flex; gap:1rem; flex-wrap:wrap; }
   .btn-flamme { background: var(--flamme); color:#fff; padding: 13px 26px; border-radius:4px; font-family:'Anton',sans-serif; font-size:14px; letter-spacing:0.02em; text-transform:uppercase; }
   .btn-flamme:hover { background:#E5491F; }
+
+  /* ===== INSCRIPTION (2 CTAs) ===== */
+  .inscription-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.4rem; }
+  .inscription-card {
+    border-radius: 8px; padding: 2rem; display:flex; flex-direction:column; gap: 0.6rem;
+  }
+  .inscription-card.parcours { background: var(--flamme); color: #fff; }
+  .inscription-card.animateur { background: var(--papier); border: 1.5px solid var(--ligne); color: var(--encre); }
+  .inscription-tag {
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
+    display:inline-block; padding: 4px 10px; border-radius: 3px; align-self: flex-start;
+  }
+  .inscription-card.parcours .inscription-tag { background: rgba(255,255,255,0.2); color:#fff; }
+  .inscription-card.animateur .inscription-tag { background: #EDE8DC; color: var(--nuit); }
+  .inscription-card h3 { font-size: 1.3rem; text-transform: uppercase; margin: 0.2rem 0 0.2rem; }
+  .inscription-card p { font-size: 13.5px; line-height:1.55; }
+  .inscription-card.parcours p { color: rgba(255,255,255,0.92); }
+  .inscription-card.animateur p { color: var(--gris); }
+  .inscription-btn {
+    display:inline-block; margin-top: 0.8rem; padding: 12px 20px; border-radius: 4px;
+    font-family:'Anton', sans-serif; font-size: 13px; letter-spacing:0.02em; text-transform:uppercase; text-align:center;
+  }
+  .inscription-btn.flamme { background: var(--blanc); color: var(--flamme); }
+  .inscription-btn.flamme:hover { background: #FFEDE8; }
+  .inscription-btn.nuit { background: var(--nuit); color: #fff; }
+  .inscription-btn.nuit:hover { background: #0D1830; }
   .btn-outline-dark { color:#fff; border:1.5px solid rgba(255,255,255,0.4); padding:12px 24px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
   .btn-outline-dark:hover { background: rgba(255,255,255,0.08); }
 
@@ -258,10 +290,10 @@
 <nav>
   <a href="/" class="nav-logo">Aimer en Grand</a>
   <ul class="nav-links">
-    <li><a href="#parcours">Parcours</a></li>
+    <li><a href="#parcours">Le parcours</a></li>
     <li><a href="#voix">365 Voix</a></li>
-    <li><a href="#animateurs">Animateurs</a></li>
-    <li><a href="#contact" class="nav-cta">Rejoindre →</a></li>
+    <li><a href="#inscription" class="nav-ghost">Tu es animateur ? →</a></li>
+    <li><a href="#inscription" class="nav-cta">Je m'inscris →</a></li>
   </ul>
 </nav>
 
@@ -269,12 +301,12 @@
 <div class="hero">
   <img src="assets/hero.jpg" alt="Groupe de jeunes en montagne">
   <div class="hero-inner">
-    <p class="hero-label">Aimer en Grand · 14-18 ans</p>
-    <h1>Les jeunes cherchent<br>des relations vraies</h1>
-    <p class="hero-sub">365 adolescents nous ont dit ce qu'ils cherchent vraiment : faire confiance, construire des amitiés solides, aimer en vérité. Nous avons décidé d'en faire un parcours.</p>
+    <p class="hero-label">Aimer en Grand · Pilote Lausanne · 14-18 ans</p>
+    <h1>Un parcours pour<br>aimer en grand</h1>
+    <p class="hero-sub">6 sessions et un week-end en montagne pour parler vrai de l'amitié, du cœur, et de ce que veut dire aimer — en petit groupe, avec d'autres jeunes de Lausanne.</p>
     <div class="hero-actions">
-      <a href="#parcours" class="btn-primary">Découvrir le parcours →</a>
-      <a href="#voix" class="btn-outline-light">Voir les résultats de l'enquête</a>
+      <a href="#inscription" class="btn-primary">Je m'inscris →</a>
+      <a href="#parcours" class="btn-outline-light">Voir le programme ↓</a>
     </div>
   </div>
 </div>
@@ -285,38 +317,49 @@
   <cite>— un jeune, enquête Aimer en Grand</cite>
 </div>
 
-<!-- HUB : 3 piliers -->
-<div class="hub-intro">
-  <span>Sur ce site</span>
-  <h2>Le parcours, l'enquête, et l'équipe</h2>
+<!-- LE PARCOURS (déplacé en premier) -->
+<div class="section-wrap alt">
+  <div class="section" id="parcours">
+    <p class="section-label">Le Parcours · Aimer en Grand</p>
+    <h2>Six sessions, une progression.<br>De l'amitié jusqu'au don de soi.</h2>
+    <p class="section-body">Le parcours suit un mouvement constant : partir de l'expérience vécue, la reconnaître, l'éclairer, et permettre un choix libre. Format 90-120 min par session, ou week-end intensif. Ancré dans la Théologie du Corps de Jean-Paul II.</p>
+    <div class="sessions-grid">
+      <div class="session"><div class="session-num">1</div><p class="session-title">L'amitié : première école du don</p><p class="session-body">La confiance, le discernement, la différence entre relation et connexion.</p></div>
+      <div class="session"><div class="session-num">2</div><p class="session-title">Le corps : lieu de présence</p><p class="session-body">Mon corps dit quelque chose de vrai sur ma capacité à donner et à recevoir.</p></div>
+      <div class="session"><div class="session-num">3</div><p class="session-title">Les émotions et la liberté intérieure</p><p class="session-body">Lire les émotions comme des signaux, les intégrer dans un mouvement vers le bien choisi.</p></div>
+      <div class="session"><div class="session-num">4</div><p class="session-title">Aimer librement : l'altérité</p><p class="session-body">La différence entre désir et don, entre attraction et engagement.</p></div>
+      <div class="session"><div class="session-num">5</div><p class="session-title">L'amour en vérité</p><p class="session-body">L'amour comme choix qui demande vérité, liberté et maturité.</p></div>
+      <div class="session"><div class="session-num">6</div><p class="session-title">Se donner : la vocation</p><p class="session-body">Pour qui et pour quoi suis-je prêt·e à m'engager ?</p></div>
+    </div>
+    <div class="deploiement">
+      <p>Pilote Lausanne 2026-2027</p>
+      <p><strong>Dimanche 1er novembre</strong> · <strong>23-24 janvier</strong> (week-end en montagne) · <strong>28 février</strong> · <strong>18 avril</strong>. Chaque dimanche : Messe · Repas · Topo.</p>
+    </div>
+  </div>
 </div>
-<div class="hub">
-  <a href="#parcours" class="hub-card parcours">
-    <div>
-      <div class="hub-tag">6 sessions · 1 week-end</div>
-      <h3>Le Parcours</h3>
-      <p>Amitié, cœur, corps, rencontre, amour vrai, vocation — un chemin en petit groupe, pas un cours.</p>
+
+<!-- INSCRIPTION -->
+<div class="section-wrap">
+  <div class="section" id="inscription" style="padding-top:3.5rem; padding-bottom:3.5rem;">
+    <div style="text-align:center; margin-bottom:2.5rem;">
+      <h2 style="max-width:100%;">Envie de rejoindre l'aventure ?</h2>
+      <p class="section-body" style="margin-left:auto; margin-right:auto; margin-bottom:0;">Deux façons de participer au pilote de Lausanne.</p>
     </div>
-    <div class="hub-cta">Découvrir →</div>
-  </a>
-  <a href="#voix" class="hub-card voix">
-    <div>
-      <div class="bignum">365</div>
-      <div class="hub-tag">L'enquête</div>
-      <h3>365 Voix</h3>
-      <p>Ce que 365 jeunes de France, Suisse et Luxembourg nous ont vraiment dit.</p>
+    <div class="inscription-grid">
+      <div class="inscription-card parcours">
+        <p class="inscription-tag">14-18 ans</p>
+        <h3>Je m'inscris au parcours</h3>
+        <p>Places limitées pour le pilote de Lausanne. Écris-nous et on te répond avec les détails pratiques.</p>
+        <a href="mailto:aimerengrand@gmail.com?subject=Inscription%20au%20parcours%20-%20Lausanne" class="inscription-btn flamme">Je m'inscris au parcours →</a>
+      </div>
+      <div class="inscription-card animateur">
+        <p class="inscription-tag">Adultes &amp; jeunes engagés</p>
+        <h3>Je m'inscris comme animateur</h3>
+        <p>Aucune expérience requise — formation et accompagnement prévus pour chaque animateur du pilote.</p>
+        <a href="mailto:aimerengrand@gmail.com?subject=Inscription%20comme%20animateur%20-%20Lausanne" class="inscription-btn nuit">Je m'inscris comme animateur →</a>
+      </div>
     </div>
-    <div class="hub-cta">Voir les résultats →</div>
-  </a>
-  <a href="#animateurs" class="hub-card animateurs">
-    <div>
-      <div class="hub-icon">A</div>
-      <div class="hub-tag">Formation &amp; ressources</div>
-      <h3>Animateurs</h3>
-      <p>Guides, plateforme de formation, mentoring — pour accompagner un groupe.</p>
-    </div>
-    <div class="hub-cta">Espace animateurs →</div>
-  </a>
+  </div>
 </div>
 
 <!-- LE CONSTAT -->
@@ -386,60 +429,6 @@
       <svg width="15" height="15" viewBox="0 0 16 16" fill="none" xmlns="http://www.w3.org/2000/svg"><path d="M8 1v9M8 10l-3-3M8 10l3-3M2 13h12" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/></svg>
       Télécharger les résultats (PDF)
     </a>
-  </div>
-</div>
-
-<!-- LEVIERS -->
-<div class="section-wrap">
-  <div class="section" id="leviers">
-    <p class="section-label">Ce que les données nous demandent de construire</p>
-    <h2>Des leviers identifiés.<br>Une méthode ajustée.</h2>
-    <p class="section-body">L'état des lieux et l'enquête convergent vers des implications concrètes. Il ne s'agit pas de produire plus de contenu — les jeunes en sont saturés. Il s'agit de créer les conditions d'une expérience relationnelle réelle.</p>
-    <div class="leviers-grid">
-      <div class="levier"><p class="levier-num">01</p><p class="levier-title">L'amitié comme porte d'entrée</p><p class="levier-body">Partir de ce que les jeunes vivent en premier plutôt que d'aborder la sexualité ou l'amour romantique d'emblée.</p></div>
-      <div class="levier"><p class="levier-num">02</p><p class="levier-title">La présence incarnée d'un adulte</p><p class="levier-body">Ce qui produit des déclics, ce n'est pas le contenu : c'est la présence d'un adulte dont l'engagement est un choix libre.</p></div>
-      <div class="levier"><p class="levier-num">03</p><p class="levier-title">Le micro-groupe comme laboratoire</p><p class="levier-body">76% des jeunes préfèrent le tête-à-tête ou le trinôme pour aborder des sujets personnels.</p></div>
-      <div class="levier"><p class="levier-num">04</p><p class="levier-title">Partir de l'expérience, pas de la doctrine</p><p class="levier-body">Le ton expert arrive systématiquement dernier. Chaque séquence part d'un vécu avant l'éclairage anthropologique.</p></div>
-      <div class="levier"><p class="levier-num">05</p><p class="levier-title">Différencier filles et garçons</p><p class="levier-body">Les filles ont besoin d'un cadre protégé. Les garçons ont besoin d'authenticité et d'une entrée par l'action concrète.</p></div>
-      <div class="levier"><p class="levier-num">06</p><p class="levier-title">Un ancrage théologique solide</p><p class="levier-body">La Théologie du Corps de Jean-Paul II suit le même mouvement que les données : de l'expérience vers le sens.</p></div>
-    </div>
-  </div>
-</div>
-
-<!-- LE PARCOURS -->
-<div class="section-wrap alt">
-  <div class="section" id="parcours">
-    <p class="section-label">Le Parcours · Aimer en Grand</p>
-    <h2>Six sessions, une progression.<br>De l'amitié jusqu'au don de soi.</h2>
-    <p class="section-body">Le parcours suit un mouvement constant : partir de l'expérience vécue, la reconnaître, l'éclairer, et permettre un choix libre. Format 90-120 min par session, ou week-end intensif. Ancré dans la Théologie du Corps de Jean-Paul II.</p>
-    <div class="sessions-grid">
-      <div class="session"><div class="session-num">1</div><p class="session-title">L'amitié : première école du don</p><p class="session-body">La confiance, le discernement, la différence entre relation et connexion.</p></div>
-      <div class="session"><div class="session-num">2</div><p class="session-title">Le corps : lieu de présence</p><p class="session-body">Mon corps dit quelque chose de vrai sur ma capacité à donner et à recevoir.</p></div>
-      <div class="session"><div class="session-num">3</div><p class="session-title">Les émotions et la liberté intérieure</p><p class="session-body">Lire les émotions comme des signaux, les intégrer dans un mouvement vers le bien choisi.</p></div>
-      <div class="session"><div class="session-num">4</div><p class="session-title">Aimer librement : l'altérité</p><p class="session-body">La différence entre désir et don, entre attraction et engagement.</p></div>
-      <div class="session"><div class="session-num">5</div><p class="session-title">L'amour en vérité</p><p class="session-body">L'amour comme choix qui demande vérité, liberté et maturité.</p></div>
-      <div class="session"><div class="session-num">6</div><p class="session-title">Se donner : la vocation</p><p class="session-body">Pour qui et pour quoi suis-je prêt·e à m'engager ?</p></div>
-    </div>
-    <div class="deploiement">
-      <p>Déploiement en cours</p>
-      <p>Pilote lancé à <strong>Lausanne</strong> — trois dimanches (Messe · Repas · Topo) et un week-end en montagne. Réseau de mentors TOB (Theology of the Body Educators) en cours de constitution.</p>
-    </div>
-  </div>
-</div>
-
-<!-- ANIMATEURS -->
-<div class="section-wrap">
-  <div class="section" id="animateurs">
-    <p class="section-label">Rejoindre l'équipe</p>
-    <h2>Devenir animateur.<br>Accompagner un groupe.</h2>
-    <p class="section-body">Aucune expérience préalable requise — une formation et un accompagnement sont prévus pour chaque animateur. Deux piliers soutiennent le rôle : la formation, et le mentoring continu.</p>
-    <div class="animateurs-grid">
-      <div class="animateur-item"><p class="animateur-item-title">Plateforme de formation</p><p class="animateur-item-body">Accès aux vidéos, aux guides animateurs, et aux ressources de Théologie du Corps et d'écologie intégrale.</p></div>
-      <div class="animateur-item"><p class="animateur-item-title">Mentoring &amp; parrainage</p><p class="animateur-item-body">Un système de parrainage permet aux animateurs d'échanger sur les problématiques rencontrées lors des séances.</p></div>
-      <div class="animateur-item"><p class="animateur-item-title">Réseau TOB Educators</p><p class="animateur-item-body">Rejoindre un réseau plus large de formateurs en Théologie du Corps, en France et à l'international.</p></div>
-      <div class="animateur-item"><p class="animateur-item-title">Profils recherchés</p><p class="animateur-item-body">Responsables de catéchèse, aumôneries, mouvements de jeunesse, jeunes couples, étudiants engagés.</p></div>
-    </div>
-    <div class="draft-note">Cette section est une première version — à préciser une fois le parcours de certification animateur (3 niveaux) finalisé.</div>
   </div>
 </div>
 
