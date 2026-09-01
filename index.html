@@ -3,7 +3,7 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Aimer en Grand · cor1418.org</title>
+<title>Aimer en Grand · Projet COR1418</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
 <style>
@@ -30,7 +30,6 @@
   a { color: inherit; text-decoration: none; }
   h1, h2, h3, .display { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: 0.01em; }
   img { display:block; max-width:100%; }
-
   /* ===== NAV ===== */
   nav {
     background: var(--blanc);
@@ -51,7 +50,7 @@
     text-transform: uppercase;
     color: var(--nuit);
   }
-  .nav-links { display: flex; gap: 2rem; list-style: none; align-items: center; }
+  .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
   .nav-links a {
     font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
     color: var(--gris);
@@ -68,7 +67,6 @@
     color: var(--nuit) !important;
   }
   .nav-ghost:hover { border-color: var(--nuit); color: var(--nuit) !important; }
-
   /* ===== HERO ===== */
   .hero {
     position: relative;
@@ -108,7 +106,6 @@
     display: inline-block;
   }
   .btn-outline-light:hover { background: rgba(255,255,255,0.12); }
-
   /* ===== QUOTE STRIP ===== */
   .quote-strip { padding: 3.5rem 3rem; text-align:center; }
   .quote-strip blockquote {
@@ -120,40 +117,37 @@
     display:block; margin-top: 0.8rem; font-style:normal; font-size: 11px;
     color: var(--gris); letter-spacing: 0.05em; text-transform: uppercase;
   }
-
-  /* ===== HUB (3 piliers) ===== */
+  /* ===== HUB (piliers) ===== */
   .hub-intro { padding: 1rem 3rem 1.5rem; text-align:center; }
   .hub-intro span {
     color: var(--flamme); font-weight: 800; letter-spacing: 0.14em; font-size: 11px; text-transform: uppercase;
   }
   .hub-intro h2 { font-size: 1.8rem; text-transform: uppercase; color: var(--nuit); margin-top: 0.5rem; }
-
-  .hub { display:flex; gap: 1.2rem; padding: 0 3rem 5rem; flex-wrap: wrap; max-width: 1200px; margin: 0 auto; }
+  .hub { display:flex; gap: 1.2rem; padding: 0; flex-wrap: wrap; }
   .hub-card {
-    flex: 1 1 300px; min-height: 320px; border-radius: 8px; position: relative; overflow: hidden;
+    flex: 1 1 300px; min-height: 300px; border-radius: 8px; position: relative; overflow: hidden;
     display:flex; flex-direction:column; justify-content: space-between; padding: 1.8rem;
   }
   .hub-card.parcours { background: var(--flamme); color: var(--blanc); }
-  .hub-card.voix { background: var(--nuit); color: var(--blanc); }
+  .hub-card.voix, .hub-card.deep { background: var(--nuit); color: var(--blanc); }
   .hub-card.animateurs { background: var(--blanc); color: var(--encre); border: 1.5px solid var(--ligne); }
   .hub-tag {
     display:inline-block; font-size: 10.5px; font-weight: 800; letter-spacing: 0.06em; text-transform: uppercase;
     padding: 4px 10px; border-radius: 3px; align-self: flex-start;
   }
-  .hub-card.parcours .hub-tag, .hub-card.voix .hub-tag { background: rgba(255,255,255,0.2); color: var(--blanc); }
+  .hub-card.parcours .hub-tag, .hub-card.voix .hub-tag, .hub-card.deep .hub-tag { background: rgba(255,255,255,0.2); color: var(--blanc); }
   .hub-card.animateurs .hub-tag { background: #F0ECE2; color: var(--nuit); }
   .hub-card .bignum { font-family:'Anton', sans-serif; font-size: 4.4rem; line-height:0.85; color: var(--rose); margin-bottom: 0.4rem; }
   .hub-icon {
     width: 50px; height:50px; border-radius:50%; background: var(--nuit); color:#fff;
     display:flex; align-items:center; justify-content:center; font-family:'Anton',sans-serif; font-size:19px; margin-bottom: 0.4rem;
   }
-  .hub-card h3 { font-size: 1.6rem; text-transform: uppercase; margin-top: 0.8rem; }
-  .hub-card p { font-size: 13.5px; line-height: 1.55; margin-top: 0.5rem; max-width: 300px; }
-  .hub-card.parcours p, .hub-card.voix p { color: rgba(255,255,255,0.9); }
+  .hub-card h3 { font-size: 1.5rem; text-transform: uppercase; margin-top: 0.8rem; }
+  .hub-card p { font-size: 13.5px; line-height: 1.55; margin-top: 0.5rem; max-width: 320px; }
+  .hub-card.parcours p, .hub-card.voix p, .hub-card.deep p { color: rgba(255,255,255,0.9); }
   .hub-card.animateurs p { color: var(--gris); }
   .hub-cta { margin-top:1rem; font-weight:800; font-size:12.5px; text-transform:uppercase; letter-spacing:0.04em; }
   .hub-card.animateurs .hub-cta { color: var(--nuit); }
-
   /* ===== SECTION SHELL ===== */
   .section-wrap { background: var(--blanc); }
   .section-wrap.alt { background: var(--papier); }
@@ -166,34 +160,30 @@
     font-size: clamp(1.6rem, 3vw, 2.4rem); text-transform: uppercase; color: var(--nuit);
     line-height: 1.15; margin-bottom: 1.2rem; max-width: 640px;
   }
-  .section-body { font-size: 14.5px; color: var(--gris); max-width: 600px; line-height: 1.75; margin-bottom: 2.5rem; }
-
+  .section-body { font-size: 14.5px; color: var(--gris); max-width: 600px; line-height: 1.75; margin-bottom: 1.4rem; }
+  .section-body:last-of-type { margin-bottom: 2.5rem; }
   /* ===== CHIFFRES ===== */
   .chiffres-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 2.5rem 2rem; }
   .chiffre-num { font-family:'Anton', sans-serif; font-size: 2.6rem; color: var(--flamme); line-height:1; margin-bottom:0.4rem; }
   .chiffre-desc { font-size: 12.5px; color: var(--encre); line-height:1.6; margin-bottom: 0.3rem; }
   .chiffre-source { font-size: 10.5px; color: var(--gris); }
-
   /* ===== FINDINGS (365 Voix) ===== */
   .findings-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 2.2rem; margin-bottom: 2.5rem; }
   .finding { border-top: 3px solid var(--flamme); padding-top: 1rem; }
   .finding-num { font-family:'Anton', sans-serif; font-size: 2.6rem; color: var(--nuit); line-height:1; margin-bottom:0.5rem; }
   .finding-title { font-size: 0.95rem; font-weight: 700; color: var(--encre); margin-bottom: 0.5rem; line-height:1.3; }
   .finding-body { font-size: 12.5px; color: var(--gris); line-height:1.6; }
-
   .citation-encadre {
     border-left: 3px solid var(--flamme); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--papier);
   }
   .citation-encadre p { font-size: 14px; color: var(--encre); line-height:1.7; margin-bottom: 0.5rem; }
   .citation-encadre span { font-size: 10.5px; font-weight: 800; letter-spacing:0.08em; text-transform:uppercase; color: var(--flamme); }
-
   .btn-download {
     display:inline-flex; align-items:center; gap:8px;
     color: var(--nuit); border: 1.5px solid var(--nuit);
     padding: 11px 20px; border-radius: 4px; font-size: 13px; font-weight: 700;
   }
   .btn-download:hover { background: var(--nuit); color: var(--blanc); }
-
   /* ===== LEVIERS ===== */
   .leviers-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.8rem; }
   .levier { border-left: 3px solid var(--ligne); padding-left: 1.1rem; }
@@ -201,7 +191,6 @@
   .levier-num { font-size: 10.5px; font-weight: 800; letter-spacing:0.14em; text-transform:uppercase; color: var(--flamme); margin-bottom:0.4rem; }
   .levier-title { font-size: 1rem; font-weight: 700; color: var(--nuit); margin-bottom:0.4rem; line-height:1.3; }
   .levier-body { font-size: 12.5px; color: var(--gris); line-height:1.6; }
-
   /* ===== SESSIONS (Parcours) ===== */
   .sessions-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); border: 1px solid var(--ligne); margin-bottom: 2.5rem; }
   .session { padding: 1.4rem; border-bottom: 1px solid var(--ligne); border-right: 1px solid var(--ligne); position:relative; }
@@ -213,11 +202,9 @@
   }
   .session-title { font-size: 0.95rem; font-weight: 700; color: var(--nuit); margin-bottom:0.3rem; line-height:1.3; }
   .session-body { font-size: 11.5px; color: var(--gris); line-height:1.5; }
-
   .deploiement { background: var(--papier); padding: 1.4rem 1.8rem; border-left: 3px solid var(--nuit); }
   .deploiement p:first-child { font-size: 10.5px; font-weight: 800; letter-spacing:0.14em; text-transform:uppercase; color: var(--nuit); margin-bottom: 0.4rem; }
   .deploiement p:last-child { font-size: 13px; color: var(--gris); line-height:1.65; }
-
   /* ===== ANIMATEURS ===== */
   .animateurs-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.8rem; margin-bottom: 2rem; }
   .animateur-item { border-left: 3px solid var(--ligne); padding-left: 1.1rem; }
@@ -226,7 +213,6 @@
   .draft-note {
     font-size: 11px; color: var(--gris); background: #F0ECE2; padding: 0.7rem 1rem; border-radius: 4px; margin-top: 1rem;
   }
-
   /* ===== CONTACT ===== */
   .contact { background: var(--nuit); color: #EDEBE4; padding: 4.5rem 3rem; }
   .contact-inner { max-width: 1000px; margin: 0 auto; }
@@ -239,7 +225,6 @@
   .contact-actions { display:flex; gap:1rem; flex-wrap:wrap; }
   .btn-flamme { background: var(--flamme); color:#fff; padding: 13px 26px; border-radius:4px; font-family:'Anton',sans-serif; font-size:14px; letter-spacing:0.02em; text-transform:uppercase; }
   .btn-flamme:hover { background:#E5491F; }
-
   /* ===== INSCRIPTION (2 CTAs) ===== */
   .inscription-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.4rem; }
   .inscription-card {
@@ -267,13 +252,11 @@
   .inscription-btn.nuit:hover { background: #0D1830; }
   .btn-outline-dark { color:#fff; border:1.5px solid rgba(255,255,255,0.4); padding:12px 24px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
   .btn-outline-dark:hover { background: rgba(255,255,255,0.08); }
-
   /* ===== FOOTER ===== */
   footer { background: var(--nuit); border-top: 1px solid rgba(255,255,255,0.1); padding: 1.8rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
   .footer-logo { font-family:'Anton', sans-serif; color: var(--blanc); font-size: 14px; text-transform: uppercase; }
   .footer-links { font-size: 11px; color: #A8A398; line-height:1.8; text-align:right; }
   .footer-links a:hover { color: var(--flamme); }
-
   /* ===== MOBILE ===== */
   @media (max-width: 720px) {
     nav { padding: 0 1.3rem; }
@@ -282,46 +265,49 @@
     footer { padding: 1.6rem 1.3rem; flex-direction: column; align-items:flex-start; }
     .footer-links { text-align: left; }
   }
+  /* Nav : sur tablette, on garde uniquement l'essentiel (Aimer en Grand, DEEP, CTA) */
+  @media (max-width: 960px) and (min-width: 721px) {
+    .nav-links a.nav-optional { display: none; }
+  }
 </style>
 </head>
 <body>
-
 <!-- NAV -->
 <nav>
   <a href="/" class="nav-logo">Aimer en Grand</a>
   <ul class="nav-links">
-    <li><a href="#parcours">Le parcours</a></li>
-    <li><a href="#voix">365 Voix</a></li>
+    <li><a href="#parcours">Aimer en Grand</a></li>
+    <li><a href="#voix" class="nav-optional">365 Voix</a></li>
+    <li><a href="#deep">DEEP</a></li>
+    <li><a href="#qui-sommes-nous" class="nav-optional">Qui sommes-nous</a></li>
     <li><a href="#inscription" class="nav-ghost">Tu es animateur ? →</a></li>
     <li><a href="#inscription" class="nav-cta">Je m'inscris →</a></li>
   </ul>
 </nav>
-
 <!-- HERO -->
 <div class="hero">
   <img src="assets/hero.jpg" alt="Groupe de jeunes en montagne">
   <div class="hero-inner">
     <p class="hero-label">Aimer en Grand · Pilote Lausanne · 14-18 ans</p>
     <h1>Un parcours pour<br>vivre nos relations en grand</h1>
-    <p class="hero-sub">3 sessions et un week-end en montagne pour parler vrai de l'amitié, du cœur, et de ce que veut dire aimer. En petit groupe, avec d'autres jeunes de Lausanne.</p>
+    <p class="hero-sub">3 sessions et un week-end en montagne pour parler vrai de l'amitié, du cœur, et de ce que veut dire aimer, à la lumière de la foi chrétienne. En petit groupe, avec d'autres jeunes de Lausanne.</p>
     <div class="hero-actions">
       <a href="#inscription" class="btn-primary">Je m'inscris →</a>
       <a href="#parcours" class="btn-outline-light">Voir le programme ↓</a>
     </div>
   </div>
 </div>
-
 <!-- QUOTE -->
 <div class="quote-strip">
   <blockquote>« J'aimerais des relations simples, sans prise de tête. »</blockquote>
   <cite>- un jeune, enquête Aimer en Grand</cite>
 </div>
-
-<!-- LE PARCOURS (déplacé en premier) -->
+<!-- LE PARCOURS -->
 <div class="section-wrap alt">
   <div class="section" id="parcours">
     <p class="section-label">Le Parcours · Aimer en Grand</p>
     <h2>Six temps, une progression.<br>De l'amitié jusqu'au don de soi.</h2>
+    <p class="section-body">Aimer en Grand n'est pas un cours de catéchisme, ni une liste de ce qu'il faudrait penser sur tel ou tel sujet. C'est une rencontre : un chemin vécu à plusieurs, où l'on part de ce qu'on vit vraiment pour explorer, à la lumière de la foi chrétienne, ce que Dieu a pensé pour chacun de nous dans nos relations.</p>
     <p class="section-body">Partir de l'expérience vécue, la reconnaître, l'éclairer, et permettre un choix libre. Format: 3 sessions + un week-end en immersion. Ancré dans la Théologie du Corps de Jean-Paul II.</p>
     <div class="sessions-grid">
       <div class="session"><div class="session-num">1</div><p class="session-title">L'amitié : première école du don</p><p class="session-body">La confiance, le discernement, la différence entre relation et connexion.</p></div>
@@ -337,7 +323,6 @@
     </div>
   </div>
 </div>
-
 <!-- INSCRIPTION -->
 <div class="section-wrap">
   <div class="section" id="inscription" style="padding-top:3.5rem; padding-bottom:3.5rem;">
@@ -361,9 +346,8 @@
     </div>
   </div>
 </div>
-
 <!-- LE CONSTAT -->
-<div class="section-wrap">
+<div class="section-wrap alt">
   <div class="section" id="constat">
     <p class="section-label">Pourquoi agir maintenant</p>
     <h2>Ce n'est pas une crise de santé mentale <br>C'est une crise du lien.</h2>
@@ -392,9 +376,8 @@
     </div>
   </div>
 </div>
-
 <!-- 365 VOIX -->
-<div class="section-wrap alt">
+<div class="section-wrap">
   <div class="section" id="voix">
     <p class="section-label">365 Voix · l'enquête Aimer en Grand</p>
     <h2>Nous avons demandé aux jeunes ce qu'ils cherchent.<br>Les réponses ont surpris tout le monde.</h2>
@@ -431,7 +414,70 @@
     </a>
   </div>
 </div>
-
+<!-- DEEP -->
+<div class="section-wrap alt">
+  <div class="section" id="deep">
+    <p class="section-label">DEEP · un second parcours en préparation</p>
+    <h2>Des repères pour prendre des décisions.</h2>
+    <p class="section-body">DEEP <em>(nom provisoire)</em> n'est pas non plus un enseignement sur les choix « corrects » à faire en fin de scolarité : c'est un accompagnement qui part de ton vécu concret pour t'aider à discerner ce à quoi tu es appelé·e - et à prendre tes décisions d'avenir en accord avec qui tu es vraiment.</p>
+    <p class="section-body">DEEP s'adresse en particulier aux jeunes de 17-18 ans qui cherchent des clés pour prendre des décisions sur leur avenir - études, orientation, choix de vie. Il part d'une conviction : les réponses sur notre orientation commencent par une meilleure connaissance de soi, éclairée par la foi, qui permet de discerner ce qui nous appelle vraiment.</p>
+    <p class="section-body">La méthode s'appuie sur les travaux d'un professeur d'une université catholique aux États-Unis, développés à partir de plus de vingt ans d'accompagnement de jeunes et d'étudiants. Elle part de récits concrets - des moments vécus où l'on s'est senti pleinement soi-même - pour faire apparaître ce qui nous anime en profondeur, les environnements où l'on donne le meilleur de soi, et notre manière propre de nous donner aux autres. L'accompagnement se fait toujours avec un adulte formé ; un outil numérique peut aider à organiser les échanges, mais ne remplace jamais cette présence.</p>
+    <div class="leviers-grid" style="margin-bottom:2.5rem;">
+      <div class="levier">
+        <p class="levier-num">Ce qui m'anime</p>
+        <p class="levier-title">Mes désirs profonds</p>
+        <p class="levier-body">Les orientations qui reviennent, encore et encore, dans les moments où je me suis senti·e le plus vivant·e et pleinement moi-même.</p>
+      </div>
+      <div class="levier">
+        <p class="levier-num">Où je donne le meilleur de moi</p>
+        <p class="levier-title">Mes environnements</p>
+        <p class="levier-body">Les conditions, les lieux, les relations qui me permettent réellement de m'épanouir - pas seulement ceux où je me sens à l'aise.</p>
+      </div>
+      <div class="levier">
+        <p class="levier-num">Ma manière de me donner</p>
+        <p class="levier-title">Mon mode de don de soi</p>
+        <p class="levier-body">La façon particulière, propre à chacun, d'être utile et présent aux autres.</p>
+      </div>
+    </div>
+    <div class="deploiement">
+      <p>À l'étude · lancement envisagé en 2027</p>
+      <p>Une formule en petit groupe, en français, à Lausanne, est actuellement à l'étude. Envie d'être tenu·e informé·e dès que le programme se précise ? <a href="mailto:aimerengrand@gmail.com?subject=Suivre%20le%20parcours%20DEEP" style="color:var(--nuit); font-weight:700; text-decoration:underline;">Écris-nous →</a></p>
+    </div>
+  </div>
+</div>
+<!-- QUI SOMMES-NOUS (projet COR) -->
+<div class="section-wrap">
+  <div class="section" id="qui-sommes-nous">
+    <p class="section-label">Qui sommes-nous</p>
+    <h2>Le projet COR : deux parcours,<br>une même conviction.</h2>
+    <p class="section-body">Le projet COR n'est ni un parcours de catéchisme, ni une manière d'exposer ce que l'Église pense de tel ou tel sujet. C'est une rencontre et un chemin vécu ensemble, où l'on explore, à partir de ce qu'on vit vraiment, ce que Dieu a pensé pour chacun de nous.</p>
+    <p class="section-body">Il part d'une conviction : la période 14-18 ans est un moment clef, où la réflexion et le partage sur nous-mêmes, notre intériorité et nos relations aux autres sont essentiels. Notre ambition : créer des espaces conviviaux où ces questions de fond peuvent se dire librement, avec des repères chrétiens pour les éclairer et un accompagnement pour chaque personne.</p>
+    <div class="citation-encadre" style="max-width:680px;">
+      <p>Pourquoi « COR » ? C'est le mot latin pour dire <strong>cœur</strong>. On l'a choisi parce qu'il dit ce qui nous intéresse vraiment : ce qui se passe dans le cœur d'un jeune, quand il se pose de vraies questions sur ses relations, sur qui il est, sur ce qu'il veut devenir.</p>
+      <p>« Le cœur parle au cœur. » C'est la devise que s'est choisie, au 19e siècle, le cardinal John Henry Newman : pour lui, ce qui touche vraiment ne passe jamais par les seules idées, mais par une présence, d'une personne à une autre.</p>
+      <span>Cardinal John Henry Newman</span>
+    </div>
+    <p style="font-weight:700; color:var(--nuit); font-size:13.5px; margin-bottom:1.2rem;">Deux parcours incarnent aujourd'hui cette conviction :</p>
+    <div class="hub">
+      <div class="hub-card parcours">
+        <p class="hub-tag">14-18 ans · pilote Lausanne</p>
+        <div>
+          <h3>Aimer en Grand</h3>
+          <p>Pour les 14-18 ans qui se posent des questions sur leurs relations - amicales, amoureuses, familiales - et veulent découvrir comment un chemin de foi peut les éclairer.</p>
+        </div>
+        <a href="#parcours" class="hub-cta">Découvrir le parcours →</a>
+      </div>
+      <div class="hub-card deep">
+        <p class="hub-tag">17-18 ans · envisagé en 2027</p>
+        <div>
+          <h3>DEEP</h3>
+          <p>Un second parcours en préparation, pour les 17-18 ans qui cherchent des repères pour prendre leurs décisions d'avenir.</p>
+        </div>
+        <a href="#deep" class="hub-cta">En savoir plus →</a>
+      </div>
+    </div>
+  </div>
+</div>
 <!-- CONTACT -->
 <div class="contact" id="contact">
   <div class="contact-inner">
@@ -461,16 +507,14 @@
     </div>
   </div>
 </div>
-
 <!-- FOOTER -->
 <footer>
   <span class="footer-logo">Aimer en Grand</span>
   <div class="footer-links">
-    Parcours sur la vie affective et relationnelle · 2026<br>
-    <a href="https://www.cor1418.org">cor1418.org</a> · <a href="mailto:aimerengrand@gmail.com">aimerengrand@gmail.com</a>
+    Parcours sur la vie affective et relationnelle · Projet COR1418 · 2026<br>
+    <a href="#qui-sommes-nous">Qui sommes-nous</a> · <a href="#deep">DEEP</a> · <a href="https://www.cor1418.org">cor1418.org</a> · <a href="mailto:aimerengrand@gmail.com">aimerengrand@gmail.com</a>
   </div>
 </footer>
-
 </body>
 </html>
 
