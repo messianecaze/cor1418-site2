@@ -1,0 +1,284 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Ce que les jeunes cherchent vraiment dans leurs relations · Aimer en Grand</title>
+<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700;800&family=Georgia&display=swap" rel="stylesheet">
+<style>
+  :root {
+    --nuit:     #14213D;
+    --flamme:   #FF5A36;
+    --rose:     #FF8FA3;
+    --papier:   #FAFAF7;
+    --encre:    #1A1A1A;
+    --gris:     #6B6B6B;
+    --blanc:    #FFFFFF;
+    --ligne:    #E7E2D8;
+  }
+  * { margin:0; padding:0; box-sizing:border-box; }
+  html { scroll-behavior: smooth; }
+  body {
+    background: var(--papier);
+    color: var(--encre);
+    font-family: 'DM Sans', sans-serif;
+    font-size: 16px;
+    line-height: 1.65;
+    -webkit-font-smoothing: antialiased;
+  }
+  a { color: inherit; text-decoration: none; }
+  h1, h2, h3, .display { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: 0.01em; }
+  img { display:block; max-width:100%; }
+  /* ===== NAV (identique au site) ===== */
+  nav {
+    background: var(--blanc);
+    border-bottom: 1px solid var(--ligne);
+    padding: 0 3rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    height: 64px;
+    position: sticky;
+    top: 0;
+    z-index: 100;
+  }
+  .nav-logo {
+    display: flex; align-items: center; gap: 0.5rem;
+    font-family: 'Anton', sans-serif; font-size: 19px; letter-spacing: 0.03em;
+    text-transform: uppercase; color: var(--nuit);
+  }
+  .nav-back {
+    font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
+    color: var(--gris); display:flex; align-items:center; gap:6px;
+  }
+  .nav-back:hover { color: var(--flamme); }
+  .nav-cta {
+    background: var(--flamme); color: var(--blanc) !important;
+    padding: 9px 18px; border-radius: 3px; font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
+  }
+  .nav-cta:hover { background: #E5491F !important; }
+  /* ===== ARTICLE HERO ===== */
+  .article-hero { background: var(--nuit); padding: 3.5rem 3rem 3rem; }
+  .article-hero-inner { max-width: 720px; margin: 0 auto; }
+  .article-tag {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase;
+    color: var(--flamme); margin-bottom: 1rem;
+  }
+  .article-hero h1 {
+    font-size: clamp(1.9rem, 4.4vw, 2.8rem); text-transform: uppercase; color: var(--blanc);
+    line-height: 1.08; margin-bottom: 1rem;
+  }
+  .article-subtitle { font-size: 15.5px; color: #C9C4B6; line-height: 1.6; margin-bottom: 1.6rem; max-width: 560px; }
+  .article-byline { font-size: 12.5px; color: #A8A398; letter-spacing: 0.02em; }
+  .article-byline strong { color: #F2E9DE; font-weight: 700; }
+  /* ===== ARTICLE BODY ===== */
+  .article-shell { max-width: 720px; margin: 0 auto; padding: 3.2rem 3rem 1rem; }
+  .article-shell p {
+    font-size: 15.5px; color: var(--encre); line-height: 1.85; margin-bottom: 1.3rem;
+  }
+  .article-shell h2 {
+    font-size: 1.25rem; text-transform: uppercase; color: var(--nuit);
+    margin: 2.4rem 0 1rem; line-height: 1.2;
+  }
+  .article-shell h2:first-of-type { margin-top: 0.4rem; }
+  .citation-encadre {
+    border-left: 3px solid var(--flamme); padding: 1.1rem 1.6rem; margin: 2rem 0; background: var(--papier);
+  }
+  .citation-encadre p {
+    font-family: Georgia, serif; font-style: italic; font-size: 16px; color: var(--nuit);
+    line-height: 1.7; margin-bottom: 0.5rem;
+  }
+  .citation-encadre span {
+    font-family: 'DM Sans', sans-serif; font-style: normal;
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--flamme);
+  }
+  .article-cta {
+    background: var(--papier); border: 1.5px solid var(--ligne); border-radius: 8px;
+    padding: 1.6rem 1.8rem; margin: 2.4rem 0; max-width: 720px;
+  }
+  .article-cta p { font-size: 13.5px; color: var(--gris); margin-bottom: 0.9rem; }
+  .article-cta p:last-child { margin-bottom: 0; }
+  .btn-flamme-sm {
+    display:inline-block; background: var(--flamme); color: #fff; padding: 10px 20px; border-radius: 4px;
+    font-family:'Anton', sans-serif; font-size: 12.5px; letter-spacing:0.02em; text-transform:uppercase;
+  }
+  .btn-flamme-sm:hover { background: #E5491F; }
+  /* ===== AUTEURS ===== */
+  .auteurs-wrap { max-width: 720px; margin: 0 auto; padding: 1.5rem 3rem 3rem; }
+  .auteurs-label {
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--flamme); margin-bottom: 1rem;
+  }
+  .auteurs-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.6rem; }
+  .auteur-item { border-left: 3px solid var(--ligne); padding-left: 1rem; }
+  .auteur-item-title { font-size: 0.95rem; font-weight:700; color: var(--nuit); margin-bottom:0.35rem; }
+  .auteur-item-body { font-size: 12.5px; color: var(--gris); line-height:1.6; }
+  /* ===== REPÈRES DE L'ENQUÊTE ===== */
+  .reperes-wrap { background: var(--blanc); padding: 3.5rem 3rem; }
+  .reperes-inner { max-width: 720px; margin: 0 auto; }
+  .reperes-label {
+    font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
+    color: var(--flamme); margin-bottom: 0.5rem;
+  }
+  .reperes-inner h3 { font-size: 1.3rem; text-transform: uppercase; color: var(--nuit); margin-bottom: 0.6rem; }
+  .reperes-meta { font-size: 12px; color: var(--gris); margin-bottom: 2rem; }
+  .reperes-list { display:flex; flex-direction:column; gap: 1.4rem; }
+  .repere-item { border-top: 1px solid var(--ligne); padding-top: 1rem; }
+  .repere-stat { font-size: 13.5px; color: var(--encre); font-weight: 700; margin-bottom: 0.3rem; line-height:1.5; }
+  .repere-source { font-size: 11px; color: var(--gris); line-height:1.5; }
+  /* ===== FOOTER (identique au site) ===== */
+  footer {
+    background: var(--nuit); border-top: 1px solid rgba(255,255,255,0.1); padding: 1.8rem 3rem;
+    display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
+  }
+  .footer-logo { font-family:'Anton', sans-serif; color: var(--blanc); font-size: 14px; text-transform: uppercase; }
+  .footer-links { font-size: 11px; color: #A8A398; line-height:1.8; text-align:right; }
+  .footer-links a:hover { color: var(--flamme); }
+  @media (max-width: 720px) {
+    nav { padding: 0 1.3rem; }
+    .article-hero { padding: 2.5rem 1.3rem 2rem; }
+    .article-shell { padding: 2.2rem 1.3rem 1rem; }
+    .auteurs-wrap { padding: 1.2rem 1.3rem 2.2rem; }
+    .reperes-wrap { padding: 2.5rem 1.3rem; }
+    footer { padding: 1.6rem 1.3rem; flex-direction: column; align-items:flex-start; }
+    .footer-links { text-align: left; }
+  }
+</style>
+</head>
+<body>
+<!-- NAV -->
+<nav>
+  <a href="index.html" class="nav-logo" aria-label="COR1418">
+    <svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
+      <g stroke="#FF5A36" stroke-width="2" stroke-linecap="round">
+        <line x1="20" y1="1" x2="20" y2="6"/><line x1="20" y1="34" x2="20" y2="39"/>
+        <line x1="1" y1="20" x2="6" y2="20"/><line x1="34" y1="20" x2="39" y2="20"/>
+        <line x1="7" y1="7" x2="10.5" y2="10.5"/><line x1="29.5" y1="29.5" x2="33" y2="33"/>
+        <line x1="33" y1="7" x2="29.5" y2="10.5"/><line x1="10.5" y1="29.5" x2="7" y2="33"/>
+      </g>
+      <circle cx="20" cy="20" r="8.5" fill="none" stroke="#14213D" stroke-width="2.4"/>
+      <line x1="20" y1="14" x2="20" y2="26" stroke="#14213D" stroke-width="2"/>
+      <line x1="15.5" y1="20" x2="24.5" y2="20" stroke="#14213D" stroke-width="2"/>
+    </svg>
+    <span>COR</span>
+  </a>
+  <a href="index.html#ressources" class="nav-back">← Retour aux ressources</a>
+  <a href="index.html#inscription" class="nav-cta">Je m'inscris →</a>
+</nav>
+<!-- ARTICLE HERO -->
+<div class="article-hero">
+  <div class="article-hero-inner">
+    <p class="article-tag">Ressources · Enquête Aimer en Grand</p>
+    <h1>Ce que les jeunes cherchent vraiment dans leurs relations</h1>
+    <p class="article-subtitle">Les résultats d'une enquête sur la vie relationnelle des adolescents.</p>
+    <p class="article-byline">Par <strong>Messiane Cazé</strong>, en collaboration avec <strong>Mgr Nicolas Brouwet</strong>, évêque de Nîmes</p>
+  </div>
+</div>
+<!-- ARTICLE BODY -->
+<div class="article-shell">
+  <p>Que cherchent aujourd'hui les adolescents lorsqu'ils confient leurs questions les plus personnelles à une intelligence artificielle plutôt qu'à un ami ou à un adulte ? Plus d'un jeune sur deux en France le fait désormais. Ce chiffre pourrait donner le vertige. Nous avons préféré y voir une question qui nous était adressée.</p>
+  <p>Plutôt que de parler des jeunes à partir des statistiques que nous produisons sur eux, nous avons voulu les écouter. Pendant plusieurs mois, 365 adolescents, pour la plupart âgés de 14 à 18 ans, ont participé à une enquête sur la vie relationnelle. Leurs réponses ne contredisent pas les fragilités bien réelles de leur génération, largement documentées. Elles révèlent une attente plus profonde : les adolescents cherchent des relations vraies.</p>
+  <p>Cette attente apparaît d'autant plus nettement que la génération actuelle est la première à disposer, dans sa poche, d'un interlocuteur disponible en permanence qui ne juge jamais, ne se lasse jamais et semble toujours disponible. On comprend l'attrait d'une telle disponibilité. Mais une relation qui ne risquerait rien ne serait déjà plus tout à fait une relation. La fidélité suppose précisément la possibilité d'être déçu et le choix, malgré cela, de rester.</p>
+
+  <h2>L'amitié, avant tout</h2>
+  <p>Le premier résultat de notre enquête nous a surpris. Lorsqu'on demande aux adolescents ce qui les touche le plus dans leur vie relationnelle, ce n'est ni l'amour romantique ni la sexualité qui arrivent en tête. C'est l'amitié. Cette réponse est remarquablement stable, quels que soient l'âge ou le sexe. Nous pensons spontanément que l'adolescence est d'abord l'âge des premières histoires d'amour. Leur réponse invite à déplacer notre regard. Ce que ces jeunes cherchent d'abord, ce n'est pas une émotion. C'est quelqu'un qui demeure. Une présence assez fidèle pour traverser le temps.</p>
+
+  <h2>À qui puis-je faire confiance ?</h2>
+  <p>Une deuxième réponse nous a arrêtés plus longtemps encore. Quand on leur demande ce qu'ils aimeraient mieux comprendre dans leur vie, la réponse qui arrive très largement en tête est celle-ci : « À qui puis-je vraiment faire confiance ? »</p>
+  <p>Ce résultat ne tient pas à un seul facteur. Les intelligences artificielles conversationnelles y contribuent en proposant une relation qui ne demande rien en retour. Mais ces jeunes évoluent aussi dans un monde où la parole circule en ligne sans visage ni garantie, où l'on peut être approché, manipulé, parfois radicalisé sans toujours savoir qui se trouve de l'autre côté de l'écran. Et ils ont grandi avec, en fond sonore permanent, la dénonciation d'abus et de manipulations. Dans ce contexte, nos sociétés ont développé des politiques de prévention nécessaires, qui apprennent à repérer des signaux, à poser des limites claires, à ne jamais laisser une situation ambiguë s'installer. Mais elles répondent à la question de ce qu'il faut fuir. Une autre question reste ouverte, tout aussi urgente : qu'est-ce qu'une relation qui fait grandir a le droit d'offrir ? Ces jeunes le pressentent : au-delà de savoir se protéger, ils veulent apprendre à reconnaître, par eux-mêmes, ce qui mérite leur confiance. Or cet apprentissage ne se transmet pas seulement par des règles. Il se transmet dans l'expérience d'une présence juste et fidèle ; une présence qui ne prend pas possession, mais qui reste.</p>
+
+  <h2>Une présence qui transforme</h2>
+  <p>Un dernier résultat de l'enquête éclaire les précédents. Ces adolescents passent chaque semaine un temps considérable devant des vidéos courtes. Pourtant, lorsqu'on leur demande ce qui a réellement changé leur regard sur eux-mêmes ou sur la vie, ces contenus arrivent presque en dernière position. Ce qui transforme, disent-ils, c'est une conversation en tête-à-tête avec une personne de confiance. C'est aussi le témoignage de quelqu'un qui parle depuis ce qu'il a réellement vécu.</p>
+  <p>Le contraste est saisissant. Un algorithme peut retenir notre attention. Il ne peut pas regarder quelqu'un dans les yeux. Il ne peut pas répondre depuis sa propre histoire. Il ne peut pas rester présent lorsque la relation devient exigeante. Une présence ne se reconnaît pas seulement à ce qu'elle dit. Elle se reconnaît à sa manière de rester. C'est cette présence-là que les jeunes semblent rechercher. Elle ne se simule pas.</p>
+
+  <h2>Un désir plus qu'un manque</h2>
+  <p>Ce qui nous a le plus frappés, en somme, c'est la tonalité d'ensemble de ces réponses. Ces adolescents ne parlent pas d'abord depuis leurs blessures. Ils parlent depuis leur désir : ils veulent des relations vraies, des adultes honnêtes, des espaces où la parole ne coûte pas trop cher. Cette génération, souvent décrite comme fragile, porte en elle une forme de lucidité qui devrait nous encourager. Elle ne réclame pas moins de relation, mais une relation plus vraie, celle où l'on accepte de prendre le risque d'être fidèle, y compris quand il serait plus facile de ne pas l'être. C'est ce risque-là, précisément, qu'une présence virtuelle ne pourra jamais prendre à notre place. Il est le propre d'une présence incarnée.</p>
+
+  <h2>Une amitié qui va jusqu'au bout</h2>
+  <p>En relisant cette enquête, une parole de l'Évangile s'est peu à peu imposée à nous. La nuit où il allait être trahi par l'un des siens et renié par un ami proche, Jésus ne retire pas son amitié. Saint Jean écrit simplement :</p>
+  <div class="citation-encadre">
+    <p>« Ayant aimé les siens qui étaient dans le monde, il les aima jusqu'au bout. »</p>
+    <span>Jean 13,1</span>
+  </div>
+  <p>Cette parole demeure d'une étonnante actualité. Le Christ ne donne pas seulement un enseignement sur l'amitié. Il en révèle la forme accomplie : celle d'une présence qui demeure lorsqu'elle pourrait s'en aller.</p>
+
+  <h2>Répondre à ce désir</h2>
+  <p>C'est de cette conviction qu'est né le parcours Aimer en Grand destiné aux 14-18 ans. Il veut offrir des lieux où les jeunes puissent faire l'expérience de relations vraies, à partir d'une pédagogie de la rencontre, du témoignage et de la vie intérieure, inspirée de la théologie du corps de saint Jean-Paul II. Un premier parcours pilote débutera à l'automne 2026.</p>
+
+  <div class="article-cta">
+    <p>Plus d'informations sur le parcours sur <a href="https://www.cor1418.org" style="color:var(--nuit); font-weight:700; text-decoration:underline;">cor1418.org</a>. Contact : <a href="mailto:aimerengrand@gmail.com" style="color:var(--nuit); font-weight:700; text-decoration:underline;">aimerengrand@gmail.com</a></p>
+    <a href="index.html#inscription" class="btn-flamme-sm">Découvrir le parcours →</a>
+  </div>
+</div>
+<!-- AUTEURS -->
+<div class="auteurs-wrap">
+  <p class="auteurs-label">Les auteurs</p>
+  <div class="auteurs-grid">
+    <div class="auteur-item">
+      <p class="auteur-item-title">Messiane Cazé</p>
+      <p class="auteur-item-body">Messiane Cazé accompagne depuis plusieurs années des adolescents sur les questions d'amour, d'amitié et de sens. Elle est titulaire d'un Master en Théologie du Corps (ITC Lyon). C'est de cette expérience qu'est né le projet de construire un programme qui nourrisse les aspirations les plus profondes des jeunes.</p>
+    </div>
+    <div class="auteur-item">
+      <p class="auteur-item-title">Mgr Nicolas Brouwet</p>
+      <p class="auteur-item-body">Mgr Nicolas Brouwet, évêque de Nîmes, accompagne et soutient ce projet depuis ses débuts.</p>
+    </div>
+  </div>
+</div>
+<!-- REPÈRES DE L'ENQUÊTE -->
+<div class="reperes-wrap">
+  <div class="reperes-inner">
+    <p class="reperes-label">Sources</p>
+    <h3>Repères de l'enquête</h3>
+    <p class="reperes-meta">365 répondants · France, Suisse, Luxembourg · mars-juin 2026 · dont 85 % de 14-18 ans — Enquête COR 14-18</p>
+    <div class="reperes-list">
+      <div class="repere-item">
+        <p class="repere-stat">Recours à l'IA pour des questionnements personnels (jeunes en France) : plus d'1 sur 2</p>
+        <p class="repere-source">Ipsos France (2026), Les adolescents et l'intelligence artificielle : enquête nationale sur les usages conversationnels, l'intimité numérique et les attentes relationnelles des 13-18 ans, Ipsos Knowledge Centre.</p>
+      </div>
+      <div class="repere-item">
+        <p class="repere-stat">Troubles psychiques significatifs chez les adolescents : environ 1 sur 3 chez les 14-19 ans en Suisse</p>
+        <p class="repere-source">UNICEF Suisse &amp; Unisanté (2021), La santé mentale des enfants et des adolescents en Suisse : facteurs de risque, de protection et prise en charge, Comité national suisse pour l'UNICEF &amp; Unisanté.</p>
+      </div>
+      <div class="repere-item">
+        <p class="repere-stat">Solitude chronique chez les moins de 25 ans en France : 40 % (contre ~15-18 % au cours de la décennie précédente)</p>
+        <p class="repere-source">IFOP pour l'association Astrée (2024), Baromètre sur la solitude et l'isolement, vague 5.</p>
+      </div>
+      <div class="repere-item">
+        <p class="repere-stat">Contact en ligne permanent chez les 15 ans : 85 %</p>
+        <p class="repere-source">World Health Organization Regional Office for Europe &amp; HBSC International Coordinating Centre (2024), Health Behaviour in School-aged Children: international report from the 2021/2022 survey, OMS, Copenhague.</p>
+      </div>
+      <div class="repere-item">
+        <p class="repere-stat">Thème qui touche le plus les jeunes interrogés : l'amitié (79 %), devant l'amour (70 %) et loin devant la sexualité (20 %)</p>
+        <p class="repere-source">Enquête COR 14-18, mars-juin 2026.</p>
+      </div>
+      <div class="repere-item">
+        <p class="repere-stat">Question jugée la plus importante à mieux comprendre : « à qui je peux vraiment faire confiance ? » (68 %, score le plus élevé de l'enquête)</p>
+        <p class="repere-source">Enquête COR 14-18, mars-juin 2026.</p>
+      </div>
+      <div class="repere-item">
+        <p class="repere-stat">Vidéos courtes consommées chaque semaine : 86 % des répondants, mais seulement 15 % les citent comme source d'un vrai déclic de compréhension</p>
+        <p class="repere-source">Enquête COR 14-18, mars-juin 2026.</p>
+      </div>
+      <div class="repere-item">
+        <p class="repere-stat">Déclic de compréhension provoqué par un tête-à-tête avec une personne de confiance : 53 % ; par un témoignage authentique : 43 %</p>
+        <p class="repere-source">Enquête COR 14-18, mars-juin 2026.</p>
+      </div>
+      <div class="repere-item">
+        <p class="repere-stat">Conditions jugées les plus importantes pour parler de sujets personnels : l'honnêteté des interlocuteurs (76 %) et l'absence de jugement (75 %) ; le ton « expert/théorique » arrive systématiquement en dernière position</p>
+        <p class="repere-source">Enquête COR 14-18, mars-juin 2026.</p>
+      </div>
+    </div>
+  </div>
+</div>
+<!-- FOOTER -->
+<footer>
+  <span class="footer-logo">Aimer en Grand</span>
+  <div class="footer-links">
+    Parcours sur la vie affective et relationnelle · Projet COR1418 · 2026<br>
+    <a href="index.html#ressources">Ressources</a> · <a href="index.html#qui-sommes-nous">Qui sommes-nous</a> · <a href="https://www.cor1418.org">cor1418.org</a> · <a href="mailto:aimerengrand@gmail.com">aimerengrand@gmail.com</a>
+  </div>
+</footer>
+</body>
+</html>
