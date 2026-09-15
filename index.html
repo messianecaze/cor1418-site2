@@ -222,6 +222,25 @@
   .deploiement { background: var(--papier); padding: 1.4rem 1.8rem; border-left: 3px solid var(--nuit); }
   .deploiement p:first-child { font-size: 10.5px; font-weight: 800; letter-spacing:0.14em; text-transform:uppercase; color: var(--nuit); margin-bottom: 0.4rem; }
   .deploiement p:last-child { font-size: 13px; color: var(--gris); line-height:1.65; }
+  /* ===== RESSOURCES ===== */
+  .resources-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.6rem; margin-bottom: 1rem; }
+  .resource-card {
+    border: 1px solid var(--ligne); border-radius: 8px; padding: 1.8rem;
+    background: var(--blanc); display:flex; flex-direction:column; gap: 0.6rem;
+    transition: border-color 0.15s ease;
+  }
+  .resource-card:hover { border-color: var(--flamme); }
+  .resource-tag {
+    font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
+    color: var(--flamme);
+  }
+  .resource-title { font-size: 1.05rem; font-weight: 700; color: var(--nuit); line-height: 1.3; }
+  .resource-excerpt { font-size: 12.5px; color: var(--gris); line-height: 1.6; }
+  .resource-meta { font-size: 10.5px; color: var(--gris); letter-spacing: 0.02em; }
+  .resource-link {
+    font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em;
+    color: var(--flamme); margin-top: 0.3rem;
+  }
   /* ===== ACCOMPAGNATEURS / PORTRAITS ===== */
   .animateurs-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.8rem; margin-bottom: 2rem; }
   .animateur-item { border-left: 3px solid var(--ligne); padding-left: 1.1rem; }
@@ -322,7 +341,7 @@
     <ul class="nav-links" id="navLinks">
       <li><a href="#parcours">Aimer en Grand</a></li>
       <li><a href="#voix" class="nav-optional">365 Voix</a></li>
-      <li><a href="#deep">DEEP</a></li>
+      <li><a href="#ressources">Ressources</a></li>
       <li><a href="#qui-sommes-nous" class="nav-optional">Qui sommes-nous</a></li>
       <li><a href="#inscription" class="nav-ghost">Tu es accompagnateur ? →</a></li>
     </ul>
@@ -374,7 +393,7 @@
     </div>
     <div class="deploiement">
       <p>Pilote UP Lausanne Nord 2026-2027</p>
-      <p><strong>Dimanches 1er novembre</strong> · <strong>28 février</strong>(11h-16h). <strong>Week-end du 23-24 janvier</strong> (week-end en montagne)</p>
+      <p><strong>Dimanches 1er novembre</strong> · <strong>28 février</strong>. <strong>Week-end du 23-24 janvier</strong> (week-end en montagne)</p>
     </div>
   </div>
 </div>
@@ -469,34 +488,27 @@
     </a>
   </div>
 </div>
-<!-- DEEP -->
+<!-- RESSOURCES -->
 <div class="section-wrap alt">
-  <div class="section" id="deep">
-    <p class="section-label">DEEP · un second parcours en préparation</p>
-    <h2>Des repères pour prendre des décisions.</h2>
-    <p class="section-body">DEEP <em>(nom provisoire)</em> n'est pas non plus un enseignement sur les choix « corrects » à faire en fin de scolarité : c'est un accompagnement qui part de ton vécu concret pour t'aider à discerner ce à quoi tu es appelé·e - et à prendre tes décisions d'avenir en accord avec qui tu es vraiment.</p>
-    <p class="section-body">DEEP s'adresse en particulier aux jeunes de 17-18 ans qui cherchent des clés pour prendre des décisions sur leur avenir - études, orientation, choix de vie. Il part d'une conviction : les réponses sur notre orientation commencent par une meilleure connaissance de soi, éclairée par la foi, qui permet de discerner ce qui nous appelle vraiment.</p>
-    <p class="section-body">La méthode s'appuie sur les travaux d'un professeur d'une université catholique aux États-Unis, développés à partir de plus de vingt ans d'accompagnement de jeunes et d'étudiants. Elle part de récits concrets - des moments vécus où l'on s'est senti pleinement soi-même - pour faire apparaître ce qui nous anime en profondeur, les environnements où l'on donne le meilleur de soi, et notre manière propre de nous donner aux autres. L'accompagnement se fait toujours avec un adulte formé ; A l'issue du parcours, le participant repart avec un rapport et des pistes pour alimenter ses réflexions futures.</p>
-    <div class="leviers-grid" style="margin-bottom:2.5rem;">
-      <div class="levier">
-        <p class="levier-num">Ce qui m'anime</p>
-        <p class="levier-title">Mes désirs profonds</p>
-        <p class="levier-body">Les orientations qui reviennent, encore et encore, dans les moments où je me suis senti·e le plus vivant·e et pleinement moi-même.</p>
+  <div class="section" id="ressources">
+    <p class="section-label">Ressources &amp; actualités</p>
+    <h2>Nos articles et actualités.</h2>
+    <p class="section-body">Des textes pour prendre le temps d'aller plus loin, et les nouvelles du projet - fondés sur l'enquête Aimer en Grand, la Théologie du Corps, et l'expérience du terrain.</p>
+    <div class="resources-grid">
+      <div class="resource-card">
+        <p class="resource-tag">Article · Enquête Aimer en Grand</p>
+        <p class="resource-title">Ce que les jeunes cherchent vraiment dans leurs relations</p>
+        <p class="resource-excerpt">Plus d'un jeune sur deux confie ses questions les plus personnelles à une IA plutôt qu'à un proche. Les résultats de l'enquête menée auprès de 365 adolescents racontent une autre histoire : celle d'un désir de relations vraies.</p>
+        <p class="resource-meta">Par Messiane Cazé, avec Mgr Nicolas Brouwet</p>
+        <a href="ce-que-les-jeunes-cherchent-vraiment.html" class="resource-link">Lire l'article →</a>
       </div>
-      <div class="levier">
-        <p class="levier-num">Où je donne le meilleur de moi</p>
-        <p class="levier-title">Mes environnements</p>
-        <p class="levier-body">Les conditions, les lieux, les relations qui me permettent réellement de m'épanouir - pas seulement ceux où je me sens à l'aise.</p>
+      <div class="resource-card">
+        <p class="resource-tag">Actualité · à l'étude</p>
+        <p class="resource-title">DEEP : un second parcours en préparation</p>
+        <p class="resource-excerpt">Un accompagnement en projet pour les 17-18 ans qui cherchent des repères pour leurs décisions d'avenir - études, orientation, choix de vie - à partir de leur vécu et éclairé par la foi. Format encore à l'étude, lancement envisagé en 2027.</p>
+        <p class="resource-meta">Non encore proposé · disponible en 2027</p>
+        <a href="deep.html" class="resource-link">En savoir plus →</a>
       </div>
-      <div class="levier">
-        <p class="levier-num">Ma manière de me donner</p>
-        <p class="levier-title">Mon mode de don de soi</p>
-        <p class="levier-body">La façon particulière, propre à chacun, d'être utile et présent aux autres.</p>
-      </div>
-    </div>
-    <div class="deploiement">
-      <p>À l'étude · lancement envisagé en 2027</p>
-      <p>Une formule en petit groupe, en français, à Lausanne, est actuellement à l'étude. Envie d'être tenu·e informé·e dès que le programme se précise ? <a href="mailto:aimerengrand@gmail.com?subject=Suivre%20le%20parcours%20DEEP" style="color:var(--nuit); font-weight:700; text-decoration:underline;">Écris-nous →</a></p>
     </div>
   </div>
 </div>
@@ -504,7 +516,7 @@
 <div class="section-wrap">
   <div class="section" id="qui-sommes-nous">
     <p class="section-label">Qui sommes-nous</p>
-    <h2>Le projet COR : deux parcours,<br>une même conviction.</h2>
+    <h2>Le projet COR : une conviction,<br>au service des jeunes.</h2>
     <p class="section-body">Le projet COR n'est ni un parcours de catéchisme, ni une manière d'exposer ce que l'Église pense de tel ou tel sujet. C'est une approche inspirée de la pédagogie de Saint Jean Paul II qui permet de partir de notre expérience pour mieux comprendre le magnifique plan que Dieu a pour chacun de nous.</p>
     <p class="section-body">Il part d'une conviction : la période 14-18 ans est un moment clef, où la réflexion et le partage sur nous-mêmes, notre intériorité et nos relations aux autres sont essentiels. Notre ambition : créer des espaces ensemble où ces questions de fond peuvent être discutés, avec des repères chrétiens pour les éclairer et un accompagnement pour chaque personne.</p>
     <div class="citation-encadre" style="max-width:680px;">
@@ -514,31 +526,12 @@
     <p style="font-weight:700; color:var(--nuit); font-size:13.5px; margin-bottom:1.2rem;">À l'origine du projet :</p>
     <div class="animateurs-grid">
       <div class="animateur-item">
-        <p class="animateur-item-title">Messiane Cazé — coordination du projet</p>
-        <p class="animateur-item-body">Messiane Cazé coordonne le projet Aimer en Grand depuis ses débuts. Titulaire d'un Master en Théologie du Corps (ITC Lyon), elle a porté l'enquête menée auprès de 365 jeunes francophones qui a nourri la conception du parcours.</p>
+        <p class="animateur-item-title">Messiane Cazé</p>
+        <p class="animateur-item-body">Coordonne la conception et le développement du parcours. Titulaire d'un master en théologie du corps (ITC Lyon), elle a conçu et accompagné plusieurs parcours pour accompagner les jeunes et les moins jeunes sur les grandes questions humaines et relationnelles qui nous occupent.</p>
       </div>
       <div class="animateur-item">
-        <p class="animateur-item-title">Mgr Nicolas Brouwet — évêque de Nîmes</p>
-        <p class="animateur-item-body">Un parcours accompagné et soutenu dans sa conception par Mgr Brouwet, évêque de Nîmes. Prêtre du diocèse de Nanterre depuis 1992, il a été évêque de Tarbes et Lourdes de 2012 à 2021, avant d'être nommé évêque de Nîmes, Uzès et Alès en 2021.</p>
-      </div>
-    </div>
-    <p style="font-weight:700; color:var(--nuit); font-size:13.5px; margin-bottom:1.2rem;">Deux parcours incarnent aujourd'hui cette conviction :</p>
-    <div class="hub">
-      <div class="hub-card parcours">
-        <p class="hub-tag">14-18 ans · pilote Lausanne</p>
-        <div>
-          <h3>Aimer en Grand</h3>
-          <p>Pour les 14-18 ans qui se posent des questions sur leurs relations - amicales, amoureuses, familiales - et veulent découvrir comment un chemin de foi peut les éclairer. Ce parcours est accompagné et soutenu depuis ses débuts par Monseigneur Nicolas Brouwet, évêque de Nîmes. </p>
-        </div>
-        <a href="#parcours" class="hub-cta">Découvrir le parcours →</a>
-      </div>
-      <div class="hub-card deep">
-        <p class="hub-tag">17-18 ans · envisagé en 2027</p>
-        <div>
-          <h3>DEEP</h3>
-          <p>Un second parcours en préparation, pour les 17-18 ans qui cherchent des repères pour prendre leurs décisions d'avenir.</p>
-        </div>
-        <a href="#deep" class="hub-cta">En savoir plus →</a>
+        <p class="animateur-item-title">Mgr Nicolas Brouwet, évêque de Nîmes</p>
+        <p class="animateur-item-body">Accompagne et soutient ce projet dans sa conception depuis ses débuts.</p>
       </div>
     </div>
   </div>
@@ -577,7 +570,7 @@
   <span class="footer-logo">Aimer en Grand</span>
   <div class="footer-links">
     Parcours sur la vie affective et relationnelle · Projet COR1418 · 2026<br>
-    <a href="#qui-sommes-nous">Qui sommes-nous</a> · <a href="#deep">DEEP</a> · <a href="https://www.cor1418.org">cor1418.org</a> · <a href="mailto:aimerengrand@gmail.com">aimerengrand@gmail.com</a>
+    <a href="#ressources">Ressources</a> · <a href="#qui-sommes-nous">Qui sommes-nous</a> · <a href="https://www.cor1418.org">cor1418.org</a> · <a href="mailto:aimerengrand@gmail.com">aimerengrand@gmail.com</a>
   </div>
 </footer>
 <script>
