@@ -100,7 +100,14 @@
     font-size: clamp(2.6rem, 6vw, 5rem);
     text-transform: uppercase; line-height: 0.95; color: var(--blanc); margin-bottom: 1.2rem;
   }
-  .hero-sub { font-size: 15px; color: #F2E9DE; max-width: 480px; margin-bottom: 1.8rem; }
+  .hero-sub-wrap { max-width: 480px; margin-bottom: 1.8rem; }
+  .hero-sub {
+    font-size: 15px; color: #F2E9DE; line-height: 1.55;
+    padding-left: 0.9rem; border-left: 2px solid rgba(255,90,54,0.55);
+    margin-bottom: 0.7rem;
+  }
+  .hero-sub:last-child { margin-bottom: 0; }
+  .hero-sub strong { color: var(--blanc); font-weight: 700; }
   .hero-actions { display:flex; gap:0.8rem; flex-wrap:wrap; }
   .btn-primary {
     background: var(--flamme); color: var(--blanc);
@@ -215,7 +222,7 @@
   .deploiement { background: var(--papier); padding: 1.4rem 1.8rem; border-left: 3px solid var(--nuit); }
   .deploiement p:first-child { font-size: 10.5px; font-weight: 800; letter-spacing:0.14em; text-transform:uppercase; color: var(--nuit); margin-bottom: 0.4rem; }
   .deploiement p:last-child { font-size: 13px; color: var(--gris); line-height:1.65; }
-  /* ===== ANIMATEURS ===== */
+  /* ===== ACCOMPAGNATEURS ===== */
   .animateurs-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.8rem; margin-bottom: 2rem; }
   .animateur-item { border-left: 3px solid var(--ligne); padding-left: 1.1rem; }
   .animateur-item-title { font-size: 1rem; font-weight:700; color: var(--nuit); margin-bottom:0.4rem; }
@@ -317,7 +324,7 @@
       <li><a href="#voix" class="nav-optional">365 Voix</a></li>
       <li><a href="#deep">DEEP</a></li>
       <li><a href="#qui-sommes-nous" class="nav-optional">Qui sommes-nous</a></li>
-      <li><a href="#inscription" class="nav-ghost">Tu es animateur ? →</a></li>
+      <li><a href="#inscription" class="nav-ghost">Tu es accompagnateur ? →</a></li>
     </ul>
     <a href="#inscription" class="nav-cta">Je m'inscris →</a>
     <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
@@ -335,7 +342,11 @@
   <div class="hero-inner">
     <p class="hero-label">Aimer en Grand · 14-18 ans · Parcours Pilote UP Lausanne Nord </p>
     <h1>Un parcours pour<br>vivre nos relations en grand</h1>
-    <p class="hero-sub">Un pilote aura lieu à Lausanne à partir de Novembre 2026: 3 sessions + un week-end en montagne pour parler vrai de l'amitié, du cœur, de ce que veut dire aimer, à la lumière de la foi catholique. Avec d'autres jeunes, en lien avec L'Unité Pastorale Lausanne-Nord et son écosystème Connexus Lausanne-Nord. Ce parcours est accompagné et soutenu dans sa conception par Monseigneur Brouwet, evêque de Nîmes, et a vocation à pouvoir être proposé dans toutes les aumoneries francophones. </p>
+    <div class="hero-sub-wrap">
+      <p class="hero-sub">Un pilote aura lieu à Lausanne à partir de <strong>novembre 2026</strong> : 2 sessions + un week-end en montagne pour parler vrai de l'amitié, du cœur, et de ce que veut dire aimer, à la lumière de la foi catholique.</p>
+      <p class="hero-sub">Avec d'autres jeunes, en lien avec l'Unité Pastorale Lausanne-Nord et son écosystème Connexus.</p>
+      <p class="hero-sub">Un parcours accompagné et soutenu dans sa conception par <strong>Mgr Brouwet</strong>, évêque de Nîmes, avec la vocation d'être proposé dans toutes les aumôneries francophones.</p>
+    </div>
     <div class="hero-actions">
       <a href="#inscription" class="btn-primary">Je m'inscris →</a>
       <a href="#parcours" class="btn-outline-light">Voir le programme ↓</a>
@@ -364,7 +375,7 @@
     </div>
     <div class="deploiement">
       <p>Pilote UP Lausanne Nord 2026-2027</p>
-      <p><strong>Dimanches 1er novembre</strong> · <strong>28 février</strong> · <strong>18 avril</strong> (11h-16h). <strong>Week-end du 23-24 janvier</strong> (week-end en montagne)</p>
+      <p><strong>Dimanches 1er novembre</strong> · <strong>28 février</strong>(11h-16h). <strong>Week-end du 23-24 janvier</strong> (week-end en montagne)</p>
     </div>
   </div>
 </div>
@@ -384,9 +395,9 @@
       </div>
       <div class="inscription-card animateur">
         <p class="inscription-tag">Adultes &amp; jeunes engagés</p>
-        <h3>Je m'inscris comme animateur</h3>
-        <p>Aucune expérience requise: formation et accompagnement prévus pour chaque animateur du pilote.</p>
-        <a href="mailto:aimerengrand@gmail.com?subject=Inscription%20comme%20animateur%20-%20Lausanne" class="inscription-btn nuit">Je m'inscris comme animateur →</a>
+        <h3>Je m'inscris comme accompagnateur</h3>
+        <p>Aucune expérience requise: formation et accompagnement prévus pour chaque accompagnateur du pilote.</p>
+        <a href="mailto:aimerengrand@gmail.com?subject=Inscription%20comme%20accompagnateur%20-%20Lausanne" class="inscription-btn nuit">Je m'inscris comme accompagnateur →</a>
       </div>
     </div>
   </div>
@@ -527,7 +538,7 @@
   <div class="contact-inner">
     <p class="section-label">Rejoindre le projet</p>
     <h2>Vous voulez agir ?<br>Nous avons besoin de vous!</h2>
-    <p class="contact-sub">Que vous soyez éducateur, animateur, responsable pastoral ou simplement convaincu qu'il faut agir maintenant - nous avons besoin de vous pour ce projet.</p>
+    <p class="contact-sub">Que vous soyez éducateur, accompagnateur, responsable pastoral ou simplement convaincu qu'il faut agir maintenant - nous avons besoin de vous pour ce projet.</p>
     <div class="contact-grid">
       <div>
         <p class="contact-item-label">Email</p>
