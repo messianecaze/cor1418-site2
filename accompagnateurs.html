@@ -1,0 +1,596 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Aimer en Grand — vue d'ensemble</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<style>
+  :root{
+    --nuit:#14213D;
+    --nuit-2:#1c2c50;
+    --flamme:#FF5A36;
+    --rose:#FF8FA3;
+    --papier:#FAFAF7;
+    --encre:#1A1A1A;
+    --gris:#6B6B6B;
+    --card-border:#e8e6df;
+    --bg: var(--papier);
+    --fg: var(--encre);
+  }
+  @media (prefers-color-scheme: dark){
+    :root:not([data-theme="light"]){
+      --bg: var(--papier);
+      --fg: var(--encre);
+    }
+  }
+  :root[data-theme="dark"]{
+    --bg: var(--papier);
+    --fg: var(--encre);
+  }
+
+  *{box-sizing:border-box;}
+  html,body{margin:0;padding:0;}
+  body{
+    background:var(--bg);
+    color:var(--fg);
+    font-family:"DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    line-height:1.5;
+    -webkit-font-smoothing:antialiased;
+  }
+  .display{
+    font-family:"Anton", "Arial Black", sans-serif;
+    font-weight:400;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+  }
+
+  .page{
+    max-width:1180px;
+    margin:0 auto;
+    padding:0 0 40px 0;
+  }
+
+  /* HERO */
+  header.hero{
+    background:var(--nuit);
+    background-image:
+      radial-gradient(ellipse 900px 400px at 15% -20%, rgba(255,90,54,0.20), transparent 60%),
+      linear-gradient(180deg, var(--nuit) 0%, var(--nuit-2) 100%);
+    color:#fff;
+    padding:44px 48px 32px 48px;
+    position:relative;
+    overflow:hidden;
+  }
+  header.hero .eyebrow{
+    color:var(--flamme);
+    font-family:"DM Sans", sans-serif;
+    font-weight:700;
+    letter-spacing:0.14em;
+    text-transform:uppercase;
+    font-size:12.5px;
+    margin-bottom:10px;
+  }
+  header.hero h1{
+    font-size:clamp(32px, 5vw, 52px);
+    margin:0 0 8px 0;
+    line-height:1.02;
+  }
+  header.hero p.sub{
+    font-family:"DM Sans", sans-serif;
+    color:#c9cedb;
+    font-size:16px;
+    margin:0;
+    max-width:640px;
+  }
+  header.hero .trailtop{
+    position:absolute; right:-40px; top:-30px; width:340px; height:340px;
+    opacity:0.14; pointer-events:none;
+  }
+
+  /* TIMELINE */
+  .timeline{
+    position:relative;
+    padding:40px 48px 8px 48px;
+  }
+  .track{
+    position:relative;
+  }
+  .track::before{
+    content:"";
+    position:absolute;
+    left:29px;
+    top:8px;
+    bottom:8px;
+    width:0;
+    border-left:3px dotted var(--flamme);
+  }
+  .step{
+    position:relative;
+    display:grid;
+    grid-template-columns:60px 1fr;
+    column-gap:22px;
+    margin-bottom:26px;
+  }
+  .badge{
+    position:relative;
+    z-index:2;
+    width:60px;
+    height:60px;
+    border-radius:50%;
+    background:var(--flamme);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:"Anton", sans-serif;
+    font-size:22px;
+    box-shadow:0 4px 14px rgba(255,90,54,0.35);
+    border:4px solid var(--papier);
+  }
+  .card{
+    background:#fff;
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,33,61,0.06);
+  }
+  .card .card-head{
+    background:var(--nuit);
+    color:#fff;
+    padding:14px 22px;
+    display:flex;
+    align-items:baseline;
+    flex-wrap:wrap;
+    gap:10px 14px;
+    border-bottom:3px solid var(--flamme);
+  }
+  .card .card-head h2{
+    font-size:19px;
+    margin:0;
+    letter-spacing:0.02em;
+  }
+  .card .card-head .time{
+    font-family:"DM Sans", sans-serif;
+    font-weight:500;
+    color:#c9cedb;
+    font-size:13px;
+    text-transform:none;
+  }
+  .card .question{
+    font-family:Georgia, "Times New Roman", serif;
+    font-style:italic;
+    color:var(--flamme);
+    background:#fff5f2;
+    padding:10px 22px;
+    font-size:15px;
+    border-bottom:1px solid var(--card-border);
+  }
+  .card .body{
+    padding:16px 22px 18px 22px;
+    font-size:14.5px;
+    color:var(--encre);
+  }
+  .card .body p{margin:0 0 9px 0;}
+  .card .body p:last-child{margin-bottom:0;}
+  .card .body b{color:var(--nuit);}
+  .card .body .muted{color:var(--gris); font-size:13.5px;}
+  .card .body .quote{
+    font-style:italic;
+    color:var(--gris);
+    font-size:13.5px;
+    border-left:2px solid var(--rose);
+    padding-left:10px;
+  }
+  .card .body ul{margin:0 0 9px 0; padding-left:18px;}
+  .card .body li{margin-bottom:4px;}
+  .tag{
+    display:inline-block;
+    background:var(--flamme);
+    color:#fff;
+    font-family:"Anton", sans-serif;
+    font-size:11px;
+    padding:2px 7px;
+    border-radius:3px;
+    margin-right:6px;
+  }
+
+  footer{
+    padding:18px 48px 0 48px;
+    border-top:1px solid var(--card-border);
+    margin:8px 48px 0 48px;
+    color:var(--gris);
+    font-size:12.5px;
+    display:flex;
+    justify-content:space-between;
+    flex-wrap:wrap;
+    gap:6px;
+  }
+
+  /* ===== PAGE CONTENT (non-timeline) ===== */
+  .content{
+    padding:36px 48px 8px 48px;
+  }
+  .lede{
+    font-size:16px;
+    color:var(--encre);
+    max-width:760px;
+    margin:0 0 6px 0;
+  }
+  .content h2.display{
+    font-size:22px;
+    color:var(--nuit);
+    margin:34px 0 6px 0;
+  }
+  .content .h2-note{
+    font-family:"DM Sans", sans-serif;
+    font-size:13.5px;
+    color:var(--gris);
+    margin:0 0 18px 0;
+    max-width:680px;
+  }
+  .stat-strip{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:16px;
+    margin-bottom:8px;
+  }
+  .stat{
+    background:#fff;
+    border:1px solid var(--card-border);
+    border-top:3px solid var(--flamme);
+    border-radius:10px;
+    padding:16px 18px;
+  }
+  .stat .num{
+    font-family:"Anton", sans-serif;
+    font-size:22px;
+    color:var(--nuit);
+    line-height:1.1;
+    margin-bottom:6px;
+  }
+  .stat .desc{
+    font-size:13px;
+    color:var(--gris);
+    line-height:1.45;
+  }
+  .format-note{
+    font-size:13.5px;
+    color:var(--gris);
+    font-style:italic;
+    margin:14px 0 4px 0;
+  }
+  .role-grid{
+    display:grid;
+    grid-template-columns:1fr 1fr;
+    gap:18px;
+    margin-top:6px;
+  }
+  .role-card{
+    background:#fff;
+    border:1px solid var(--card-border);
+    border-radius:14px;
+    overflow:hidden;
+    box-shadow:0 1px 3px rgba(20,33,61,0.06);
+  }
+  .role-card .rc-head{
+    padding:13px 20px;
+    font-family:"Anton", sans-serif;
+    font-size:16px;
+    letter-spacing:0.01em;
+    text-transform:uppercase;
+  }
+  .role-card.mine .rc-head{ background:var(--flamme); color:#fff; }
+  .role-card.others .rc-head{ background:var(--nuit); color:#fff; }
+  .role-card .rc-body{ padding:16px 20px 18px 20px; }
+  .role-card .rc-body ul{ margin:0; padding-left:18px; }
+  .role-card .rc-body li{ margin-bottom:9px; font-size:14px; line-height:1.5; }
+  .role-card .rc-body li:last-child{ margin-bottom:0; }
+  .role-card .rc-body b{ color:var(--nuit); }
+  .callout{
+    border-left:3px solid var(--rose);
+    background:#fff;
+    border-radius:0 10px 10px 0;
+    padding:14px 20px;
+    margin-top:20px;
+    font-size:13.5px;
+    color:var(--encre);
+    line-height:1.55;
+  }
+  @media (max-width:760px){
+    .stat-strip{ grid-template-columns:1fr; }
+    .role-grid{ grid-template-columns:1fr; }
+    .content{ padding:28px 20px 8px 20px; }
+  }
+
+  @media (max-width:640px){
+    header.hero{padding:32px 22px 24px 22px;}
+    .timeline{padding:28px 18px 8px 18px;}
+    footer{padding:18px 18px 0 18px; margin:8px 18px 0 18px;}
+    .step{grid-template-columns:44px 1fr; column-gap:14px;}
+    .badge{width:44px;height:44px;font-size:16px;}
+    .track::before{left:21px;}
+  }
+  .section-tag{
+    font-family:"DM Sans", sans-serif;
+    font-weight:700;
+    letter-spacing:0.1em;
+    text-transform:uppercase;
+    font-size:11.5px;
+    color:var(--flamme);
+    margin:0 0 6px 0;
+  }
+  .theme-grid{
+    display:grid;
+    grid-template-columns:repeat(2, 1fr);
+    gap:14px;
+    margin-top:6px;
+  }
+  .theme-card{
+    background:#fff;
+    border:1px solid var(--card-border);
+    border-radius:12px;
+    padding:16px 18px;
+    display:flex;
+    gap:13px;
+    align-items:flex-start;
+  }
+  .theme-num{
+    flex-shrink:0;
+    width:32px;
+    height:32px;
+    border-radius:50%;
+    background:var(--nuit);
+    color:#fff;
+    display:flex;
+    align-items:center;
+    justify-content:center;
+    font-family:"Anton", sans-serif;
+    font-size:13px;
+  }
+  .theme-title{
+    font-size:14.5px;
+    font-weight:700;
+    color:var(--nuit);
+    margin-bottom:4px;
+    line-height:1.3;
+  }
+  .theme-desc{
+    font-size:12.5px;
+    color:var(--gris);
+    line-height:1.5;
+  }
+  @media (max-width:760px){
+    .theme-grid{ grid-template-columns:1fr; }
+  }
+</style>
+</head>
+<body>
+<div class="page">
+
+  <header class="hero">
+    <svg class="trailtop" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
+      <path d="M10 280 Q 90 220 70 160 Q 50 100 130 90 Q 210 80 190 20" stroke="#FF5A36" stroke-width="4" fill="none" stroke-dasharray="2 14" stroke-linecap="round"/>
+    </svg>
+    <div class="eyebrow">Aimer en Grand · Vue d'ensemble</div>
+    <h1 class="display">Aimer en Grand</h1>
+    <p class="sub">Ce qu'est le parcours, ses 6 thèmes, le déroulé en 7 temps de chaque rencontre, et le rôle de l'accompagnateur jeune qui les porte.</p>
+  </header>
+
+  <div class="content">
+
+    <p class="section-tag">01 · Vue d'ensemble</p>
+    <h2 class="display">Qu'est-ce qu'Aimer en Grand ?</h2>
+    <p class="h2-note" style="max-width:760px;">Aimer en Grand est un parcours sur la vie relationnelle proposé aux jeunes de 14 à 18 ans. Conçu pour explorer, à plusieurs, le projet lumineux de Dieu pour nos relations, ce parcours se déploie sur 6 thèmes, de l'amitié jusqu'au don de soi. Ancré dans la Théologie du Corps de Jean-Paul II, il vise à proposer des repères et à donner des outils pour faire des choix librement.</p>
+
+    <p class="section-tag" style="margin-top:38px;">02 · Les 6 thèmes</p>
+    <h2 class="display">De l'amitié jusqu'au don de soi</h2>
+    <p class="h2-note">Chaque thème se vit en une rencontre, toujours organisée selon la même progression en 7 temps (détaillée plus bas).</p>
+    <div class="theme-grid">
+      <div class="theme-card">
+        <div class="theme-num">1</div>
+        <div>
+          <div class="theme-title">L'amitié : école de la relation et du don</div>
+          <div class="theme-desc">La confiance, le discernement, la différence entre relation et connexion. Ce qui distingue un ami d'une simple connaissance, et pourquoi l'amitié vraie veut le bien de l'autre avant son approbation.</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">2</div>
+        <div>
+          <div class="theme-title">Le corps : lieu de présence</div>
+          <div class="theme-desc">Mon corps dit quelque chose de vrai sur ma capacité à donner et à recevoir. Redécouvrir le corps comme un don plutôt qu'un outil ou une image à contrôler, face à la pression des écrans et des standards.</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">3</div>
+        <div>
+          <div class="theme-title">Les émotions et la liberté intérieure</div>
+          <div class="theme-desc">Lire les émotions comme des signaux, les intégrer dans un mouvement vers le bien choisi. Apprendre à distinguer ce qu'on ressent de ce qu'on choisit de faire — et retrouver l'espace de liberté entre les deux.</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">4</div>
+        <div>
+          <div class="theme-title">Aimer librement : altérité et complémentarité</div>
+          <div class="theme-desc">La différence entre désir et don, entre attraction et engagement. Ce que la différence homme-femme apporte plutôt que ce qu'elle menace, et comment accueillir l'autre sans le réduire à ses propres attentes.</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">5</div>
+        <div>
+          <div class="theme-title">L'amour en vérité</div>
+          <div class="theme-desc">L'amour comme choix qui demande vérité, liberté et maturité. Distinguer l'amour qui engage de la simple attirance, face aux modèles de consommation relationnelle qui brouillent les repères.</div>
+        </div>
+      </div>
+      <div class="theme-card">
+        <div class="theme-num">6</div>
+        <div>
+          <div class="theme-title">Se donner : quel est mon appel personnel ?</div>
+          <div class="theme-desc">Pour qui et pour quoi suis-je prêt·e à m'engager ? La vocation, sous toutes ses formes, comme un chemin qui se découvre progressivement plutôt qu'une décision qu'il faudrait figer d'un coup.</div>
+        </div>
+      </div>
+    </div>
+
+    <p class="section-tag" style="margin-top:38px;">03 · Le format</p>
+    <h2 class="display">Le format, concrètement</h2>
+    <p class="h2-note">Le parcours se déroule sous l'une de ces deux formes :</p>
+    <div class="stat-strip">
+      <div class="stat">
+        <div class="num">6 séances de 90 min</div>
+        <div class="desc">Un thème par rencontre.</div>
+      </div>
+      <div class="stat">
+        <div class="num">3 demi-journées</div>
+        <div class="desc">Deux thèmes combinés par rencontre.</div>
+      </div>
+    </div>
+
+    <p class="section-tag" style="margin-top:38px;">04 · Le déroulé d'une rencontre</p>
+    <h2 class="display">7 étapes pour chaque thème</h2>
+    <p class="h2-note">De l'accueil à l'action concrète de la semaine : la trame commune à chaque rencontre, pensée pour partir du vécu avant d'éclairer.</p>
+  </div>
+
+  <div class="timeline">
+    <div class="track">
+
+      <div class="step">
+        <div class="badge">01</div>
+        <div class="card">
+          <div class="card-head">
+            <h2 class="display">Vivre</h2>
+            <span class="time">0–20 min · durée 20 min</span>
+          </div>
+          <div class="question">Est-ce que j'ai envie d'être ici ?</div>
+          <div class="body">
+            <p>Un temps d'accueil et un icebreaker, qui prépare le thème sans le dévoiler.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="badge">02</div>
+        <div class="card">
+          <div class="card-head">
+            <h2 class="display">Raconter</h2>
+            <span class="time">20–28 min · durée 8 min</span>
+          </div>
+          <div class="question">Est-ce que ça parle de vraie vie ?</div>
+          <div class="body">
+            <p>Un témoignage ou un récit, pour ancrer le thème dans du vécu réel.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="badge">03</div>
+        <div class="card">
+          <div class="card-head">
+            <h2 class="display">Explorer</h2>
+            <span class="time">28–43 min · durée 15 min</span>
+          </div>
+          <div class="question">Et moi, qu'est-ce que j'en pense ?</div>
+          <div class="body">
+            <p>Un temps de discussion en groupe, pour apprendre aussi à dialoguer.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="badge">04</div>
+        <div class="card">
+          <div class="card-head">
+            <h2 class="display">Éclairer</h2>
+            <span class="time">43–53 min · durée 10 min</span>
+          </div>
+          <div class="question">Existe-t-il des repères qui peuvent m'aider ?</div>
+          <div class="body">
+            <p>L'accompagnateur apporte des repères — les idées clés du thème, mises en perspective.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="badge">05</div>
+        <div class="card">
+          <div class="card-head">
+            <h2 class="display">Expérimenter</h2>
+            <span class="time">53–73 min · durée 20 min</span>
+          </div>
+          <div class="question">Qu'est-ce que ça change concrètement ?</div>
+          <div class="body">
+            <p>Une mise en situation, un jeu de rôle ou un exercice, pour mettre le repère à l'épreuve.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="badge">06</div>
+        <div class="card">
+          <div class="card-head">
+            <h2 class="display">Partager</h2>
+            <span class="time">73–85 min · durée 12 min</span>
+          </div>
+          <div class="question">Qu'est-ce que je découvre ?</div>
+          <div class="body">
+            <p>Partage de ce qu'on en tire en binômes / trinômes / petits groupes stables — ou sous forme d'écriture personnelle avec un bref partage à la fin.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="step">
+        <div class="badge">07</div>
+        <div class="card">
+          <div class="card-head">
+            <h2 class="display">Oser</h2>
+            <span class="time">85–90 min · durée 5 min</span>
+          </div>
+          <div class="question">Qu'est-ce que j'en fais cette semaine ?</div>
+          <div class="body">
+            <p>Une petite action concrète — objectif <b>SMART</b>, lié au thème : Spécifique, Manifeste, Atteignable, Réaliste, Temporellement défini.</p>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+
+  <div class="content" style="padding-top:8px;">
+    <p class="section-tag" style="margin-top:10px;">05 · Qui porte les rencontres</p>
+    <h2 class="display">Le rôle de l'accompagnateur jeune</h2>
+    <p class="h2-note">Chaque accompagnateur prend en charge un thème du parcours, et contribue à tous les autres.</p>
+    <div class="role-grid">
+      <div class="role-card mine">
+        <div class="rc-head">Sur son thème</div>
+        <div class="rc-body">
+          <ul>
+            <li>Prépare et livre le <b>témoignage</b> du temps Raconter — un texte cadré, préparé en amont avec l'équipe. Chaque accompagnateur témoigne une fois durant le parcours, sur le thème qu'il porte.</li>
+            <li>Anime le temps <b>Éclairer</b> comme intervieweur — c'est lui qui pose les questions, sous forme de discussion ou d'interview. L'intervenant en face de lui peut varier d'un thème à l'autre ; le rôle d'intervieweur reste le sien.</li>
+          </ul>
+        </div>
+      </div>
+      <div class="role-card others">
+        <div class="rc-head">Sur les autres thèmes</div>
+        <div class="rc-body">
+          <ul>
+            <li>Aide à l'<b>accueil</b> en début de rencontre.</li>
+            <li>Facilite les <b>discussions</b> et les temps de <b>partage</b>.</li>
+            <li>Aide à définir l'objectif concret du temps <b>Oser</b> — l'action de la semaine.</li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <footer>
+    <span style="display:flex; align-items:center; gap:10px;">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQyIiBoZWlnaHQ9IjE3NCIgdmlld0JveD0iMCAwIDM0MiAxNzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6YzJwYT0iaHR0cDovL2MycGEub3JnL21hbmlmZXN0Ij4KPGcgc3Ryb2tlPSIjRkY1QTM2IiBzdHJva2Utd2lkdGg9IjcuNjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CjxsaW5lIHgxPSI4OC4wMCIgeTE9IjIzLjYzIiB4Mj0iODguMDAiIHkyPSI0Mi44MyIvPgo8bGluZSB4MT0iODguMDAiIHkxPSIxMjkuMjMiIHgyPSI4OC4wMCIgeTI9IjE0OC40MyIvPgo8bGluZSB4MT0iMjUuNjAiIHkxPSI4Ni4wMyIgeDI9IjQ0LjgwIiB5Mj0iODYuMDMiLz4KPGxpbmUgeDE9IjEzMS4yMCIgeTE9Ijg2LjAzIiB4Mj0iMTUwLjQwIiB5Mj0iODYuMDMiLz4KPGxpbmUgeDE9IjQ0LjgwIiB5MT0iNDIuODMiIHgyPSI1Ny42MCIgeTI9IjU1LjYzIi8+CjxsaW5lIHgxPSIxMTguNDAiIHkxPSIxMTYuNDMiIHgyPSIxMzEuMjAiIHkyPSIxMjkuMjMiLz4KPGxpbmUgeDE9IjEzMS4yMCIgeTE9IjQyLjgzIiB4Mj0iMTE4LjQwIiB5Mj0iNTUuNjMiLz4KPGxpbmUgeDE9IjU3LjYwIiB5MT0iMTE2LjQzIiB4Mj0iNDQuODAiIHkyPSIxMjkuMjMiLz4KPC9nPgo8Y2lyY2xlIGN4PSI4OC4wMCIgY3k9Ijg2LjAzIiByPSIyOC44MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjguOTYiLz4KPGxpbmUgeDE9Ijg4LjAwIiB5MT0iNjUuMjMiIHgyPSI4OC4wMCIgeTI9IjEwNi44MyIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjcuNjgiLz4KPGxpbmUgeDE9IjcwLjQwIiB5MT0iODYuMDMiIHgyPSIxMDUuNjAiIHkyPSI4Ni4wMyIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjcuNjgiLz4KPGcgZmlsbD0iIzE0MjEzRCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg2LjAwLDEwMy4wNikiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMCwwKSBzY2FsZSgwLjA0NDkyMiwtMC4wNDQ5MjIpIj48cGF0aCBkPSJNNDg4IC0xNlEyOTcgLTE2IDE4MC41IDEwMy4wUTY0IDIyMiA2NCA0MzZWMTI0OFE2NCAxNTA0IDE2NS41IDE2NDAuMFEyNjcgMTc3NiA0OTYgMTc3NlE2MjEgMTc3NiA3MTguNSAxNzMwLjBRODE2IDE2ODQgODcyLjAgMTU5Mi41UTkyOCAxNTAxIDkyOCAxMzYyVjEwNThINTc4VjEzMThRNTc4IDEzOTcgNTU4LjAgMTQyNC41UTUzOCAxNDUyIDQ5NiAxNDUyUTQ0NyAxNDUyIDQzMC4wIDE0MTYuNVE0MTMgMTM4MSA0MTMgMTMyMlY0NDFRNDEzIDM2OCA0MzQuNSAzMzguMFE0NTYgMzA4IDQ5NiAzMDhRNTQxIDMwOCA1NTkuNSAzNDUuMFE1NzggMzgyIDU3OCA0NDFWNzU4SDkzMlY0MjVROTMyIDE5MyA4MTUuMCA4OC41UTY5OCAtMTYgNDg4IC0xNloiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ0LjUzOSwwKSBzY2FsZSgwLjA0NDkyMiwtMC4wNDQ5MjIpIj48cGF0aCBkPSJNNDk4IC0xNlEyODcgLTE2IDE3NS41IDExMS41UTY0IDIzOSA2NCA0ODBWMTMxNlE2NCAxNTQyIDE3NC41IDE2NTkuMFEyODUgMTc3NiA0OTggMTc3NlE3MTEgMTc3NiA4MjEuNSAxNjU5LjBROTMyIDE1NDIgOTMyIDEzMTZWNDgwUTkzMiAyMzkgODIwLjUgMTExLjVRNzA5IC0xNiA0OTggLTE2Wk01MDEgMzA4UTU4MSAzMDggNTgxIDQ2M1YxMzIyUTU4MSAxNDUyIDUwMyAxNDUyUTQxNSAxNDUyIDQxNSAxMzE5VjQ2MVE0MTUgMzc5IDQzNS4wIDM0My41UTQ1NSAzMDggNTAxIDMwOFoiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkwLjIwMSwwKSBzY2FsZSgwLjA0NDkyMiwtMC4wNDQ5MjIpIj48cGF0aCBkPSJNNzggMFYxNzYwSDYxOFE3NTMgMTc2MCA4MjIuMCAxNjk4LjVRODkxIDE2MzcgOTE0LjUgMTUyNi41UTkzOCAxNDE2IDkzOCAxMjY3UTkzOCAxMTIzIDkwMS41IDEwMzcuMFE4NjUgOTUxIDc2NCA5MThRODQ3IDkwMSA4ODAuNSA4MzUuNVE5MTQgNzcwIDkxNCA2NjZWMEg1NjdWNjg5UTU2NyA3NjYgNTM1LjUgNzg0LjVRNTA0IDgwMyA0MzQgODAzVjBaTTQzNiAxMTA4SDUyMVE1OTQgMTEwOCA1OTQgMTI2N1E1OTQgMTM3MCA1NzguMCAxNDAyLjBRNTYyIDE0MzQgNTE4IDE0MzRINDM2WiIvPjwvZz4KPC9nPgo8ZyBmaWxsPSIjRkY1QTM2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTIuMzksMTQ4LjA2KSI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwLDApIHNjYWxlKDAuMDMwMDAwLC0wLjAzMDAwMCkiPjxwYXRoIGQ9Ik0xNTIgMFY2MDZMMzIgNTc2VjYzNkwxODAgNzAwSDIzN1YwWiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuMzYwLDApIHNjYWxlKDAuMDMwMDAwLC0wLjAzMDAwMCkiPjxwYXRoIGQ9Ik0zOTIgMFYxNTBIMzdWMjE1TDM3NyA3MDBINDc1VjIyNEg1NzlWMTUwSDQ3NVYwWk0xMzAgMjI0SDM5NlY2MDdaIi8+PC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMy41NzAsMCkgc2NhbGUoMC4wMzAwMDAsLTAuMDMwMDAwKSI+PHBhdGggZD0iTTcyIDI2MFYzMzFINDY4VjI2MFoiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUyLjgwMCwwKSBzY2FsZSgwLjAzMDAwMCwtMC4wMzAwMDApIj48cGF0aCBkPSJNMTUyIDBWNjA2TDMyIDU3NlY2MzZMMTgwIDcwMEgyMzdWMFoiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY1LjE2MCwwKSBzY2FsZSgwLjAzMDAwMCwtMC4wMzAwMDApIj48cGF0aCBkPSJNMzA0IC0xMlEyMzYgLTEyIDE4Mi4wIDEzLjVRMTI4IDM5IDk2LjAgODQuNVE2NCAxMzAgNjQgMTkwUTY0IDIzMyA4MS4wIDI3MC4wUTk4IDMwNyAxMjguNSAzMzQuNVExNTkgMzYyIDE5OSAzNzNRMTQzIDM5MyAxMTIuNSA0MzUuMFE4MiA0NzcgODIgNTI2UTgyIDU3OCAxMDkuMCA2MjAuMFExMzYgNjYyIDE4NS41IDY4Ny4wUTIzNSA3MTIgMzA0IDcxMlEzNzQgNzEyIDQyMy41IDY4Ny4wUTQ3MyA2NjIgNDk5LjUgNjIwLjBRNTI2IDU3OCA1MjYgNTI2UTUyNiA0NzcgNDk1LjUgNDM1LjBRNDY1IDM5MyA0MDkgMzczUTQ1MCAzNjIgNDgwLjUgMzM0LjVRNTExIDMwNyA1MjcuNSAyNzAuMFE1NDQgMjMzIDU0NCAxOTBRNTQ0IDEzMCA1MTIuNSA4NC41UTQ4MSAzOSA0MjYuNSAxMy41UTM3MiAtMTIgMzA0IC0xMlpNMzA0IDYyUTM4MyA2MiA0MjEuNSA5OC41UTQ2MCAxMzUgNDYwIDE5NVE0NjAgMjYzIDQxNy41IDI5OC4wUTM3NSAzMzMgMzA0IDMzM1EyMzMgMzMzIDE5MC41IDI5OC4wUTE0OCAyNjMgMTQ4IDE5NVExNDggMTM1IDE4Ny4wIDk4LjVRMjI2IDYyIDMwNCA2MlpNMzA0IDQwM1EzNjcgNDAzIDQwNC4wIDQzNi4wUTQ0MSA0NjkgNDQxIDUyMVE0NDEgNTgwIDQwNC41IDYxMC4wUTM2OCA2NDAgMzA0IDY0MFEyNDEgNjQwIDIwNC41IDYxMC4wUTE2OCA1ODAgMTY4IDUyMVExNjggNDY5IDIwNC41IDQzNi4wUTI0MSA0MDMgMzA0IDQwM1oiLz48L2c+CjwvZz4KPC9zdmc+" alt="COR 14-18" style="height:22px; width:auto; display:block;">
+      aimerengrand · cor1418.org
+    </span>
+    <span>Vue d'ensemble du parcours</span>
+  </footer>
+
+</div>
+</body>
+</html>
