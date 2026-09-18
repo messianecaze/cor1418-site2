@@ -6,7 +6,7 @@
 <title>Aimer en Grand — vue d'ensemble</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:ital,wght@0,400;0,500;0,700;1,400;1,500&family=Georgia&display=swap" rel="stylesheet">
 <style>
   :root{
     --nuit:#14213D;
@@ -75,15 +75,54 @@
   }
   header.hero h1{
     font-size:clamp(32px, 5vw, 52px);
-    margin:0 0 8px 0;
+    margin:0 0 10px 0;
     line-height:1.02;
+  }
+  .catho-tag{
+    display:inline-block;
+    font-family:"DM Sans", sans-serif;
+    font-weight:700;
+    letter-spacing:0.08em;
+    text-transform:uppercase;
+    font-size:12px;
+    color:#fff;
+    background:rgba(255,90,54,0.20);
+    border:1px solid rgba(255,90,54,0.55);
+    padding:5px 12px;
+    border-radius:20px;
+    margin:0 0 14px 0;
   }
   header.hero p.sub{
     font-family:"DM Sans", sans-serif;
     color:#c9cedb;
     font-size:16px;
     margin:0;
-    max-width:640px;
+    max-width:660px;
+  }
+  .hero-nav{
+    display:flex;
+    flex-wrap:wrap;
+    gap:8px;
+    margin-top:6px;
+    position:relative;
+    z-index:1;
+  }
+  .hero-nav a{
+    font-family:"DM Sans", sans-serif;
+    font-weight:700;
+    font-size:12.5px;
+    letter-spacing:0.02em;
+    color:#fff;
+    text-decoration:none;
+    border:1px solid rgba(255,255,255,0.35);
+    padding:7px 14px;
+    border-radius:20px;
+    transition:background 0.15s, border-color 0.15s;
+    white-space:nowrap;
+  }
+  .hero-nav a:hover{
+    background:var(--flamme);
+    border-color:var(--flamme);
   }
   header.hero .trailtop{
     position:absolute; right:-40px; top:-30px; width:340px; height:340px;
@@ -159,6 +198,15 @@
     font-size:13px;
     text-transform:none;
   }
+  .card .card-head .soul-move{
+    font-family:"DM Sans", sans-serif;
+    font-weight:700;
+    letter-spacing:0.07em;
+    text-transform:uppercase;
+    font-size:11px;
+    color:var(--flamme);
+    margin-left:auto;
+  }
   .card .question{
     font-family:Georgia, "Times New Roman", serif;
     font-style:italic;
@@ -229,7 +277,7 @@
     font-size:13.5px;
     color:var(--gris);
     margin:0 0 18px 0;
-    max-width:680px;
+    max-width:700px;
   }
   .stat-strip{
     display:grid;
@@ -299,6 +347,44 @@
     color:var(--encre);
     line-height:1.55;
   }
+
+  /* Revelation motif — the "life → question → light → discernment → free response" line */
+  .revelation-line{
+    font-family:"Anton", sans-serif;
+    font-size:clamp(12.5px, 2vw, 18px);
+    color:var(--nuit);
+    background:#fff;
+    border:1px solid var(--card-border);
+    border-left:4px solid var(--flamme);
+    border-radius:0 10px 10px 0;
+    padding:16px 22px;
+    letter-spacing:0.01em;
+    line-height:1.7;
+    margin:14px 0 4px 0;
+  }
+  .sacred-quote{
+    font-family:Georgia, "Times New Roman", serif;
+    font-style:italic;
+    color:var(--nuit);
+    background:#fff5f2;
+    border-left:3px solid var(--flamme);
+    border-radius:0 10px 10px 0;
+    padding:14px 22px;
+    font-size:15px;
+    line-height:1.6;
+    margin:18px 0 4px 0;
+    max-width:760px;
+  }
+  .sacred-quote .attr{
+    display:block;
+    font-family:"DM Sans", sans-serif;
+    font-style:normal;
+    font-weight:700;
+    color:var(--gris);
+    font-size:12px;
+    margin-top:8px;
+  }
+
   @media (max-width:760px){
     .stat-strip{ grid-template-columns:1fr; }
     .role-grid{ grid-template-columns:1fr; }
@@ -312,6 +398,7 @@
     .step{grid-template-columns:44px 1fr; column-gap:14px;}
     .badge{width:44px;height:44px;font-size:16px;}
     .track::before{left:21px;}
+    .card .card-head .soul-move{ margin-left:0; }
   }
   .section-tag{
     font-family:"DM Sans", sans-serif;
@@ -376,64 +463,73 @@
     </svg>
     <div class="eyebrow">Aimer en Grand · Vue d'ensemble</div>
     <h1 class="display">Aimer en Grand</h1>
-    <p class="sub">Ce qu'est le parcours, ses 6 thèmes, le déroulé en 7 temps de chaque rencontre, et le rôle de l'accompagnateur jeune qui les porte.</p>
+    <p class="catho-tag">Un parcours catholique pour les 14–18 ans</p>
+    <nav class="hero-nav">
+      <a href="#bref">Le parcours en bref</a>
+      <a href="#themes">Les 6 thèmes</a>
+      <a href="#format">Le format</a>
+      <a href="#fondement">Le fondement spirituel</a>
+      <a href="#deroule">Le déroulé d'une rencontre</a>
+      <a href="#role">L'accompagnateur</a>
+    </nav>
   </header>
 
   <div class="content">
 
-    <p class="section-tag">01 · Vue d'ensemble</p>
-    <h2 class="display">Qu'est-ce qu'Aimer en Grand ?</h2>
-    <p class="h2-note" style="max-width:760px;">Aimer en Grand est un parcours sur la vie relationnelle proposé aux jeunes de 14 à 18 ans. Conçu pour explorer, à plusieurs, le projet lumineux de Dieu pour nos relations, ce parcours se déploie sur 6 thèmes, de l'amitié jusqu'au don de soi. Ancré dans la Théologie du Corps de Jean-Paul II, il vise à proposer des repères et à donner des outils pour faire des choix librement.</p>
+    <p class="section-tag" id="bref">01 · Le parcours en bref</p>
+    <h2 class="display">Le parcours en bref</h2>
+    <p class="h2-note" style="max-width:760px;">Aimer en Grand est un parcours catholique pour les 14-18 ans, vécu en petits groupes. Il part de la vie réelle des jeunes et de leurs questions, pour les mettre progressivement en dialogue avec la Révélation chrétienne — la Parole de Dieu, l'anthropologie chrétienne et la Théologie du Corps de saint Jean-Paul II. Six thèmes, de l'amitié jusqu'au don de soi, pour découvrir peu à peu le projet de Dieu sur l'amour humain — et choisir librement comment y répondre.</p>
+    <div class="revelation-line">LA VIE → LA QUESTION → LA LUMIÈRE → LE DISCERNEMENT → LA RÉPONSE LIBRE</div>
 
-    <p class="section-tag" style="margin-top:38px;">02 · Les 6 thèmes</p>
+    <p class="section-tag" style="margin-top:38px;" id="themes">02 · Les 6 thèmes</p>
     <h2 class="display">De l'amitié jusqu'au don de soi</h2>
-    <p class="h2-note">Chaque thème se vit en une rencontre, toujours organisée selon la même progression en 7 temps (détaillée plus bas).</p>
+    <p class="h2-note">Le parcours part de l'expérience relationnelle la plus immédiate des jeunes — l'amitié — pour ouvrir progressivement une question plus profonde : pour quoi suis-je fait ? À travers le corps, le désir, la liberté et l'amour, se dévoile peu à peu la vision chrétienne de la personne : créée par amour, faite pour la communion et appelée à devenir don. Chaque thème se vit en une rencontre, organisée selon la même progression en 7 temps (détaillée plus bas).</p>
     <div class="theme-grid">
       <div class="theme-card">
         <div class="theme-num">1</div>
         <div>
           <div class="theme-title">L'amitié : école de la relation et du don</div>
-          <div class="theme-desc">La confiance, le discernement, la différence entre relation et connexion. Ce qui distingue un ami d'une simple connaissance, et pourquoi l'amitié vraie veut le bien de l'autre avant son approbation.</div>
+          <div class="theme-desc">De « qui sont mes vrais amis ? » à la découverte que l'amour cherche le bien de l'autre : la confiance, le discernement, la différence entre relation et connexion.</div>
         </div>
       </div>
       <div class="theme-card">
         <div class="theme-num">2</div>
         <div>
           <div class="theme-title">Le corps : lieu de présence</div>
-          <div class="theme-desc">Mon corps dit quelque chose de vrai sur ma capacité à donner et à recevoir. Redécouvrir le corps comme un don plutôt qu'un outil ou une image à contrôler, face à la pression des écrans et des standards.</div>
+          <div class="theme-desc">Du rapport à l'image et au corps à la découverte du corps comme langage de la personne et du don — mon corps dit quelque chose de vrai sur ma capacité à donner et à recevoir.</div>
         </div>
       </div>
       <div class="theme-card">
         <div class="theme-num">3</div>
         <div>
           <div class="theme-title">Les émotions et la liberté intérieure</div>
-          <div class="theme-desc">Lire les émotions comme des signaux, les intégrer dans un mouvement vers le bien choisi. Apprendre à distinguer ce qu'on ressent de ce qu'on choisit de faire — et retrouver l'espace de liberté entre les deux.</div>
+          <div class="theme-desc">De « ce que je ressens » à une liberté capable d'orienter le désir vers un bien véritable : lire les émotions comme des signaux, apprendre à choisir.</div>
         </div>
       </div>
       <div class="theme-card">
         <div class="theme-num">4</div>
         <div>
           <div class="theme-title">Aimer librement : altérité et complémentarité</div>
-          <div class="theme-desc">La différence entre désir et don, entre attraction et engagement. Ce que la différence homme-femme apporte plutôt que ce qu'elle menace, et comment accueillir l'autre sans le réduire à ses propres attentes.</div>
+          <div class="theme-desc">De l'attraction et de la différence à la découverte de la communion : aimer sans posséder ni utiliser, accueillir la différence homme-femme comme une promesse plutôt qu'une menace.</div>
         </div>
       </div>
       <div class="theme-card">
         <div class="theme-num">5</div>
         <div>
           <div class="theme-title">L'amour en vérité</div>
-          <div class="theme-desc">L'amour comme choix qui demande vérité, liberté et maturité. Distinguer l'amour qui engage de la simple attirance, face aux modèles de consommation relationnelle qui brouillent les repères.</div>
+          <div class="theme-desc">De « qu'est-ce qu'aimer vraiment ? » à l'amour libre, total, fidèle et fécond, révélé pleinement dans le Christ — face aux modèles de consommation relationnelle.</div>
         </div>
       </div>
       <div class="theme-card">
         <div class="theme-num">6</div>
         <div>
           <div class="theme-title">Se donner : quel est mon appel personnel ?</div>
-          <div class="theme-desc">Pour qui et pour quoi suis-je prêt·e à m'engager ? La vocation, sous toutes ses formes, comme un chemin qui se découvre progressivement plutôt qu'une décision qu'il faudrait figer d'un coup.</div>
+          <div class="theme-desc">De « qu'est-ce que je veux faire de ma vie ? » à « à qui suis-je appelé·e à me donner ? » : vocation, service, sainteté, comme un chemin qui se découvre progressivement.</div>
         </div>
       </div>
     </div>
 
-    <p class="section-tag" style="margin-top:38px;">03 · Le format</p>
+    <p class="section-tag" style="margin-top:38px;" id="format">03 · Le format</p>
     <h2 class="display">Le format, concrètement</h2>
     <p class="h2-note">Le parcours se déroule sous l'une de ces deux formes :</p>
     <div class="stat-strip">
@@ -447,9 +543,14 @@
       </div>
     </div>
 
-    <p class="section-tag" style="margin-top:38px;">04 · Le déroulé d'une rencontre</p>
+    <p class="section-tag" style="margin-top:38px;" id="fondement">04 · Le fondement spirituel</p>
+    <h2 class="display">Partir de la vie pour aller vers la Révélation</h2>
+    <p class="h2-note" style="max-width:760px;">Aimer en Grand ne commence pas par un enseignement à apprendre, mais par une expérience à regarder. Chaque rencontre part de la vie réelle des jeunes, fait émerger leurs questions, puis les met progressivement en dialogue avec la raison et la Révélation chrétienne — la Parole de Dieu, l'anthropologie chrétienne et la Théologie du Corps. Cette lumière ne vient pas s'ajouter à l'expérience : elle en révèle le sens et ouvre un chemin de réponse libre.</p>
+    <blockquote class="sacred-quote">Nous ne sommes pas seulement faits pour chercher l'amour. Nous sommes créés par amour, pour aimer, et appelés à apprendre à nous donner.<span class="attr">— fondement anthropologique du parcours, Aimer en Grand</span></blockquote>
+
+    <p class="section-tag" style="margin-top:38px;" id="deroule">05 · Le déroulé d'une rencontre</p>
     <h2 class="display">7 étapes pour chaque thème</h2>
-    <p class="h2-note">De l'accueil à l'action concrète de la semaine : la trame commune à chaque rencontre, pensée pour partir du vécu avant d'éclairer.</p>
+    <p class="h2-note">De l'accueil à l'action concrète de la semaine : la trame commune à chaque rencontre, pensée pour partir du vécu avant d'éclairer. Le mot en majuscules à droite de chaque titre indique le mouvement intérieur correspondant.</p>
   </div>
 
   <div class="timeline">
@@ -461,10 +562,11 @@
           <div class="card-head">
             <h2 class="display">Vivre</h2>
             <span class="time">0–20 min · durée 20 min</span>
+            <span class="soul-move">Accueillir</span>
           </div>
           <div class="question">Est-ce que j'ai envie d'être ici ?</div>
           <div class="body">
-            <p>Un temps d'accueil et un icebreaker, qui prépare le thème sans le dévoiler.</p>
+            <p>Un temps d'accueil et un icebreaker, qui prépare le thème sans le dévoiler. Dieu est déjà présent dans la vie réelle des jeunes, avant même que la rencontre commence.</p>
           </div>
         </div>
       </div>
@@ -475,10 +577,11 @@
           <div class="card-head">
             <h2 class="display">Raconter</h2>
             <span class="time">20–28 min · durée 8 min</span>
+            <span class="soul-move">Reconnaître</span>
           </div>
           <div class="question">Est-ce que ça parle de vraie vie ?</div>
           <div class="body">
-            <p>Un témoignage ou un récit, pour ancrer le thème dans du vécu réel.</p>
+            <p>Un témoignage ou un récit, pour ancrer le thème dans du vécu réel. Mon histoire et celle des autres peuvent devenir des lieux de révélation.</p>
           </div>
         </div>
       </div>
@@ -489,10 +592,11 @@
           <div class="card-head">
             <h2 class="display">Explorer</h2>
             <span class="time">28–43 min · durée 15 min</span>
+            <span class="soul-move">Chercher</span>
           </div>
           <div class="question">Et moi, qu'est-ce que j'en pense ?</div>
           <div class="body">
-            <p>Un temps de discussion en groupe, pour apprendre aussi à dialoguer.</p>
+            <p>Un temps de discussion en groupe, pour apprendre aussi à dialoguer et à chercher honnêtement la vérité.</p>
           </div>
         </div>
       </div>
@@ -503,10 +607,11 @@
           <div class="card-head">
             <h2 class="display">Éclairer</h2>
             <span class="time">43–53 min · durée 10 min</span>
+            <span class="soul-move">Recevoir une lumière</span>
           </div>
-          <div class="question">Existe-t-il des repères qui peuvent m'aider ?</div>
+          <div class="question">Quelle lumière la foi chrétienne apporte-t-elle sur ce que nous venons de découvrir ?</div>
           <div class="body">
-            <p>L'accompagnateur apporte des repères — les idées clés du thème, mises en perspective.</p>
+            <p>L'expérience et les questions du groupe sont mises en dialogue avec des repères humains et avec la Révélation : la Parole de Dieu, l'anthropologie chrétienne et, particulièrement, la Théologie du Corps de Jean-Paul II. Il ne s'agit pas de refermer la discussion par « la bonne réponse », mais d'ouvrir une compréhension plus grande de la personne, de l'amour et de sa vocation.</p>
           </div>
         </div>
       </div>
@@ -517,10 +622,11 @@
           <div class="card-head">
             <h2 class="display">Expérimenter</h2>
             <span class="time">53–73 min · durée 20 min</span>
+            <span class="soul-move">Mettre à l'épreuve</span>
           </div>
           <div class="question">Qu'est-ce que ça change concrètement ?</div>
           <div class="body">
-            <p>Une mise en situation, un jeu de rôle ou un exercice, pour mettre le repère à l'épreuve.</p>
+            <p>Une mise en situation, un jeu de rôle ou un exercice, pour découvrir qu'une vérité sur l'amour peut se vivre, et pas seulement se penser.</p>
           </div>
         </div>
       </div>
@@ -531,10 +637,11 @@
           <div class="card-head">
             <h2 class="display">Partager</h2>
             <span class="time">73–85 min · durée 12 min</span>
+            <span class="soul-move">Discerner</span>
           </div>
           <div class="question">Qu'est-ce que je découvre ?</div>
           <div class="body">
-            <p>Partage de ce qu'on en tire en binômes / trinômes / petits groupes stables — ou sous forme d'écriture personnelle avec un bref partage à la fin.</p>
+            <p>Partage de ce qu'on en tire en binômes / trinômes / petits groupes stables — ou sous forme d'écriture personnelle avec un bref partage à la fin. Un temps pour relire et discerner ce qui s'est passé en soi.</p>
           </div>
         </div>
       </div>
@@ -545,10 +652,11 @@
           <div class="card-head">
             <h2 class="display">Oser</h2>
             <span class="time">85–90 min · durée 5 min</span>
+            <span class="soul-move">Répondre</span>
           </div>
           <div class="question">Qu'est-ce que j'en fais cette semaine ?</div>
           <div class="body">
-            <p>Une petite action concrète — objectif <b>SMART</b>, lié au thème : Spécifique, Manifeste, Atteignable, Réaliste, Temporellement défini.</p>
+            <p>Une petite action concrète — objectif <b>SMART</b>, lié au thème : Spécifique, Manifeste, Atteignable, Réaliste, Temporellement défini. Une réponse libre, posée dans la vie réelle.</p>
           </div>
         </div>
       </div>
@@ -557,7 +665,7 @@
   </div>
 
   <div class="content" style="padding-top:8px;">
-    <p class="section-tag" style="margin-top:10px;">05 · Qui porte les rencontres</p>
+    <p class="section-tag" style="margin-top:10px;" id="role">06 · Qui porte les rencontres</p>
     <h2 class="display">Le rôle de l'accompagnateur jeune</h2>
     <p class="h2-note">Chaque accompagnateur prend en charge un thème du parcours, et contribue à tous les autres.</p>
     <div class="role-grid">
@@ -585,7 +693,7 @@
 
   <footer>
     <span style="display:flex; align-items:center; gap:10px;">
-      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQyIiBoZWlnaHQ9IjE3NCIgdmlld0JveD0iMCAwIDM0MiAxNzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6YzJwYT0iaHR0cDovL2MycGEub3JnL21hbmlmZXN0Ij4KPGcgc3Ryb2tlPSIjRkY1QTM2IiBzdHJva2Utd2lkdGg9IjcuNjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CjxsaW5lIHgxPSI4OC4wMCIgeTE9IjIzLjYzIiB4Mj0iODguMDAiIHkyPSI0Mi44MyIvPgo8bGluZSB4MT0iODguMDAiIHkxPSIxMjkuMjMiIHgyPSI4OC4wMCIgeTI9IjE0OC40MyIvPgo8bGluZSB4MT0iMjUuNjAiIHkxPSI4Ni4wMyIgeDI9IjQ0LjgwIiB5Mj0iODYuMDMiLz4KPGxpbmUgeDE9IjEzMS4yMCIgeTE9Ijg2LjAzIiB4Mj0iMTUwLjQwIiB5Mj0iODYuMDMiLz4KPGxpbmUgeDE9IjQ0LjgwIiB5MT0iNDIuODMiIHgyPSI1Ny42MCIgeTI9IjU1LjYzIi8+CjxsaW5lIHgxPSIxMTguNDAiIHkxPSIxMTYuNDMiIHgyPSIxMzEuMjAiIHkyPSIxMjkuMjMiLz4KPGxpbmUgeDE9IjEzMS4yMCIgeTE9IjQyLjgzIiB4Mj0iMTE4LjQwIiB5Mj0iNTUuNjMiLz4KPGxpbmUgeDE9IjU3LjYwIiB5MT0iMTE2LjQzIiB4Mj0iNDQuODAiIHkyPSIxMjkuMjMiLz4KPC9nPgo8Y2lyY2xlIGN4PSI4OC4wMCIgY3k9Ijg2LjAzIiByPSIyOC44MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjguOTYiLz4KPGxpbmUgeDE9Ijg4LjAwIiB5MT0iNjUuMjMiIHgyPSI4OC4wMCIgeTI9IjEwNi44MyIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjcuNjgiLz4KPGxpbmUgeDE9IjcwLjQwIiB5MT0iODYuMDMiIHgyPSIxMDUuNjAiIHkyPSI4Ni4wMyIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjcuNjgiLz4KPGcgZmlsbD0iIzE0MjEzRCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg2LjAwLDEwMy4wNikiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMCwwKSBzY2FsZSgwLjA0NDkyMiwtMC4wNDQ5MjIpIj48cGF0aCBkPSJNNDg4IC0xNlEyOTcgLTE2IDE4MC41IDEwMy4wUTY0IDIyMiA2NCA0MzZWMTI0OFE2NCAxNTA0IDE2NS41IDE2NDAuMFEyNjcgMTc3NiA0OTYgMTc3NlE2MjEgMTc3NiA3MTguNSAxNzMwLjBRODE2IDE2ODQgODcyLjAgMTU5Mi41UTkyOCAxNTAxIDkyOCAxMzYyVjEwNThINTc4VjEzMThRNTc4IDEzOTcgNTU4LjAgMTQyNC41UTUzOCAxNDUyIDQ5NiAxNDUyUTQ0NyAxNDUyIDQzMC4wIDE0MTYuNVE0MTMgMTM4MSA0MTMgMTMyMlY0NDFRNDEzIDM2OCA0MzQuNSAzMzguMFE0NTYgMzA4IDQ5NiAzMDhRNTQxIDMwOCA1NTkuNSAzNDUuMFE1NzggMzgyIDU3OCA0NDFWNzU4SDkzMlY0MjVROTMyIDE5MyA4MTUuMCA4OC41UTY5OCAtMTYgNDg4IC0xNloiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDQ0LjUzOSwwKSBzY2FsZSgwLjA0NDkyMiwtMC4wNDQ5MjIpIj48cGF0aCBkPSJNNDk4IC0xNlEyODcgLTE2IDE3NS41IDExMS41UTY0IDIzOSA2NCA0ODBWMTMxNlE2NCAxNTQyIDE3NC41IDE2NTkuMFEyODUgMTc3NiA0OTggMTc3NlE3MTEgMTc3NiA4MjEuNSAxNjU5LjBROTMyIDE1NDIgOTMyIDEzMTZWNDgwUTkzMiAyMzkgODIwLjUgMTExLjVRNzA5IC0xNiA0OTggLTE2Wk01MDEgMzA4UTU4MSAzMDggNTgxIDQ2M1YxMzIyUTU4MSAxNDUyIDUwMyAxNDUyUTQxNSAxNDUyIDQxNSAxMzE5VjQ2MVE0MTUgMzc5IDQzNS4wIDM0My41UTQ1NSAzMDggNTAxIDMwOFoiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDkwLjIwMSwwKSBzY2FsZSgwLjA0NDkyMiwtMC4wNDQ5MjIpIj48cGF0aCBkPSJNNzggMFYxNzYwSDYxOFE3NTMgMTc2MCA4MjIuMCAxNjk4LjVRODkxIDE2MzcgOTE0LjUgMTUyNi41UTkzOCAxNDE2IDkzOCAxMjY3UTkzOCAxMTIzIDkwMS41IDEwMzcuMFE4NjUgOTUxIDc2NCA5MThRODQ3IDkwMSA4ODAuNSA4MzUuNVE5MTQgNzcwIDkxNCA2NjZWMEg1NjdWNjg5UTU2NyA3NjYgNTM1LjUgNzg0LjVRNTA0IDgwMyA0MzQgODAzVjBaTTQzNiAxMTA4SDUyMVE1OTQgMTEwOCA1OTQgMTI2N1E1OTQgMTM3MCA1NzguMCAxNDAyLjBRNTYyIDE0MzQgNTE4IDE0MzRINDM2WiIvPjwvZz4KPC9nPgo8ZyBmaWxsPSIjRkY1QTM2IiB0cmFuc2Zvcm09InRyYW5zbGF0ZSgyMTIuMzksMTQ4LjA2KSI+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDAuMDAwLDApIHNjYWxlKDAuMDMwMDAwLC0wLjAzMDAwMCkiPjxwYXRoIGQ9Ik0xNTIgMFY2MDZMMzIgNTc2VjYzNkwxODAgNzAwSDIzN1YwWiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTIuMzYwLDApIHNjYWxlKDAuMDMwMDAwLC0wLjAzMDAwMCkiPjxwYXRoIGQ9Ik0zOTIgMFYxNTBIMzdWMjE1TDM3NyA3MDBINDc1VjIyNEg1NzlWMTUwSDQ3NVYwWk0xMzAgMjI0SDM5NlY2MDdaIi8+PC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgzMy41NzAsMCkgc2NhbGUoMC4wMzAwMDAsLTAuMDMwMDAwKSI+PHBhdGggZD0iTTcyIDI2MFYzMzFINDY4VjI2MFoiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDUyLjgwMCwwKSBzY2FsZSgwLjAzMDAwMCwtMC4wMzAwMDApIj48cGF0aCBkPSJNMTUyIDBWNjA2TDMyIDU3NlY2MzZMMTgwIDcwMEgyMzdWMFoiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDY1LjE2MCwwKSBzY2FsZSgwLjAzMDAwMCwtMC4wMzAwMDApIj48cGF0aCBkPSJNMzA0IC0xMlEyMzYgLTEyIDE4Mi4wIDEzLjVRMTI4IDM5IDk2LjAgODQuNVE2NCAxMzAgNjQgMTkwUTY0IDIzMyA4MS4wIDI3MC4wUTk4IDMwNyAxMjguNSAzMzQuNVExNTkgMzYyIDE5OSAzNzNRMTQzIDM5MyAxMTIuNSA0MzUuMFE4MiA0NzcgODIgNTI2UTgyIDU3OCAxMDkuMCA2MjAuMFExMzYgNjYyIDE4NS41IDY4Ny4wUTIzNSA3MTIgMzA0IDcxMlEzNzQgNzEyIDQyMy41IDY4Ny4wUTQ3MyA2NjIgNDk5LjUgNjIwLjBRNTI2IDU3OCA1MjYgNTI2UTUyNiA0NzcgNDk1LjUgNDM1LjBRNDY1IDM5MyA0MDkgMzczUTQ1MCAzNjIgNDgwLjUgMzM0LjVRNTExIDMwNyA1MjcuNSAyNzAuMFE1NDQgMjMzIDU0NCAxOTBRNTQ0IDEzMCA1MTIuNSA4NC41UTQ4MSAzOSA0MjYuNSAxMy41UTM3MiAtMTIgMzA0IC0xMlpNMzA0IDYyUTM4MyA2MiA0MjEuNSA5OC41UTQ2MCAxMzUgNDYwIDE5NVE0NjAgMjYzIDQxNy41IDI5OC4wUTM3NSAzMzMgMzA0IDMzM1EyMzMgMzMzIDE5MC41IDI5OC4wUTE0OCAyNjMgMTQ4IDE5NVExNDggMTM1IDE4Ny4wIDk4LjVRMjI2IDYyIDMwNCA2MlpNMzA0IDQwM1EzNjcgNDAzIDQwNC4wIDQzNi4wUTQ0MSA0NjkgNDQxIDUyMVE0NDEgNTgwIDQwNC41IDYxMC4wUTM2OCA2NDAgMzA0IDY0MFEyNDEgNjQwIDIwNC41IDYxMC4wUTE2OCA1ODAgMTY4IDUyMVExNjggNDY5IDIwNC41IDQzNi4wUTI0MSA0MDMgMzA0IDQwM1oiLz48L2c+CjwvZz4KPC9zdmc+" alt="COR 14-18" style="height:22px; width:auto; display:block;">
+      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQyIiBoZWlnaHQ9IjE3NCIgdmlld0JveD0iMCAwIDM0MiAxNzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6YzJwYT0iaHR0cDovL2MycGEub3JnL21hbmlmZXN0Ij4KPGcgc3Ryb2tlPSIjRkY1QTM2IiBzdHJva2Utd2lkdGg9IjcuNjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CjxsaW5lIHgxPSI4OC4wMCIgeTE9IjIzLjYzIiB4Mj0iODguMDAiIHkyPSI0Mi44MyIvPgo8bGluZSB4MT0iODguMDAiIHkxPSIxMjkuMjMiIHgyPSI4OC4wMCIgeTI9IjE0OC40MyIvPgo8bGluZSB4MT0iMjUuNjAiIHkxPSI4Ni4wMyIgeDI9IjQ0LjgwIiB5Mj0iODYuMDMiLz4KPGxpbmUgeDE9IjEzMS4yMCIgeTE9Ijg2LjAzIiB4Mj0iMTUwLjQwIiB5Mj0iODYuMDMiLz4KPGxpbmUgeDE9IjQ0LjgwIiB5MT0iNDIuODMiIHgyPSI1Ny42MCIgeTI9IjU1LjYzIi8+CjxsaW5lIHgxPSIxMTguNDAiIHkxPSIxMTYuNDMiIHgyPSIxMzEuMjAiIHkyPSIxMjkuMjMiLz4KPGxpbmUgeDE9IjEzMS4yMCIgeTE9IjQyLjgzIiB4Mj0iMTE4LjQwIiB5Mj0iNTUuNjMiLz4KPGxpbmUgeDE9IjU3LjYwIiB5MT0iMTE2LjQzIiB4Mj0iNDQuODAiIHkyPSIxMjkuMjMiLz4KPC9nPgo8Y2lyY2xlIGN4PSI4OC4wMCIgY3k9Ijg2LjAzIiByPSIyOC44MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjguOTYiLz4KPGxpbmUgeDE9Ijg4LjAwIiB5MT0iNjUuMjMiIHgyPSI4OC4wMCIgeTI9IjEwNi44MyIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjcuNjgiLz4KPGxpbmUgeDE9IjcwLjQwIiB5MT0iODYuMDMiIHgyPSIxMDUuNjAiIHkyPSI4Ni4wMyIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjcuNjgiLz4KPGcgZmlsbD0iIzE0MjEzRCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg2LjAwLDEwMy4wNikiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMCwwKSBzY2FsZSgwLjA0NDkyMiwtMC4wNDQ5MjIpIj48cGF0aCBkPSJNNDg4IC0xNlEyOTcgLTE2IDE4MC41IDEwMy4wUTY0IDIyMiA2NCA0MzZWMTI0OFExNjQgMTQwNC41UTI2NyAxNzc2IDQ5NiAxNzc2UTYyMSAxNzc2IDcxOC41IDE3MzAuMFE4MTYgMTY4NCA4NzIuMCAxNTkyLjVROTI4IDE1MDEgOTI4IDEzNjJWMTA1OEg1NzhWMTMxOFE1NzggMTM5NyA1NTguMCAxNDI0LjVRNTM4IDE0NTIgNDk2IDE0NTJRNDQ3IDE0NTIgNDMwLjAgMTQxNi41UTQxMyAxMzgxIDQxMyAxMzIyVjQ0MVE0MTMgMzY4IDQzNC41IDMzOC4wUTQ1NiAzMDggNDk2IDMwOFE1NDEgMzA4IDU1OS41IDM0NS4wUTU3OCAzODIgNTc4IDQ0MVY3NThIOTMyVjQyNVE5MzIgMTkzIDgxNS4wIDg4LjVRNjk4IC0xNiA0ODggLTE2WiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDQuNTM5LDApIHNjYWxlKDAuMDQ0OTIyLC0wLjA0NDkyMikiPjxwYXRoIGQ9Ik00OTggLTE2UTI4NyAtMTYgMTc1LjUgMTExLjVRNjQgMjM5IDY0IDQ4MFYxMzE2UTY0IDE1NDIgMTc0LjUgMTY1OS4wUTI4NSAxNzc2IDQ5OCAxNzc2UTcxMSAxNzc2IDgyMS41IDE2NTkuMFE5MzIgMTU0MiA5MzIgMTMxNlY0ODBROTMyIDIzOSA4MjAuNSAxMTEuNVE3MDkgLTE2IDQ5OCAtMTZaTTUwMSAzMDhRNTgxIDMwOCA1ODEgNDYzVjEzMjJRNTgxIDE0NTIgNTAzIDE0NTJRNDE1IDE0NTIgNDE1IDEzMTlWNDYxUTQxNSAzNzkgNDM1LjAgMzQzLjVRNDU1IDMwOCA1MDEgMzA4WiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTAuMjAxLDApIHNjYWxlKDAuMDQ0OTIyLC0wLjA0NDkyMikiPjxwYXRoIGQ9Ik03OCAwVjE3NjBINjE4UTc1MyAxNzYwIDgyMi4wIDE2OTguNVE4OTEgMTYzNyA5MTQuNSAxNTI2LjVROTM4IDE0MTYgOTM4IDEyNjdROTM4IDExMjMgOTAxLjUgMTAzNy4wUTg2NSA5NTEgNzY0IDkxOFE4NDcgOTAxIDg4MC41IDgzNS41UTkxNCA3NzAgOTE0IDY2NlYwSDU2N1Y2ODlRNTY3IDc2NiA1MzUuNSA3ODQuNVE1MDQgODAzIDQzNCA4MDNWMFpNNDM2IDExMDhINTIxUTU5NCAxMTA4IDU5NCAxMjY3UTU5NCAxMzcwIDU3OC4wIDE0MDIuMFE1NjIgMTQzNCA1MTggMTQzNEg0MzZaIi8+PC9nPgo8L2c+CjxnIGZpbGw9IiNGRjVBMzYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIxMi4zOSwxNDguMDYpIj4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAsMCkgc2NhbGUoMC4wMzAwMDAsLTAuMDMwMDAwKSI+PHBhdGggZD0iTTE1MiAwVjYwNkwzMiA1NzZWNjM2TDE4MCA3MDBIMjM3VjBaIi8+PC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMi4zNjAsMCkgc2NhbGUoMC4wMzAwMDAsLTAuMDMwMDAwKSI+PHBhdGggZD0iTTM5MiAwVjE1MEgzN1YyMTVMMzc3IDcwMEg0NzVWMjI0SDU3OVYxNTBINDc1VjBaTTEzMCAyMjRIMzk2VjYwN1oiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzLjU3MCwwKSBzY2FsZSgwLjAzMDAwMCwtMC4wMzAwMDApIj48cGF0aCBkPSJNNzIgMjYwVjMzMUg0NjhWMjYwWiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTIuODAwLDApIHNjYWxlKDAuMDMwMDAwLC0wLjAzMDAwMCkiPjxwYXRoIGQ9Ik0xNTIgMFY2MDZMMzIgNTc2VjYzNkwxODAgNzAwSDIzN1YwWiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjUuMTYwLDApIHNjYWxlKDAuMDMwMDAwLC0wLjAzMDAwMCkiPjxwYXRoIGQ9Ik0zMDQgLTEyUTIzNiAtMTIgMTgyLjAgMTMuNVExMjggMzkgOTYuMCA4NC41UTY0IDEzMCA2NCAxOTBRNjQgMjMzIDgxLjAgMjcwLjBROTggMzA3IDEyOC41IDMzNC41UTE1OSAzNjIgMTk5IDM3M1ExNDMgMzkzIDExMi41IDQzNS4wUTgyIDQ3NyA4MiA1MjZROTQgNTc4IDEwOS4wIDYyMC4wUTEzNiA2NjIgMTg1LjUgNjg3LjBRMjM1IDcxMiAzMDQgNzEyUTM3NCA3MTIgNDIzLjUgNjg3LjBRNDczIDY2MiA0OTkuNSA2MjAuMFE1MjYgNTc4IDUyNiA1MjZRNTI2IDQ3NyA0OTUuNSA0MzUuMFE0NjUgMzkzIDQwOSAzNzNRNDUwIDM2MiA0ODAuNSAzMzQuNVE1MTEgMzA3IDUyNy41IDI3MC4wUTU0NCAyMzMgNTQ0IDE5MFE1NDQgMTMwIDUxMi41IDg0LjVRNDgxIDM5IDQyNi41IDEzLjVRMzcyIC0xMiAzMDQgLTEyWk0zMDQgNjJRMzgzIDYyIDQyMS41IDk4LjVRNDYwIDEzNSA0NjAgMTk1UTQ2MCAyNjMgNDE3LjUgMjk4LjBRMzc1IDMzMyAzMDQgMzMzUTIzMyAzMzMgMTkwLjUgMjk4LjBRMTQ4IDI2MyAxNDggMTk1UTE0OCAxMzUgMTg3LjAgOTguNVEyMjYgNjIgMzA0IDYyWk0zMDQgNDAzUTM2NyA0MDMgNDA0LjAgNDM2LjBRNDQxIDQ2OSA0NDEgNTIxUTQ0MSA1ODAgNDA0LjUgNjEwLjBRMzY4IDY0MCAzMDQgNjQwUTI0MSA2NDAgMjA0LjUgNjEwLjBRMTY4IDU4MCAxNjggNTIxUTE2OCA0NjkgMjA0LjUgNDM2LjBRMjQxIDQwMyAzMDQgNDAzWiIvPjwvZz4KPC9nPgo8L3N2Zz4=" alt="COR 14-18" style="height:22px; width:auto; display:block;">
       aimerengrand · cor1418.org
     </span>
     <span>Vue d'ensemble du parcours</span>
