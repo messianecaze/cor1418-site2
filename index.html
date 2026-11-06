@@ -135,6 +135,17 @@
     display:block; margin-top: 0.8rem; font-style:normal; font-size: 11px;
     color: var(--gris); letter-spacing: 0.05em; text-transform: uppercase;
   }
+  /* ===== PRESSE ===== */
+  .press-band { background: var(--nuit); padding: 2.2rem 3rem; }
+  .press-inner { max-width: 1000px; margin: 0 auto; display:flex; align-items:center; gap: 2rem; flex-wrap: wrap; }
+  .press-label { font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--flamme); flex-shrink:0; }
+  .press-body { flex: 1 1 420px; color: #EDEBE4; }
+  .press-source { font-size: 11px; letter-spacing: 0.06em; text-transform: uppercase; color: #A8A398; margin-bottom: 0.35rem; }
+  .press-title { font-family: 'Anton', sans-serif; font-size: clamp(1.2rem, 2.4vw, 1.6rem); text-transform: uppercase; color: var(--blanc); line-height: 1.15; margin-bottom: 0.5rem; }
+  .press-quote { font-family: Georgia, serif; font-style: italic; font-size: 14.5px; color: #C9C4B6; }
+  .press-link { flex-shrink:0; background: var(--flamme); color:#fff; padding: 12px 22px; border-radius: 4px; font-family:'Anton',sans-serif; font-size: 13px; letter-spacing:0.02em; text-transform: uppercase; }
+  .press-link:hover { background:#E5491F; }
+  @media (max-width: 720px) { .press-band { padding: 2rem 1.3rem; } .press-inner { gap: 1rem; } }
   /* ===== SECTION SHELL ===== */
   .section-wrap { background: var(--blanc); }
   .section-wrap.alt { background: var(--papier); }
@@ -337,6 +348,18 @@
   <div class="quote-item">
     <blockquote>« L'homme ne peut vivre sans amour. [...] Sa vie est privée de sens s'il ne reçoit pas la révélation de l'amour.»</blockquote>
     <cite>- Jean-Paul II</cite>
+  </div>
+</div>
+<!-- PRESSE -->
+<div class="press-band">
+  <div class="press-inner">
+    <p class="press-label">Ils parlent de nous</p>
+    <div class="press-body">
+      <p class="press-source">Aleteia · Clotilde Fournier · 31 octobre 2026</p>
+      <p class="press-title">Ces initiatives offrent aux jeunes les bases d'une vie affective et relationnelle réussie</p>
+      <p class="press-quote">Aimer en Grand veut « offrir un lieu où la relation prend le risque d'être réelle ».</p>
+    </div>
+    <a href="https://fr.aleteia.org/2026/10/31/ces-initiatives-offrent-aux-jeunes-les-bases-dune-vie-affective-et-relationnelle-reussie/" class="press-link" target="_blank" rel="noopener">Lire l'article →</a>
   </div>
 </div>
 <!-- LE PARCOURS -->
