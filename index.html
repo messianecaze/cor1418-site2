@@ -92,6 +92,11 @@
     background: linear-gradient(180deg, rgba(20,33,61,0.10) 0%, rgba(20,33,61,0.35) 55%, rgba(20,33,61,0.94) 100%);
   }
   .hero-inner { position:relative; z-index:2; max-width: 780px; padding: 0 3rem 4rem; }
+  .press-badge { display:inline-flex; align-items:center; gap:0.55rem; margin-bottom: 1.1rem; background: rgba(250,250,247,0.95); color: var(--nuit); padding: 7px 14px 7px 8px; border-radius: 999px; font-size: 13px; font-weight: 600; box-shadow: 0 4px 18px rgba(20,33,61,0.25); }
+  .press-badge-tag { background: var(--flamme); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
+  .press-badge strong { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; }
+  .press-badge:hover { background: #fff; }
+  #presse { scroll-margin-top: 80px; }
   .hero-label {
     font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
     color: var(--flamme); margin-bottom: 0.8rem;
@@ -338,6 +343,7 @@
 <div class="hero">
   <img src="assets/hero.jpg" alt="Deux jeunes au sommet, lever de soleil sur les Alpes et croix de sommet">
   <div class="hero-inner">
+    <a href="#presse" class="press-badge"><span class="press-badge-tag">Presse</span><span>Aimer en Grand dans <strong>Aleteia</strong> ↓</span></a>
     <p class="hero-label">Aimer en Grand · 14-18 ans · Parcours Pilote UP Lausanne Nord </p>
     <h1>Un parcours pour<br>vivre nos relations en grand</h1>
     <div class="hero-sub-wrap">
@@ -362,7 +368,7 @@
   </div>
 </div>
 <!-- PRESSE -->
-<section class="press-band" aria-label="Ils parlent de nous">
+<section class="press-band" id="presse" aria-label="Ils parlent de nous">
   <div class="press-inner">
     <h2 class="press-kicker">Ils parlent de nous</h2>
     <div class="press-card">
