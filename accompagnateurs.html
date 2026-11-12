@@ -5,17 +5,17 @@
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root{
-    --nuit:#14213D;
-    --nuit-2:#1c2c50;
-    --flamme:#FF5A36;
-    --rose:#FF8FA3;
-    --papier:#FAFAF7;
-    --encre:#1A1A1A;
-    --gris:#6B6B6B;
-    --card-border:#e8e6df;
+    --nuit:#24388A;
+    --nuit-2:#2E4C86;
+    --flamme:#C8402F;
+    --rose:#DDAE52;
+    --papier:#FBF8F2;
+    --encre:#2B2A33;
+    --gris:#625E6B;
+    --card-border:#E8E1D4;
     --bg: var(--papier);
     --fg: var(--encre);
   }
@@ -35,16 +35,12 @@
   body{
     background:var(--bg);
     color:var(--fg);
-    font-family:"DM Sans", -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    font-family:'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
     line-height:1.5;
     -webkit-font-smoothing:antialiased;
   }
   .display{
-    font-family:"Anton", "Arial Black", sans-serif;
-    font-weight:400;
-    letter-spacing:0.01em;
-    text-transform:uppercase;
-  }
+    font-family:'Fraunces', Georgia, serif; font-weight:700; }
 
   .page{
     max-width:1180px;
@@ -56,7 +52,7 @@
   header.hero{
     background:var(--nuit);
     background-image:
-      radial-gradient(ellipse 900px 400px at 15% -20%, rgba(255,90,54,0.20), transparent 60%),
+      radial-gradient(ellipse 900px 400px at 15% -20%, rgba(200,64,47,0.20), transparent 60%),
       linear-gradient(180deg, var(--nuit) 0%, var(--nuit-2) 100%);
     color:#fff;
     padding:44px 48px 32px 48px;
@@ -65,7 +61,7 @@
   }
   header.hero .eyebrow{
     color:var(--flamme);
-    font-family:"DM Sans", sans-serif;
+    font-family:'Inter', sans-serif;
     font-weight:700;
     letter-spacing:0.14em;
     text-transform:uppercase;
@@ -79,21 +75,21 @@
   }
   .catho-tag{
     display:inline-block;
-    font-family:"DM Sans", sans-serif;
+    font-family:'Inter', sans-serif;
     font-weight:700;
     letter-spacing:0.08em;
     text-transform:uppercase;
     font-size:12px;
     color:#fff;
-    background:rgba(255,90,54,0.20);
-    border:1px solid rgba(255,90,54,0.55);
+    background:rgba(200,64,47,0.20);
+    border:1px solid rgba(200,64,47,0.55);
     padding:5px 12px;
     border-radius:20px;
     margin:0 0 14px 0;
   }
   header.hero p.sub{
-    font-family:"DM Sans", sans-serif;
-    color:#c9cedb;
+    font-family:'Inter', sans-serif;
+    color:#D3D9EE;
     font-size:16px;
     margin:0;
     max-width:660px;
@@ -107,7 +103,7 @@
     z-index:1;
   }
   .hero-nav a{
-    font-family:"DM Sans", sans-serif;
+    font-family:'Inter', sans-serif;
     font-weight:700;
     font-size:12.5px;
     letter-spacing:0.02em;
@@ -163,17 +159,16 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    font-family:"Anton", sans-serif;
+    font-family:'Inter', system-ui, sans-serif;
     font-size:22px;
-    box-shadow:0 4px 14px rgba(255,90,54,0.35);
-    border:4px solid var(--papier);
-  }
+    box-shadow:0 4px 14px rgba(200,64,47,0.35);
+    border:4px solid var(--papier); font-weight:800; letter-spacing:0.06em; }
   .card{
     background:#fff;
     border:1px solid var(--card-border);
     border-radius:14px;
     overflow:hidden;
-    box-shadow:0 1px 3px rgba(20,33,61,0.06);
+    box-shadow:0 1px 3px rgba(36,56,138,0.06);
   }
   .card .card-head{
     background:var(--nuit);
@@ -191,14 +186,14 @@
     letter-spacing:0.02em;
   }
   .card .card-head .time{
-    font-family:"DM Sans", sans-serif;
+    font-family:'Inter', sans-serif;
     font-weight:500;
-    color:#c9cedb;
+    color:#D3D9EE;
     font-size:13px;
     text-transform:none;
   }
   .card .card-head .soul-move{
-    font-family:"DM Sans", sans-serif;
+    font-family:'Inter', sans-serif;
     font-weight:700;
     letter-spacing:0.07em;
     text-transform:uppercase;
@@ -210,7 +205,7 @@
     font-family:Georgia, "Times New Roman", serif;
     font-style:italic;
     color:var(--flamme);
-    background:#fff5f2;
+    background:#F4EEE1;
     padding:10px 22px;
     font-size:15px;
     border-bottom:1px solid var(--card-border);
@@ -237,12 +232,11 @@
     display:inline-block;
     background:var(--flamme);
     color:#fff;
-    font-family:"Anton", sans-serif;
+    font-family:'Fraunces', Georgia, serif;
     font-size:11px;
     padding:2px 7px;
     border-radius:3px;
-    margin-right:6px;
-  }
+    margin-right:6px; font-weight:700; }
 
   footer{
     padding:18px 48px 0 48px;
@@ -272,7 +266,7 @@
     margin:34px 0 6px 0;
   }
   .content .h2-note{
-    font-family:"DM Sans", sans-serif;
+    font-family:'Inter', sans-serif;
     font-size:13.5px;
     color:var(--gris);
     margin:0 0 18px 0;
@@ -292,12 +286,11 @@
     padding:16px 18px;
   }
   .stat .num{
-    font-family:"Anton", sans-serif;
+    font-family:'Fraunces', Georgia, serif;
     font-size:22px;
     color:var(--nuit);
     line-height:1.1;
-    margin-bottom:6px;
-  }
+    margin-bottom:6px; font-weight:700; }
   .stat .desc{
     font-size:13px;
     color:var(--gris);
@@ -320,15 +313,12 @@
     border:1px solid var(--card-border);
     border-radius:14px;
     overflow:hidden;
-    box-shadow:0 1px 3px rgba(20,33,61,0.06);
+    box-shadow:0 1px 3px rgba(36,56,138,0.06);
   }
   .role-card .rc-head{
     padding:13px 20px;
-    font-family:"Anton", sans-serif;
-    font-size:16px;
-    letter-spacing:0.01em;
-    text-transform:uppercase;
-  }
+    font-family:'Fraunces', Georgia, serif;
+    font-size:16px; font-weight:700; }
   .role-card.mine .rc-head{ background:var(--flamme); color:#fff; }
   .role-card.others .rc-head{ background:var(--nuit); color:#fff; }
   .role-card .rc-body{ padding:16px 20px 18px 20px; }
@@ -349,7 +339,7 @@
 
   /* Revelation motif — the "life → question → light → discernment → free response" line */
   .revelation-line{
-    font-family:"Anton", sans-serif;
+    font-family:'Fraunces', Georgia, serif;
     font-size:clamp(12.5px, 2vw, 18px);
     color:var(--nuit);
     background:#fff;
@@ -357,15 +347,14 @@
     border-left:4px solid var(--flamme);
     border-radius:0 10px 10px 0;
     padding:16px 22px;
-    letter-spacing:0.01em;
+    
     line-height:1.7;
-    margin:14px 0 4px 0;
-  }
+    margin:14px 0 4px 0; font-weight:700; }
   .sacred-quote{
     font-family:Georgia, "Times New Roman", serif;
     font-style:italic;
     color:var(--nuit);
-    background:#fff5f2;
+    background:#F4EEE1;
     border-left:3px solid var(--flamme);
     border-radius:0 10px 10px 0;
     padding:14px 22px;
@@ -376,7 +365,7 @@
   }
   .sacred-quote .attr{
     display:block;
-    font-family:"DM Sans", sans-serif;
+    font-family:'Inter', sans-serif;
     font-style:normal;
     font-weight:700;
     color:var(--gris);
@@ -400,7 +389,7 @@
     .card .card-head .soul-move{ margin-left:0; }
   }
   .section-tag{
-    font-family:"DM Sans", sans-serif;
+    font-family:'Inter', sans-serif;
     font-weight:700;
     letter-spacing:0.1em;
     text-transform:uppercase;
@@ -433,9 +422,8 @@
     display:flex;
     align-items:center;
     justify-content:center;
-    font-family:"Anton", sans-serif;
-    font-size:13px;
-  }
+    font-family:'Fraunces', Georgia, serif;
+    font-size:13px; font-weight:700; }
   .theme-title{
     font-size:14.5px;
     font-weight:700;
@@ -457,9 +445,6 @@
 <div class="page">
 
   <header class="hero">
-    <svg class="trailtop" viewBox="0 0 300 300" xmlns="http://www.w3.org/2000/svg">
-      <path d="M10 280 Q 90 220 70 160 Q 50 100 130 90 Q 210 80 190 20" stroke="#FF5A36" stroke-width="4" fill="none" stroke-dasharray="2 14" stroke-linecap="round"/>
-    </svg>
     <div class="eyebrow">Aimer en Grand · Vue d'ensemble</div>
     <h1 class="display">Aimer en Grand</h1>
     <p class="catho-tag">Un parcours catholique pour les 14–18 ans</p>
@@ -691,7 +676,7 @@
 
   <footer>
     <span style="display:flex; align-items:center; gap:10px;">
-      <img src="data:image/svg+xml;base64,PHN2ZyB3aWR0aD0iMzQyIiBoZWlnaHQ9IjE3NCIgdmlld0JveD0iMCAwIDM0MiAxNzQiIHhtbG5zPSJodHRwOi8vd3d3LnczLm9yZy8yMDAwL3N2ZyIgeG1sbnM6YzJwYT0iaHR0cDovL2MycGEub3JnL21hbmlmZXN0Ij4KPGcgc3Ryb2tlPSIjRkY1QTM2IiBzdHJva2Utd2lkdGg9IjcuNjgiIHN0cm9rZS1saW5lY2FwPSJyb3VuZCI+CjxsaW5lIHgxPSI4OC4wMCIgeTE9IjIzLjYzIiB4Mj0iODguMDAiIHkyPSI0Mi44MyIvPgo8bGluZSB4MT0iODguMDAiIHkxPSIxMjkuMjMiIHgyPSI4OC4wMCIgeTI9IjE0OC40MyIvPgo8bGluZSB4MT0iMjUuNjAiIHkxPSI4Ni4wMyIgeDI9IjQ0LjgwIiB5Mj0iODYuMDMiLz4KPGxpbmUgeDE9IjEzMS4yMCIgeTE9Ijg2LjAzIiB4Mj0iMTUwLjQwIiB5Mj0iODYuMDMiLz4KPGxpbmUgeDE9IjQ0LjgwIiB5MT0iNDIuODMiIHgyPSI1Ny42MCIgeTI9IjU1LjYzIi8+CjxsaW5lIHgxPSIxMTguNDAiIHkxPSIxMTYuNDMiIHgyPSIxMzEuMjAiIHkyPSIxMjkuMjMiLz4KPGxpbmUgeDE9IjEzMS4yMCIgeTE9IjQyLjgzIiB4Mj0iMTE4LjQwIiB5Mj0iNTUuNjMiLz4KPGxpbmUgeDE9IjU3LjYwIiB5MT0iMTE2LjQzIiB4Mj0iNDQuODAiIHkyPSIxMjkuMjMiLz4KPC9nPgo8Y2lyY2xlIGN4PSI4OC4wMCIgY3k9Ijg2LjAzIiByPSIyOC44MCIgZmlsbD0ibm9uZSIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjguOTYiLz4KPGxpbmUgeDE9Ijg4LjAwIiB5MT0iNjUuMjMiIHgyPSI4OC4wMCIgeTI9IjEwNi44MyIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjcuNjgiLz4KPGxpbmUgeDE9IjcwLjQwIiB5MT0iODYuMDMiIHgyPSIxMDUuNjAiIHkyPSI4Ni4wMyIgc3Ryb2tlPSIjMTQyMTNEIiBzdHJva2Utd2lkdGg9IjcuNjgiLz4KPGcgZmlsbD0iIzE0MjEzRCIgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMTg2LjAwLDEwMy4wNikiPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgwLjAwMCwwKSBzY2FsZSgwLjA0NDkyMiwtMC4wNDQ5MjIpIj48cGF0aCBkPSJNNDg4IC0xNlEyOTcgLTE2IDE4MC41IDEwMy4wUTY0IDIyMiA2NCA0MzZWMTI0OFExNjQgMTQwNC41UTI2NyAxNzc2IDQ5NiAxNzc2UTYyMSAxNzc2IDcxOC41IDE3MzAuMFE4MTYgMTY4NCA4NzIuMCAxNTkyLjVROTI4IDE1MDEgOTI4IDEzNjJWMTA1OEg1NzhWMTMxOFE1NzggMTM5NyA1NTguMCAxNDI0LjVRNTM4IDE0NTIgNDk2IDE0NTJRNDQ3IDE0NTIgNDMwLjAgMTQxNi41UTQxMyAxMzgxIDQxMyAxMzIyVjQ0MVE0MTMgMzY4IDQzNC41IDMzOC4wUTQ1NiAzMDggNDk2IDMwOFE1NDEgMzA4IDU1OS41IDM0NS4wUTU3OCAzODIgNTc4IDQ0MVY3NThIOTMyVjQyNVE5MzIgMTkzIDgxNS4wIDg4LjVRNjk4IC0xNiA0ODggLTE2WiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNDQuNTM5LDApIHNjYWxlKDAuMDQ0OTIyLC0wLjA0NDkyMikiPjxwYXRoIGQ9Ik00OTggLTE2UTI4NyAtMTYgMTc1LjUgMTExLjVRNjQgMjM5IDY0IDQ4MFYxMzE2UTY0IDE1NDIgMTc0LjUgMTY1OS4wUTI4NSAxNzc2IDQ5OCAxNzc2UTcxMSAxNzc2IDgyMS41IDE2NTkuMFE5MzIgMTU0MiA5MzIgMTMxNlY0ODBROTMyIDIzOSA4MjAuNSAxMTEuNVE3MDkgLTE2IDQ5OCAtMTZaTTUwMSAzMDhRNTgxIDMwOCA1ODEgNDYzVjEzMjJRNTgxIDE0NTIgNTAzIDE0NTJRNDE1IDE0NTIgNDE1IDEzMTlWNDYxUTQxNSAzNzkgNDM1LjAgMzQzLjVRNDU1IDMwOCA1MDEgMzA4WiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoOTAuMjAxLDApIHNjYWxlKDAuMDQ0OTIyLC0wLjA0NDkyMikiPjxwYXRoIGQ9Ik03OCAwVjE3NjBINjE4UTc1MyAxNzYwIDgyMi4wIDE2OTguNVE4OTEgMTYzNyA5MTQuNSAxNTI2LjVROTM4IDE0MTYgOTM4IDEyNjdROTM4IDExMjMgOTAxLjUgMTAzNy4wUTg2NSA5NTEgNzY0IDkxOFE4NDcgOTAxIDg4MC41IDgzNS41UTkxNCA3NzAgOTE0IDY2NlYwSDU2N1Y2ODlRNTY3IDc2NiA1MzUuNSA3ODQuNVE1MDQgODAzIDQzNCA4MDNWMFpNNDM2IDExMDhINTIxUTU5NCAxMTA4IDU5NCAxMjY3UTU5NCAxMzcwIDU3OC4wIDE0MDIuMFE1NjIgMTQzNCA1MTggMTQzNEg0MzZaIi8+PC9nPgo8L2c+CjxnIGZpbGw9IiNGRjVBMzYiIHRyYW5zZm9ybT0idHJhbnNsYXRlKDIxMi4zOSwxNDguMDYpIj4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoMC4wMDAsMCkgc2NhbGUoMC4wMzAwMDAsLTAuMDMwMDAwKSI+PHBhdGggZD0iTTE1MiAwVjYwNkwzMiA1NzZWNjM2TDE4MCA3MDBIMjM3VjBaIi8+PC9nPgo8ZyB0cmFuc2Zvcm09InRyYW5zbGF0ZSgxMi4zNjAsMCkgc2NhbGUoMC4wMzAwMDAsLTAuMDMwMDAwKSI+PHBhdGggZD0iTTM5MiAwVjE1MEgzN1YyMTVMMzc3IDcwMEg0NzVWMjI0SDU3OVYxNTBINDc1VjBaTTEzMCAyMjRIMzk2VjYwN1oiLz48L2c+CjxnIHRyYW5zZm9ybT0idHJhbnNsYXRlKDMzLjU3MCwwKSBzY2FsZSgwLjAzMDAwMCwtMC4wMzAwMDApIj48cGF0aCBkPSJNNzIgMjYwVjMzMUg0NjhWMjYwWiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNTIuODAwLDApIHNjYWxlKDAuMDMwMDAwLC0wLjAzMDAwMCkiPjxwYXRoIGQ9Ik0xNTIgMFY2MDZMMzIgNTc2VjYzNkwxODAgNzAwSDIzN1YwWiIvPjwvZz4KPGcgdHJhbnNmb3JtPSJ0cmFuc2xhdGUoNjUuMTYwLDApIHNjYWxlKDAuMDMwMDAwLC0wLjAzMDAwMCkiPjxwYXRoIGQ9Ik0zMDQgLTEyUTIzNiAtMTIgMTgyLjAgMTMuNVExMjggMzkgOTYuMCA4NC41UTY0IDEzMCA2NCAxOTBRNjQgMjMzIDgxLjAgMjcwLjBROTggMzA3IDEyOC41IDMzNC41UTE1OSAzNjIgMTk5IDM3M1ExNDMgMzkzIDExMi41IDQzNS4wUTgyIDQ3NyA4MiA1MjZROTQgNTc4IDEwOS4wIDYyMC4wUTEzNiA2NjIgMTg1LjUgNjg3LjBRMjM1IDcxMiAzMDQgNzEyUTM3NCA3MTIgNDIzLjUgNjg3LjBRNDczIDY2MiA0OTkuNSA2MjAuMFE1MjYgNTc4IDUyNiA1MjZRNTI2IDQ3NyA0OTUuNSA0MzUuMFE0NjUgMzkzIDQwOSAzNzNRNDUwIDM2MiA0ODAuNSAzMzQuNVE1MTEgMzA3IDUyNy41IDI3MC4wUTU0NCAyMzMgNTQ0IDE5MFE1NDQgMTMwIDUxMi41IDg0LjVRNDgxIDM5IDQyNi41IDEzLjVRMzcyIC0xMiAzMDQgLTEyWk0zMDQgNjJRMzgzIDYyIDQyMS41IDk4LjVRNDYwIDEzNSA0NjAgMTk1UTQ2MCAyNjMgNDE3LjUgMjk4LjBRMzc1IDMzMyAzMDQgMzMzUTIzMyAzMzMgMTkwLjUgMjk4LjBRMTQ4IDI2MyAxNDggMTk1UTE0OCAxMzUgMTg3LjAgOTguNVEyMjYgNjIgMzA0IDYyWk0zMDQgNDAzUTM2NyA0MDMgNDA0LjAgNDM2LjBRNDQxIDQ2OSA0NDEgNTIxUTQ0MSA1ODAgNDA0LjUgNjEwLjBRMzY4IDY0MCAzMDQgNjQwUTI0MSA2NDAgMjA0LjUgNjEwLjBRMTY4IDU4MCAxNjggNTIxUTE2OCA0NjkgMjA0LjUgNDM2LjBRMjQxIDQwMyAzMDQgNDAzWiIvPjwvZz4KPC9nPgo8L3N2Zz4=" alt="COR 14-18" style="height:22px; width:auto; display:block;">
+      <img src="assets/logo-cor-clair.png" alt="COR" style="height:40px;width:auto;display:block">
       aimerengrand · cor1418.org
     </span>
     <span>Vue d'ensemble du parcours</span>

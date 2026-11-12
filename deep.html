@@ -4,32 +4,32 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>DEEP · un second parcours en préparation · Aimer en Grand</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
   :root {
-    --nuit:     #14213D;
-    --flamme:   #FF5A36;
-    --rose:     #FF8FA3;
-    --papier:   #FAFAF7;
-    --encre:    #1A1A1A;
-    --gris:     #6B6B6B;
+    --nuit:     #24388A;
+    --flamme:   #C8402F;
+    --rose:     #DDAE52;
+    --papier:   #FBF8F2;
+    --encre:    #2B2A33;
+    --gris:     #625E6B;
     --blanc:    #FFFFFF;
-    --ligne:    #E7E2D8;
+    --ligne:    #E8E1D4;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
   body {
     background: var(--papier);
     color: var(--encre);
-    font-family: 'DM Sans', sans-serif;
+    font-family: 'Inter', sans-serif;
     font-size: 16px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; text-decoration: none; }
-  h1, h2, h3, .display { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: 0.01em; }
+  h1, h2, h3, .display { font-family: 'Fraunces', Georgia, serif; font-weight:700; }
   /* ===== NAV (identique au site) ===== */
   nav {
     background: var(--blanc);
@@ -45,9 +45,8 @@
   }
   .nav-logo {
     display: flex; align-items: center; gap: 0.5rem;
-    font-family: 'Anton', sans-serif; font-size: 19px; letter-spacing: 0.03em;
-    text-transform: uppercase; color: var(--nuit);
-  }
+    font-family: 'Fraunces', Georgia, serif; font-size: 19px; 
+     color: var(--nuit); font-weight:700; }
   .nav-back {
     font-size: 12px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
     color: var(--gris); display:flex; align-items:center; gap:6px;
@@ -57,7 +56,7 @@
     background: var(--flamme); color: var(--blanc) !important;
     padding: 9px 18px; border-radius: 3px; font-size:12px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase;
   }
-  .nav-cta:hover { background: #E5491F !important; }
+  .nav-cta:hover { background: #8E2B22 !important; }
   /* ===== SECTION SHELL (identique au site) ===== */
   .section-wrap { background: var(--blanc); }
   .section-wrap.alt { background: var(--papier); }
@@ -67,7 +66,7 @@
     color: var(--flamme); margin-bottom: 1rem;
   }
   .section h2 {
-    font-size: clamp(1.6rem, 3vw, 2.4rem); text-transform: uppercase; color: var(--nuit);
+    font-size: clamp(1.6rem, 3vw, 2.4rem); color: var(--nuit);
     line-height: 1.15; margin-bottom: 1.2rem; max-width: 640px;
   }
   .section-body { font-size: 14.5px; color: var(--gris); max-width: 600px; line-height: 1.75; margin-bottom: 1.4rem; }
@@ -88,7 +87,7 @@
     background: var(--nuit); border-top: 1px solid rgba(255,255,255,0.1); padding: 1.8rem 3rem;
     display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem;
   }
-  .footer-logo { font-family:'Anton', sans-serif; color: var(--blanc); font-size: 14px; text-transform: uppercase; }
+  .footer-logo { font-family:'Fraunces', Georgia, serif; color: var(--blanc); font-size: 14px; font-weight:700; }
   .footer-links { font-size: 11px; color: #A8A398; line-height:1.8; text-align:right; }
   .footer-links a:hover { color: var(--flamme); }
   @media (max-width: 720px) {
@@ -102,20 +101,7 @@
 <body>
 <!-- NAV -->
 <nav>
-  <a href="index.html" class="nav-logo" aria-label="COR1418">
-    <svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-      <g stroke="#FF5A36" stroke-width="2" stroke-linecap="round">
-        <line x1="20" y1="1" x2="20" y2="6"/><line x1="20" y1="34" x2="20" y2="39"/>
-        <line x1="1" y1="20" x2="6" y2="20"/><line x1="34" y1="20" x2="39" y2="20"/>
-        <line x1="7" y1="7" x2="10.5" y2="10.5"/><line x1="29.5" y1="29.5" x2="33" y2="33"/>
-        <line x1="33" y1="7" x2="29.5" y2="10.5"/><line x1="10.5" y1="29.5" x2="7" y2="33"/>
-      </g>
-      <circle cx="20" cy="20" r="8.5" fill="none" stroke="#14213D" stroke-width="2.4"/>
-      <line x1="20" y1="14" x2="20" y2="26" stroke="#14213D" stroke-width="2"/>
-      <line x1="15.5" y1="20" x2="24.5" y2="20" stroke="#14213D" stroke-width="2"/>
-    </svg>
-    <span>COR</span>
-  </a>
+  <a href="index.html" class="nav-logo" aria-label="COR, accueil"><img src="assets/logo-cor-clair.png" alt="COR" style="height:42px;width:auto;display:block"></a>
   <a href="index.html#ressources" class="nav-back">← Retour aux ressources</a>
   <a href="index.html#inscription" class="nav-cta">Je m'inscris →</a>
 </nav>
@@ -123,7 +109,7 @@
 <div class="section-wrap alt">
   <div class="section" id="deep">
     <p class="section-label">DEEP · un second parcours en préparation</p>
-    <h2>Des repères pour prendre des décisions.</h2>
+    <h2>Des repères pour prendre des décisions</h2>
     <p class="section-body">DEEP <em>(nom provisoire)</em> n'est pas non plus un enseignement sur les choix « corrects » à faire en fin de scolarité : c'est un accompagnement qui part de ton vécu concret pour t'aider à discerner ce à quoi tu es appelé·e - et à prendre tes décisions d'avenir en accord avec qui tu es vraiment.</p>
     <p class="section-body">DEEP s'adresse en particulier aux jeunes de 17-18 ans qui cherchent des clés pour prendre des décisions sur leur avenir - études, orientation, choix de vie. Il part d'une conviction : les réponses sur notre orientation commencent par une meilleure connaissance de soi, éclairée par la foi, qui permet de discerner ce qui nous appelle vraiment.</p>
     <p class="section-body">La méthode s'appuie sur les travaux d'un professeur d'une université catholique aux États-Unis, développés à partir de plus de vingt ans d'accompagnement de jeunes et d'étudiants. Elle part de récits concrets - des moments vécus où l'on s'est senti pleinement soi-même - pour faire apparaître ce qui nous anime en profondeur, les environnements où l'on donne le meilleur de soi, et notre manière propre de nous donner aux autres. L'accompagnement se fait toujours avec un adulte formé ; A l'issue du parcours, le participant repart avec un rapport et des pistes pour alimenter ses réflexions futures.</p>
@@ -152,7 +138,7 @@
 </div>
 <!-- FOOTER -->
 <footer>
-  <span class="footer-logo">Aimer en Grand</span>
+  <a href="/" class="footer-logo" aria-label="COR, accueil"><img src="assets/logo-cor-sombre.png" alt="COR" style="height:42px;width:auto;display:block"></a>
   <div class="footer-links">
     Parcours sur la vie affective et relationnelle · Projet COR1418 · 2026<br>
     <a href="index.html#ressources">Ressources</a> · <a href="index.html#qui-sommes-nous">Qui sommes-nous</a> · <a href="https://www.cor1418.org">cor1418.org</a> · <a href="mailto:aimerengrand@gmail.com">aimerengrand@gmail.com</a>
