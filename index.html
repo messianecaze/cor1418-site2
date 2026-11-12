@@ -4,280 +4,209 @@
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
 <title>Aimer en Grand · Projet COR1418</title>
-<link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
 <link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=Anton&family=DM+Sans:wght@400;500;700;800&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,700&family=Inter:wght@400;600;700;800&display=swap" rel="stylesheet">
 <style>
+  /* COR 14-18 · design system « trait et lavis » */
   :root {
-    --nuit:     #14213D;
-    --flamme:   #FF5A36;
-    --rose:     #FF8FA3;
-    --papier:   #FAFAF7;
-    --encre:    #1A1A1A;
-    --gris:     #6B6B6B;
-    --blanc:    #FFFFFF;
-    --ligne:    #E7E2D8;
+    --papier:       #FBF8F2;
+    --creme:        #F4EEE1;
+    --blanc:        #FFFFFF;
+    --filet:        #E8E1D4;
+    --encre:        #2B2A33;
+    --encre-douce:  #625E6B;
+    --source:       #736D63;
+    --trait:        #24388A;
+    --rouge:        #C8402F;
+    --rouge-fonce:  #8E2B22;
+    --bleu-vitrail: #2E4C86;
+    --bleu-clair:   #8FB2DE;
+    --ocre:         #DDAE52;
+    --display: 'Fraunces', Georgia, 'Times New Roman', serif;
+    --sans: 'Inter', system-ui, sans-serif;
+    --citation: Georgia, 'Times New Roman', serif;
   }
   * { margin:0; padding:0; box-sizing:border-box; }
   html { scroll-behavior: smooth; }
   body {
     background: var(--papier);
     color: var(--encre);
-    font-family: 'DM Sans', sans-serif;
+    font-family: var(--sans);
     font-size: 16px;
     line-height: 1.65;
     -webkit-font-smoothing: antialiased;
   }
   a { color: inherit; text-decoration: none; }
-  h1, h2, h3, .display { font-family: 'Anton', sans-serif; font-weight: 400; letter-spacing: 0.01em; }
+  a:focus-visible, button:focus-visible { outline: 3px solid var(--trait); outline-offset: 3px; }
+  h1, h2, h3, .display { font-family: var(--display); font-weight: 700; }
+  h1, h2 { text-wrap: balance; }
   img { display:block; max-width:100%; }
   /* ===== NAV ===== */
   nav {
-    background: var(--blanc);
-    border-bottom: 1px solid var(--ligne);
+    background: var(--papier);
+    border-bottom: 1px solid var(--filet);
     padding: 0 3rem;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    height: 64px;
-    position: sticky;
-    top: 0;
-    z-index: 100;
+    display: flex; align-items: center; justify-content: space-between;
+    height: 64px; position: sticky; top: 0; z-index: 100;
   }
-  .nav-logo {
-    display: flex;
-    align-items: center;
-    gap: 0.5rem;
-    font-family: 'Anton', sans-serif;
-    font-size: 19px;
-    letter-spacing: 0.03em;
-    text-transform: uppercase;
-    color: var(--nuit);
-  }
+  .nav-logo { display: flex; align-items: center; }
+  .nav-logo img { height: 42px; width: auto; }
   .nav-logo svg { flex-shrink: 0; }
   .nav-right { display: flex; align-items: center; gap: 1.6rem; }
   .nav-links { display: flex; gap: 1.6rem; list-style: none; align-items: center; }
-  .nav-links a {
-    font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase;
-    color: var(--gris);
-  }
-  .nav-links a:hover { color: var(--flamme); }
-  .nav-cta {
-    background: var(--flamme); color: var(--blanc) !important;
-    padding: 9px 18px; border-radius: 3px;
-  }
-  .nav-cta:hover { background: #E5491F !important; }
-  .nav-ghost {
-    border: 1.5px solid var(--ligne); border-radius: 20px;
-    padding: 7px 14px !important; font-size: 11px !important;
-    color: var(--nuit) !important;
-  }
-  .nav-ghost:hover { border-color: var(--nuit); color: var(--nuit) !important; }
-  .nav-toggle {
-    display: none; background: none; border: none; padding: 0; margin: 0; cursor: pointer;
-    align-items: center; justify-content: center;
-  }
+  .nav-links a { font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; color: var(--encre-douce); }
+  .nav-links a:hover { color: var(--rouge); }
+  .nav-cta { background: var(--rouge); color: var(--blanc) !important; padding: 9px 18px; border-radius: 4px; font-size: 12px; font-weight: 700; letter-spacing: 0.06em; text-transform: uppercase; }
+  .nav-cta:hover { background: var(--rouge-fonce) !important; }
+  .nav-ghost { border: 1.5px solid var(--filet); border-radius: 20px; padding: 7px 14px !important; font-size: 11px !important; color: var(--trait) !important; }
+  .nav-ghost:hover { border-color: var(--trait); }
+  .nav-toggle { display: none; background: none; border: none; padding: 0; margin: 0; cursor: pointer; align-items: center; justify-content: center; }
   /* ===== HERO ===== */
-  .hero {
-    position: relative;
-    height: 82vh; min-height: 480px; max-height: 720px;
-    overflow: hidden;
-    display: flex; align-items: flex-end;
-  }
-  .hero img {
-    position:absolute; inset:0; width:100%; height:100%; object-fit:cover; object-position: 50% 8%;
-  }
-  .hero::after {
-    content:""; position:absolute; inset:0;
-    background: linear-gradient(180deg, rgba(20,33,61,0.10) 0%, rgba(20,33,61,0.35) 55%, rgba(20,33,61,0.94) 100%);
-  }
-  .hero-inner { position:relative; z-index:2; max-width: 780px; padding: 0 3rem 4rem; }
-  .press-badge { display:inline-flex; align-items:center; gap:0.55rem; margin-bottom: 1.1rem; background: rgba(250,250,247,0.95); color: var(--nuit); padding: 7px 14px 7px 8px; border-radius: 999px; font-size: 13px; font-weight: 600; box-shadow: 0 4px 18px rgba(20,33,61,0.25); }
-  .press-badge-tag { background: var(--flamme); color: #fff; font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
-  .press-badge strong { font-family: Georgia, 'Times New Roman', serif; font-size: 15px; }
-  .press-badge:hover { background: #fff; }
+  .hero { max-width: 1200px; margin: 0 auto; padding: 3rem 3rem 3.5rem; display: flex; flex-wrap: wrap; gap: 3rem; align-items: center; }
+  .hero-inner { flex: 1 1 460px; min-width: 0; display: flex; flex-direction: column; gap: 1.1rem; }
+  .press-badge { align-self: flex-start; display:inline-flex; align-items:center; gap:0.55rem; background: var(--blanc); border: 1px solid var(--filet); color: var(--trait); padding: 6px 14px 6px 7px; border-radius: 999px; font-size: 13px; font-weight: 600; }
+  .press-badge-tag { background: var(--rouge); color: var(--blanc); font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; padding: 4px 9px; border-radius: 999px; }
+  .press-badge strong { font-family: var(--citation); font-size: 15px; }
+  .press-badge:hover { border-color: var(--trait); }
   #presse { scroll-margin-top: 80px; }
-  .hero-label {
-    font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase;
-    color: var(--flamme); margin-bottom: 0.8rem;
-  }
-  .hero h1 {
-    font-size: clamp(2.6rem, 6vw, 5rem);
-    text-transform: uppercase; line-height: 0.95; color: var(--blanc); margin-bottom: 1.2rem;
-  }
-  .hero-sub-wrap { max-width: 480px; margin-bottom: 1.8rem; }
-  .hero-sub {
-    font-size: 15px; color: #F2E9DE; line-height: 1.55;
-    padding-left: 0.9rem; border-left: 2px solid rgba(255,90,54,0.55);
-    margin-bottom: 0.7rem;
-  }
-  .hero-sub:last-child { margin-bottom: 0; }
-  .hero-sub strong { color: var(--blanc); font-weight: 700; }
-  .hero-actions { display:flex; gap:0.8rem; flex-wrap:wrap; }
-  .btn-primary {
-    background: var(--flamme); color: var(--blanc);
-    padding: 13px 26px; border-radius: 4px;
-    font-family: 'Anton', sans-serif; font-size: 14px; letter-spacing: 0.02em; text-transform: uppercase;
-    display: inline-block;
-  }
-  .btn-primary:hover { background:#E5491F; }
-  .btn-outline-light {
-    color: var(--blanc); border: 1.5px solid rgba(255,255,255,0.65);
-    padding: 12px 24px; border-radius: 4px;
-    font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase;
-    display: inline-block;
-  }
-  .btn-outline-light:hover { background: rgba(255,255,255,0.12); }
+  .hero-label { font-size: 11px; font-weight: 800; letter-spacing: 0.18em; text-transform: uppercase; color: var(--rouge); }
+  .hero h1 { font-size: clamp(2.3rem, 4.6vw, 3.3rem); line-height: 1.05; color: var(--encre); }
+  .hero-sub-wrap { max-width: 480px; display: flex; flex-direction: column; gap: 0.7rem; }
+  .hero-sub { font-size: 15px; color: var(--encre); line-height: 1.55; }
+  .hero-sub strong { font-weight: 700; }
+  .hero-actions { display:flex; gap:0.8rem; flex-wrap:wrap; margin-top: 0.4rem; }
+  .hero-dessin { flex: 0 1 560px; min-width: 0; max-width: 100%; }
+  .hero-scene { position: relative; width: 100%; max-width: 560px; aspect-ratio: 476 / 366; margin: 0 auto; }
+  .hero-scene .rosace { position: absolute; left: 13.2%; top: 0; width: 73.5%; height: auto; }
+  .hero-scene .groupe { position: absolute; left: 0; bottom: 0; width: 100%; height: auto; }
+  .btn-primary { background: var(--rouge); color: var(--blanc); padding: 13px 26px; border-radius: 4px; font-family: var(--sans); font-weight: 800; letter-spacing: 0.06em; font-size: 13.5px; text-transform: uppercase; display: inline-block; }
+  .btn-primary:hover { background: var(--rouge-fonce); }
+  .btn-outline-light { color: var(--encre); border: 1.5px solid var(--encre); padding: 12px 24px; border-radius: 4px; font-size: 13px; font-weight: 700; letter-spacing: 0.04em; text-transform: uppercase; display: inline-block; }
+  .btn-outline-light:hover { background: var(--creme); }
   /* ===== QUOTE STRIP ===== */
-  .quote-strip { padding: 3.5rem 3rem; text-align:center; }
+  .quote-strip { padding: 3.5rem 3rem; text-align:center; background: var(--blanc); border-top: 1px solid var(--filet); }
   .quote-item + .quote-item { margin-top: 2.6rem; }
-  .quote-strip blockquote {
-    font-family: Georgia, serif; font-style: italic;
-    font-size: clamp(1.2rem, 2.4vw, 1.7rem); color: var(--nuit);
-    max-width: 700px; margin: 0 auto; line-height: 1.4;
-  }
-  .quote-strip cite {
-    display:block; margin-top: 0.8rem; font-style:normal; font-size: 11px;
-    color: var(--gris); letter-spacing: 0.05em; text-transform: uppercase;
-  }
+  .quote-strip blockquote { font-family: var(--citation); font-style: italic; font-size: clamp(1.2rem, 2.4vw, 1.6rem); color: var(--trait); max-width: 700px; margin: 0 auto; line-height: 1.4; }
+  .quote-strip cite { display:block; margin-top: 0.8rem; font-style:normal; font-size: 11px; color: var(--encre-douce); letter-spacing: 0.05em; text-transform: uppercase; }
   /* ===== PRESSE ===== */
-  .press-band { background: var(--nuit); padding: 3rem 3rem 3.2rem; }
+  .press-band { background: var(--bleu-vitrail); padding: 3rem 3rem 3.2rem; }
   .press-inner { max-width: 1000px; margin: 0 auto; }
-  .press-kicker { font-family: 'Anton', sans-serif; font-size: clamp(1.6rem, 3.4vw, 2.3rem); text-transform: uppercase; color: var(--blanc); letter-spacing: 0.01em; line-height: 1; margin-bottom: 1.4rem; display: flex; align-items: center; gap: 0.9rem; }
-  .press-kicker::after { content: ""; flex: 1; height: 2px; background: var(--flamme); opacity: 0.8; }
+  .press-kicker { font-family: var(--display); font-weight: 700; font-size: clamp(1.6rem, 3.4vw, 2.2rem); color: var(--blanc); line-height: 1; margin-bottom: 1.4rem; }
   .press-card { background: var(--papier); border-radius: 6px; display: flex; align-items: stretch; overflow: hidden; }
-  .press-media { background: #FFF1EC; border-right: 3px solid var(--flamme); padding: 1.6rem 1.8rem; display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; flex-shrink: 0; min-width: 190px; }
-  .press-tag { font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--flamme); }
-  .press-name { font-family: Georgia, 'Times New Roman', serif; font-weight: 700; font-size: 2.1rem; color: var(--nuit); line-height: 1.05; }
-  .press-date { font-size: 12.5px; color: #6B6A66; }
-  .press-body { flex: 1; padding: 1.6rem 1.8rem; display: flex; flex-direction: column; justify-content: center; gap: 0.6rem; }
-  .press-intro { font-size: 13px; font-weight: 700; color: var(--flamme); }
-  .press-title { font-family: Georgia, 'Times New Roman', serif; font-size: clamp(1.15rem, 2.1vw, 1.45rem); color: var(--nuit); line-height: 1.3; }
-  .press-quote { font-size: 14.5px; color: #4A4A48; }
-  .press-link { align-self: flex-start; margin-top: 0.4rem; background: var(--flamme); color: #fff; padding: 11px 20px; border-radius: 4px; font-family: 'Anton', sans-serif; font-size: 13px; letter-spacing: 0.02em; text-transform: uppercase; }
-  .press-link:hover { background: #E5491F; }
+  .press-media { background: var(--creme); padding: 1.6rem 1.8rem; display: flex; flex-direction: column; justify-content: center; gap: 0.35rem; flex-shrink: 0; min-width: 190px; }
+  .press-tag { font-size: 10.5px; font-weight: 800; letter-spacing: 0.16em; text-transform: uppercase; color: var(--rouge); }
+  .press-name { font-family: var(--citation); font-weight: 700; font-size: 2.1rem; color: var(--trait); line-height: 1.05; }
+  .press-date { font-size: 12.5px; color: var(--encre-douce); }
+  .press-body { flex: 1; min-width: 0; padding: 1.6rem 1.8rem; display: flex; flex-direction: column; justify-content: center; gap: 0.6rem; }
+  .press-intro { font-size: 13px; font-weight: 700; color: var(--rouge); }
+  .press-title { font-family: var(--citation); font-size: clamp(1.15rem, 2.1vw, 1.4rem); color: var(--trait); line-height: 1.3; }
+  .press-quote { font-size: 14.5px; color: var(--encre-douce); }
+  .press-link { align-self: flex-start; margin-top: 0.4rem; background: var(--rouge); color: var(--blanc); padding: 11px 20px; border-radius: 4px; font-family: var(--sans); font-weight: 800; letter-spacing: 0.06em; font-size: 12.5px; text-transform: uppercase; }
+  .press-link:hover { background: var(--rouge-fonce); }
   @media (max-width: 720px) {
     .press-band { padding: 2.4rem 1.2rem; }
     .press-card { flex-direction: column; }
-    .press-media { border-right: none; border-bottom: 3px solid var(--flamme); padding: 1.2rem 1.3rem; min-width: 0; }
+    .press-media { padding: 1.2rem 1.3rem; min-width: 0; }
     .press-body { padding: 1.3rem; }
   }
   /* ===== SECTION SHELL ===== */
   .section-wrap { background: var(--blanc); }
   .section-wrap.alt { background: var(--papier); }
   .section { max-width: 1000px; margin: 0 auto; padding: 4.5rem 3rem; }
-  .section-label {
-    font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase;
-    color: var(--flamme); margin-bottom: 1rem;
-  }
-  .section h2 {
-    font-size: clamp(1.6rem, 3vw, 2.4rem); text-transform: uppercase; color: var(--nuit);
-    line-height: 1.15; margin-bottom: 1.2rem; max-width: 640px;
-  }
-  .section-body { font-size: 14.5px; color: var(--gris); max-width: 600px; line-height: 1.75; margin-bottom: 1.4rem; }
+  .section-label { font-size: 11px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--rouge); margin-bottom: 1rem; }
+  .section h2 { font-size: clamp(1.7rem, 3.2vw, 2.4rem); color: var(--encre); line-height: 1.12; margin-bottom: 1.2rem; max-width: 640px; }
+  .section-body { font-size: 14.5px; color: var(--encre-douce); max-width: 600px; line-height: 1.75; margin-bottom: 1.4rem; }
   .section-body:last-of-type { margin-bottom: 2.5rem; }
   /* ===== CHIFFRES ===== */
   .chiffres-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(180px,1fr)); gap: 2.5rem 2rem; }
-  .chiffre-num { font-family:'Anton', sans-serif; font-size: 2.6rem; color: var(--flamme); line-height:1; margin-bottom:0.4rem; }
+  .chiffre-num { font-family: var(--display); font-weight: 700; font-size: 2.4rem; color: var(--rouge); line-height:1; margin-bottom:0.5rem; }
   .chiffre-desc { font-size: 12.5px; color: var(--encre); line-height:1.6; margin-bottom: 0.3rem; }
-  .chiffre-source { font-size: 10.5px; color: var(--gris); }
+  .chiffre-source { font-size: 10.5px; color: var(--source); }
   /* ===== FINDINGS (365 Voix) ===== */
   .findings-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); gap: 2.2rem; margin-bottom: 2.5rem; }
-  .finding { border-top: 3px solid var(--flamme); padding-top: 1rem; }
-  .finding-num { font-family:'Anton', sans-serif; font-size: 2.6rem; color: var(--nuit); line-height:1; margin-bottom:0.5rem; }
+  .finding { border-top: 2px solid var(--trait); padding-top: 1rem; }
+  .finding-num { font-family: var(--display); font-weight: 700; font-size: 2.4rem; color: var(--trait); line-height:1; margin-bottom:0.5rem; }
   .finding-title { font-size: 0.95rem; font-weight: 700; color: var(--encre); margin-bottom: 0.5rem; line-height:1.3; }
-  .finding-body { font-size: 12.5px; color: var(--gris); line-height:1.6; }
-  .citation-encadre {
-    border-left: 3px solid var(--flamme); padding: 1rem 1.5rem; margin: 2rem 0; background: var(--papier);
-  }
+  .finding-body { font-size: 12.5px; color: var(--encre-douce); line-height:1.6; }
+  .citation-encadre { background: var(--creme); border-radius: 8px; padding: 1.3rem 1.6rem; margin: 2rem 0; }
   .citation-encadre p { font-size: 14px; color: var(--encre); line-height:1.7; margin-bottom: 0.5rem; }
-  .citation-encadre span { font-size: 10.5px; font-weight: 800; letter-spacing:0.08em; text-transform:uppercase; color: var(--flamme); }
-  .btn-download {
-    display:inline-flex; align-items:center; gap:8px;
-    color: var(--nuit); border: 1.5px solid var(--nuit);
-    padding: 11px 20px; border-radius: 4px; font-size: 13px; font-weight: 700;
-  }
-  .btn-download:hover { background: var(--nuit); color: var(--blanc); }
+  .citation-encadre span { font-size: 10.5px; font-weight: 800; letter-spacing:0.08em; text-transform:uppercase; color: var(--rouge); }
+  .btn-download { display:inline-flex; align-items:center; gap:8px; color: var(--trait); border: 1.5px solid var(--trait); padding: 11px 20px; border-radius: 4px; font-size: 13px; font-weight: 700; }
+  .btn-download:hover { background: var(--trait); color: var(--blanc); }
   /* ===== SESSIONS (Parcours) ===== */
-  .sessions-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(220px,1fr)); border: 1px solid var(--ligne); margin-bottom: 2.5rem; }
-  .session { padding: 1.4rem; border-bottom: 1px solid var(--ligne); border-right: 1px solid var(--ligne); position:relative; }
-  .session:nth-child(even) { background: var(--papier); }
-  .session-num {
-    display:inline-flex; align-items:center; justify-content:center;
-    width: 26px; height:26px; border-radius:50%; background: var(--flamme); color:#fff;
-    font-family:'Anton',sans-serif; font-size: 12px; margin-bottom: 0.6rem;
-  }
-  .session-title { font-size: 0.95rem; font-weight: 700; color: var(--nuit); margin-bottom:0.3rem; line-height:1.3; }
-  .session-body { font-size: 11.5px; color: var(--gris); line-height:1.5; }
-  .deploiement { background: var(--papier); padding: 1.4rem 1.8rem; border-left: 3px solid var(--nuit); }
-  .deploiement p:first-child { font-size: 10.5px; font-weight: 800; letter-spacing:0.14em; text-transform:uppercase; color: var(--nuit); margin-bottom: 0.4rem; }
-  .deploiement p:last-child { font-size: 13px; color: var(--gris); line-height:1.65; }
+  .sessions-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1px; background: var(--filet); border: 1px solid var(--filet); margin-bottom: 2.5rem; }
+  .session { background: var(--blanc); padding: 22px; display: flex; gap: 16px; min-width: 0; }
+  /* pastilles */
+  .session-num { flex-shrink: 0; display:flex; align-items:center; justify-content:center; width: 34px; height:34px; border-radius:50%; background: var(--rouge); color: var(--blanc); font-weight: 800; font-size: 14px; }
+  .session:nth-child(2) /* pastilles */
+  .session-num { background: var(--bleu-vitrail); }
+  .session:nth-child(3) /* pastilles */
+  .session-num { background: var(--ocre); color: var(--encre); }
+  .session:nth-child(4) /* pastilles */
+  .session-num { background: var(--bleu-clair); color: var(--encre); }
+  .session:nth-child(5) /* pastilles */
+  .session-num { background: var(--rouge-fonce); }
+  .session:nth-child(6) /* pastilles */
+  .session-num { background: var(--trait); }
+  .session-question { font-family: var(--citation); font-style: italic; font-size: 19px; line-height: 1.25; color: var(--trait); margin-bottom: 3px; }
+  .session-source { font-size: 11px; color: var(--source); margin-bottom: 10px; }
+  .session-title { font-size: 15px; font-weight: 700; color: var(--encre); margin-bottom: 4px; line-height:1.3; }
+  .session-question + .session-source + .session-title { font-size: 13.5px; }
+  .session-body { font-size: 12.5px; color: var(--encre-douce); line-height:1.5; }
+  .deploiement { background: var(--creme); border-radius: 8px; padding: 1.2rem 1.6rem; }
+  .deploiement p:first-child { font-size: 10.5px; font-weight: 800; letter-spacing:0.14em; text-transform:uppercase; color: var(--trait); }
+  .deploiement p:last-child:not(:first-child) { font-size: 13px; color: var(--encre-douce); line-height:1.65; margin-top: 0.4rem; }
   /* ===== RESSOURCES ===== */
   .resources-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(280px,1fr)); gap: 1.6rem; margin-bottom: 1rem; }
-  .resource-card {
-    border: 1px solid var(--ligne); border-radius: 8px; padding: 1.8rem;
-    background: var(--blanc); display:flex; flex-direction:column; gap: 0.6rem;
-    transition: border-color 0.15s ease;
-  }
-  .resource-card:hover { border-color: var(--flamme); }
-  .resource-tag {
-    font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase;
-    color: var(--flamme);
-  }
-  .resource-title { font-size: 1.05rem; font-weight: 700; color: var(--nuit); line-height: 1.3; }
-  .resource-excerpt { font-size: 12.5px; color: var(--gris); line-height: 1.6; }
-  .resource-meta { font-size: 10.5px; color: var(--gris); letter-spacing: 0.02em; }
-  .resource-link {
-    font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em;
-    color: var(--flamme); margin-top: 0.3rem;
-  }
+  .resource-card { border: 1px solid var(--filet); border-radius: 8px; padding: 1.8rem; background: var(--blanc); display:flex; flex-direction:column; gap: 0.6rem; transition: border-color 0.15s ease; }
+  .resource-card:hover { border-color: var(--trait); }
+  .resource-tag { font-size: 10.5px; font-weight: 800; letter-spacing: 0.08em; text-transform: uppercase; color: var(--rouge); }
+  .resource-title { font-size: 1.05rem; font-weight: 700; color: var(--encre); line-height: 1.3; }
+  .resource-excerpt { font-size: 12.5px; color: var(--encre-douce); line-height: 1.6; }
+  .resource-meta { font-size: 10.5px; color: var(--source); letter-spacing: 0.02em; }
+  .resource-link { font-weight: 800; font-size: 12px; text-transform: uppercase; letter-spacing: 0.04em; color: var(--trait); margin-top: 0.3rem; }
+  .resource-link:hover { color: var(--rouge); }
   /* ===== PORTRAITS ===== */
   .animateurs-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(240px,1fr)); gap: 1.8rem; margin-bottom: 2rem; }
-  .animateur-item { border-left: 3px solid var(--ligne); padding-left: 1.1rem; }
-  .animateur-item-title { font-size: 1rem; font-weight:700; color: var(--nuit); margin-bottom:0.4rem; }
-  .animateur-item-body { font-size: 12.5px; color: var(--gris); line-height:1.6; }
+  .animateur-item { border-top: 1px solid var(--filet); padding-top: 1rem; }
+  .animateur-item-title { font-size: 1rem; font-weight:700; color: var(--encre); margin-bottom:0.4rem; }
+  .animateur-item-body { font-size: 12.5px; color: var(--encre-douce); line-height:1.6; }
   /* ===== CONTACT ===== */
-  .contact { background: var(--nuit); color: #EDEBE4; padding: 4.5rem 3rem; }
+  .contact { background: var(--trait); color: #E9ECF6; padding: 4.5rem 3rem; }
+  .contact .section-label { color: var(--ocre); }
   .contact-inner { max-width: 1000px; margin: 0 auto; }
-  .contact h2 { color: var(--blanc); font-size: clamp(1.6rem, 3vw, 2.2rem); text-transform:uppercase; margin-bottom: 1rem; max-width: 520px; }
-  .contact-sub { font-size: 14.5px; color: #C9C4B6; max-width: 540px; line-height:1.75; margin-bottom: 2.5rem; }
+  .contact h2 { color: var(--blanc); font-size: clamp(1.7rem, 3.2vw, 2.4rem); margin-bottom: 1rem; max-width: 520px; line-height: 1.1; }
+  .contact-sub { font-size: 14.5px; color: #D3D9EE; max-width: 540px; line-height:1.75; margin-bottom: 2.5rem; }
   .contact-grid { display:grid; grid-template-columns: repeat(auto-fit, minmax(200px,1fr)); gap: 2rem; margin-bottom: 2.5rem; }
-  .contact-item-label { font-size: 10.5px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color: var(--flamme); margin-bottom:0.4rem; }
-  .contact-item-value { font-size: 1rem; color: var(--blanc); }
-  .contact-item-sub { font-size: 11px; color: #A8A398; margin-top:2px; }
+  .contact-item-label { font-size: 10.5px; font-weight:800; letter-spacing:0.12em; text-transform:uppercase; color: var(--ocre); margin-bottom:0.4rem; }
+  .contact-item-value { font-size: 1rem; color: var(--blanc); overflow-wrap: anywhere; }
+  .contact-item-sub { font-size: 11px; color: #C4CBE4; margin-top:2px; }
   .contact-actions { display:flex; gap:1rem; flex-wrap:wrap; }
-  .btn-flamme { background: var(--flamme); color:#fff; padding: 13px 26px; border-radius:4px; font-family:'Anton',sans-serif; font-size:14px; letter-spacing:0.02em; text-transform:uppercase; }
-  .btn-flamme:hover { background:#E5491F; }
-  .btn-outline-dark { color:#fff; border:1.5px solid rgba(255,255,255,0.4); padding:12px 24px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
-  .btn-outline-dark:hover { background: rgba(255,255,255,0.08); }
+  .btn-flamme { background: var(--rouge); color: var(--blanc); padding: 13px 26px; border-radius:4px; font-family: var(--sans); font-weight: 800; letter-spacing: 0.06em; font-size:13.5px; text-transform:uppercase; }
+  .btn-flamme:hover { background: var(--rouge-fonce); }
+  .btn-outline-dark { color: var(--blanc); border:1.5px solid rgba(255,255,255,0.6); padding:12px 24px; border-radius:4px; font-size:13px; font-weight:700; letter-spacing:0.04em; text-transform:uppercase; }
+  .btn-outline-dark:hover { background: rgba(255,255,255,0.1); }
   /* ===== INSCRIPTION (un seul CTA) ===== */
-  .inscription-card {
-    max-width: 560px; margin: 0 auto;
-    border-radius: 8px; padding: 2.2rem; display:flex; flex-direction:column; gap: 0.6rem;
-    background: var(--flamme); color: #fff; text-align: center; align-items: center;
-  }
-  .inscription-tag {
-    font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase;
-    display:inline-block; padding: 4px 10px; border-radius: 3px;
-    background: rgba(255,255,255,0.2); color:#fff;
-  }
-  .inscription-card h3 { font-size: 1.4rem; text-transform: uppercase; margin: 0.2rem 0; }
-  .inscription-card p { font-size: 13.5px; line-height:1.55; color: rgba(255,255,255,0.92); }
-  .inscription-btn {
-    display:inline-block; margin-top: 0.8rem; padding: 12px 22px; border-radius: 4px;
-    font-family:'Anton', sans-serif; font-size: 13px; letter-spacing:0.02em; text-transform:uppercase; text-align:center;
-    background: var(--blanc); color: var(--flamme);
-  }
-  .inscription-btn:hover { background: #FFEDE8; }
+  .inscription { display: flex; flex-wrap: wrap; gap: 2.5rem; align-items: center; justify-content: center; }
+  .inscription-dessin { flex: 0 1 400px; width: 400px; min-width: 0; max-width: 100%; height: auto; }
+  .inscription-texte { flex: 1 1 380px; max-width: 480px; min-width: 0; display: flex; flex-direction: column; gap: 0.75rem; }
+  .inscription-texte h2 { margin-bottom: 0; }
+  .inscription-texte > .section-body { margin-bottom: 0; }
+  .inscription-card { border-top: 2px solid var(--rouge); padding-top: 1rem; margin-top: 0.25rem; display:flex; flex-direction:column; gap: 0.5rem; }
+  .inscription-tag { align-self: flex-start; font-size: 10.5px; font-weight: 800; letter-spacing: 0.1em; text-transform: uppercase; color: var(--rouge); }
+  .inscription-card h3 { font-family: var(--sans); font-size: 1.25rem; font-weight: 800; color: var(--encre); }
+  .inscription-card p { font-size: 13.5px; line-height:1.55; color: var(--encre-douce); }
+  .inscription-btn { align-self: flex-start; display:inline-block; margin-top: 0.5rem; padding: 12px 22px; border-radius: 4px; font-family: var(--sans); font-weight: 800; letter-spacing: 0.06em; font-size: 12.5px; text-transform:uppercase; background: var(--rouge); color: var(--blanc); }
+  .inscription-btn:hover { background: var(--rouge-fonce); }
   /* ===== FOOTER ===== */
-  footer { background: var(--nuit); border-top: 1px solid rgba(255,255,255,0.1); padding: 1.8rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
-  .footer-logo {
-    display:flex; align-items:center; gap:0.5rem;
-    font-family:'Anton', sans-serif; color: var(--blanc); font-size: 19px; letter-spacing: 0.03em; text-transform: uppercase;
-  }
+  footer { background: var(--encre); padding: 1.8rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
+  .footer-logo { display:flex; align-items:center; }
+  .footer-logo img { height: 42px; width: auto; }
   .footer-logo svg { flex-shrink: 0; }
-  .footer-links { font-size: 11px; color: #A8A398; line-height:1.8; text-align:right; }
-  .footer-links a:hover { color: var(--flamme); }
+  .footer-links { font-size: 11px; color: #B9B5C2; line-height:1.8; text-align:right; }
+  .footer-links a:hover { color: var(--blanc); }
   /* ===== MOBILE ===== */
   @media (max-width: 720px) {
     nav { padding: 0 1.3rem; position: relative; }
@@ -286,41 +215,29 @@
     .nav-cta { padding: 8px 14px; font-size: 10.5px; }
     .nav-links {
       position: absolute; top: 64px; left: 0; right: 0;
-      background: var(--blanc); border-bottom: 1px solid var(--ligne);
+      background: var(--papier); border-bottom: 1px solid var(--filet);
       flex-direction: column; align-items: stretch; gap: 0;
       max-height: 0; overflow: hidden; transition: max-height 0.25s ease;
     }
     nav.nav-open .nav-links { max-height: 320px; }
-    .nav-links a { display: block; width: 100%; padding: 14px 1.3rem; border-bottom: 1px solid var(--ligne); }
-    .nav-links a.nav-ghost { border-radius: 0; border: none; border-bottom: 1px solid var(--ligne); text-align: left; padding: 14px 1.3rem !important; font-size: 12px !important; }
-    .hero img { object-position: 88% 50%; }
-    .hero-inner, .section, .contact-inner, .quote-strip { padding-left: 1.3rem; padding-right: 1.3rem; }
+    .nav-links a { display: block; width: 100%; padding: 14px 1.3rem; border-bottom: 1px solid var(--filet); }
+    .nav-links a.nav-ghost { border-radius: 0; border: none; border-bottom: 1px solid var(--filet); text-align: left; padding: 14px 1.3rem !important; font-size: 12px !important; }
+    .hero { padding: 2rem 1.3rem 2.5rem; gap: 2rem; }
+    .section, .contact-inner, .quote-strip { padding-left: 1.3rem; padding-right: 1.3rem; }
+    .contact { padding-left: 0; padding-right: 0; }
     footer { padding: 1.6rem 1.3rem; flex-direction: column; align-items:flex-start; }
     .footer-links { text-align: left; }
   }
   @media (max-width: 960px) and (min-width: 721px) {
     .nav-links a.nav-optional { display: none; }
-    .hero img { object-position: 90% 50%; }
   }
+  @media (prefers-reduced-motion: reduce) { html { scroll-behavior: auto; } .nav-links { transition: none; } }
 </style>
 </head>
 <body>
 <!-- NAV -->
 <nav>
-  <a href="/" class="nav-logo" aria-label="COR1418">
-    <svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-      <g stroke="#FF5A36" stroke-width="2" stroke-linecap="round">
-        <line x1="20" y1="1" x2="20" y2="6"/><line x1="20" y1="34" x2="20" y2="39"/>
-        <line x1="1" y1="20" x2="6" y2="20"/><line x1="34" y1="20" x2="39" y2="20"/>
-        <line x1="7" y1="7" x2="10.5" y2="10.5"/><line x1="29.5" y1="29.5" x2="33" y2="33"/>
-        <line x1="33" y1="7" x2="29.5" y2="10.5"/><line x1="10.5" y1="29.5" x2="7" y2="33"/>
-      </g>
-      <circle cx="20" cy="20" r="8.5" fill="none" stroke="#14213D" stroke-width="2.4"/>
-      <line x1="20" y1="14" x2="20" y2="26" stroke="#14213D" stroke-width="2"/>
-      <line x1="15.5" y1="20" x2="24.5" y2="20" stroke="#14213D" stroke-width="2"/>
-    </svg>
-    <span>COR</span>
-  </a>
+  <a href="/" class="nav-logo" aria-label="COR, accueil"><img src="assets/logo-cor-clair.png" alt="COR"></a>
   <div class="nav-right">
     <ul class="nav-links" id="navLinks">
       <li><a href="#parcours">Aimer en Grand</a></li>
@@ -341,7 +258,6 @@
 </nav>
 <!-- HERO -->
 <div class="hero">
-  <img src="assets/hero.jpg" alt="Deux jeunes au sommet, lever de soleil sur les Alpes et croix de sommet">
   <div class="hero-inner">
     <a href="#presse" class="press-badge"><span class="press-badge-tag">Presse</span><span>Aimer en Grand dans <strong>Aleteia</strong> ↓</span></a>
     <p class="hero-label">Aimer en Grand · 14-18 ans · Parcours Pilote UP Lausanne Nord </p>
@@ -353,6 +269,12 @@
     <div class="hero-actions">
       <a href="#inscription" class="btn-primary">Je m'inscris →</a>
       <a href="#parcours" class="btn-outline-light">Voir le programme ↓</a>
+    </div>
+  </div>
+  <div class="hero-dessin">
+    <div class="hero-scene" role="img" aria-label="Six jeunes dessinés à l'encre bleue, serrés les uns contre les autres, devant une rosace de vitrail à peine esquissée">
+      <img class="rosace" src="assets/rosace-vitrail.svg" alt="">
+      <img class="groupe" src="assets/groupe-devant-vitrail.png" alt="">
     </div>
   </div>
 </div>
@@ -391,16 +313,16 @@
 <div class="section-wrap alt">
   <div class="section" id="parcours">
     <p class="section-label">Le Parcours · Aimer en Grand</p>
-    <h2>Six temps, une progression.<br>De l'amitié jusqu'au don de soi.</h2>
+    <h2>Six temps, une progression<br>De l'amitié jusqu'au don de soi</h2>
     <p class="section-body">Aimer en Grand n'est pas un cours de catéchisme, ni une liste de ce qu'il faudrait penser sur tel ou tel sujet. C'est une rencontre : un chemin vécu à plusieurs, où l'on part de ce qu'on vit vraiment pour explorer le projet lumineux de Dieu pour les relations.</p>
     <p class="section-body">Ce parcours vise à partir de l'expérience vécue, à la reconnaître, l'éclairer, et à donner des outils pour permettre de faire des choix librement. Il est ancré dans la Théologie du Corps de Jean-Paul II.</p>
     <div class="sessions-grid">
-      <div class="session"><div class="session-num">1</div><p class="session-title">L'amitié : école de la relation et du don</p><p class="session-body">La confiance, le discernement, la différence entre relation et connexion.</p></div>
-      <div class="session"><div class="session-num">2</div><p class="session-title">Le corps : lieu de présence</p><p class="session-body">Mon corps dit quelque chose de vrai sur ma capacité à donner et à recevoir.</p></div>
-      <div class="session"><div class="session-num">3</div><p class="session-title">Les émotions et la liberté intérieure</p><p class="session-body">Lire les émotions comme des signaux, les intégrer dans un mouvement vers le bien choisi.</p></div>
-      <div class="session"><div class="session-num">4</div><p class="session-title">Aimer librement : altérité et complémentarité</p><p class="session-body">La différence entre désir et don, entre attraction et engagement.</p></div>
-      <div class="session"><div class="session-num">5</div><p class="session-title">L'amour en vérité</p><p class="session-body">L'amour comme choix qui demande vérité, liberté et maturité.</p></div>
-      <div class="session"><div class="session-num">6</div><p class="session-title">Se donner : quel est mon appel personnel?</p><p class="session-body">Pour qui et pour quoi suis-je prêt·e à m'engager ?</p></div>
+      <div class="session"><div class="session-num">1</div><div><p class="session-question">« À qui je peux vraiment faire confiance ? »</p><p class="session-source">Jugée « très importante » par 68 % des jeunes · enquête 365 Voix</p><p class="session-title">L'amitié : école de la relation et du don</p><p class="session-body">La confiance, le discernement, la différence entre relation et connexion.</p></div></div>
+      <div class="session"><div class="session-num">2</div><div><p class="session-title">Le corps : lieu de présence</p><p class="session-body">Mon corps dit quelque chose de vrai sur ma capacité à donner et à recevoir.</p></div></div>
+      <div class="session"><div class="session-num">3</div><div><p class="session-title">Les émotions et la liberté intérieure</p><p class="session-body">Lire les émotions comme des signaux, les intégrer dans un mouvement vers le bien choisi.</p></div></div>
+      <div class="session"><div class="session-num">4</div><div><p class="session-title">Aimer librement : altérité et complémentarité</p><p class="session-body">La différence entre désir et don, entre attraction et engagement.</p></div></div>
+      <div class="session"><div class="session-num">5</div><div><p class="session-title">L'amour en vérité</p><p class="session-body">L'amour comme choix qui demande vérité, liberté et maturité.</p></div></div>
+      <div class="session"><div class="session-num">6</div><div><p class="session-title">Se donner : quel est mon appel personnel?</p><p class="session-body">Pour qui et pour quoi suis-je prêt·e à m'engager ?</p></div></div>
     </div>
     <div class="deploiement">
       <p>Pilote UP Lausanne Nord 2026-2027</p>
@@ -411,15 +333,18 @@
 <!-- INSCRIPTION -->
 <div class="section-wrap">
   <div class="section" id="inscription" style="padding-top:3.5rem; padding-bottom:3.5rem;">
-    <div style="text-align:center; margin-bottom:2.5rem;">
-      <h2 style="max-width:100%;">Envie de rejoindre l'aventure ?</h2>
-      <p class="section-body" style="margin-left:auto; margin-right:auto; margin-bottom:0;">Rejoins le pilote de Lausanne.</p>
-    </div>
-    <div class="inscription-card">
-      <p class="inscription-tag">14-18 ans</p>
-      <h3>Je m'inscris au parcours</h3>
-      <p>Places limitées pour le pilote de Lausanne. Écris-nous pour les détails pratiques.</p>
-      <a href="mailto:aimerengrand@gmail.com?subject=Inscription%20au%20parcours%20-%20Lausanne" class="inscription-btn">Je m'inscris au parcours →</a>
+    <div class="inscription">
+      <img class="inscription-dessin" src="assets/saut-de-joie.png" alt="Quatre jeunes dessinés à l'encre bleue qui sautent de joie, avec des touches d'aquarelle">
+      <div class="inscription-texte">
+        <h2>Envie de rejoindre l'aventure ?</h2>
+        <p class="section-body">Rejoins le pilote de Lausanne.</p>
+        <div class="inscription-card">
+          <p class="inscription-tag">14-18 ans</p>
+          <h3>Je m'inscris au parcours</h3>
+          <p>Places limitées pour le pilote de Lausanne. Écris-nous pour les détails pratiques.</p>
+          <a href="mailto:aimerengrand@gmail.com?subject=Inscription%20au%20parcours%20-%20Lausanne" class="inscription-btn">Je m'inscris au parcours →</a>
+        </div>
+      </div>
     </div>
   </div>
 </div>
@@ -495,7 +420,7 @@
 <div class="section-wrap alt">
   <div class="section" id="ressources">
     <p class="section-label">Ressources &amp; actualités</p>
-    <h2>Nos articles et actualités.</h2>
+    <h2>Nos articles et actualités</h2>
     <p class="section-body">Des textes pour prendre le temps d'aller plus loin, et les nouvelles du projet - fondés sur l'enquête Aimer en Grand, la Théologie du Corps, et l'expérience du terrain.</p>
     <div class="resources-grid">
       <div class="resource-card">
@@ -519,7 +444,7 @@
 <div class="section-wrap">
   <div class="section" id="qui-sommes-nous">
     <p class="section-label">Qui sommes-nous</p>
-    <h2>Le projet COR : une conviction,<br>au service des jeunes.</h2>
+    <h2>Le projet COR : une conviction,<br>au service des jeunes</h2>
     <p class="section-body">Le projet COR n'est ni un parcours de catéchisme, ni une manière d'exposer ce que l'Église pense de tel ou tel sujet. C'est une approche inspirée de la pédagogie de Saint Jean Paul II qui permet de partir de notre expérience pour mieux comprendre le magnifique plan que Dieu a pour chacun de nous.</p>
     <p class="section-body">Il part d'une conviction : la période 14-18 ans est un moment clef, où la réflexion et le partage sur nous-mêmes, notre intériorité et nos relations aux autres sont essentiels. Notre ambition : créer des espaces ensemble où ces questions de fond peuvent être discutés, avec des repères chrétiens pour les éclairer et un accompagnement pour chaque personne.</p>
     <div class="citation-encadre" style="max-width:680px;">
@@ -570,20 +495,7 @@
 </div>
 <!-- FOOTER -->
 <footer>
-  <a href="/" class="footer-logo" aria-label="COR1418">
-    <svg width="26" height="26" viewBox="0 0 40 40" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
-      <g stroke="#FF5A36" stroke-width="2" stroke-linecap="round">
-        <line x1="20" y1="1" x2="20" y2="6"/><line x1="20" y1="34" x2="20" y2="39"/>
-        <line x1="1" y1="20" x2="6" y2="20"/><line x1="34" y1="20" x2="39" y2="20"/>
-        <line x1="7" y1="7" x2="10.5" y2="10.5"/><line x1="29.5" y1="29.5" x2="33" y2="33"/>
-        <line x1="33" y1="7" x2="29.5" y2="10.5"/><line x1="10.5" y1="29.5" x2="7" y2="33"/>
-      </g>
-      <circle cx="20" cy="20" r="8.5" fill="none" stroke="#FFFFFF" stroke-width="2.4"/>
-      <line x1="20" y1="14" x2="20" y2="26" stroke="#FFFFFF" stroke-width="2"/>
-      <line x1="15.5" y1="20" x2="24.5" y2="20" stroke="#FFFFFF" stroke-width="2"/>
-    </svg>
-    <span>COR</span>
-  </a>
+  <a href="/" class="footer-logo" aria-label="COR, accueil"><img src="assets/logo-cor-sombre.png" alt="COR"></a>
   <div class="footer-links">
     Parcours sur la vie affective et relationnelle · Projet COR1418 · 2026<br>
     <a href="#ressources">Ressources</a> · <a href="#qui-sommes-nous">Qui sommes-nous</a> · <a href="https://www.cor1418.org">cor1418.org</a> · <a href="mailto:aimerengrand@gmail.com">aimerengrand@gmail.com</a>
