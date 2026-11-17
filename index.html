@@ -150,10 +150,7 @@
   .session-num { background: var(--rouge-fonce); }
   .session:nth-child(6) /* pastilles */
   .session-num { background: var(--trait); }
-  .session-question { font-family: var(--citation); font-style: italic; font-size: 19px; line-height: 1.25; color: var(--trait); margin-bottom: 3px; }
-  .session-source { font-size: 11px; color: var(--source); margin-bottom: 10px; }
   .session-title { font-size: 15px; font-weight: 700; color: var(--encre); margin-bottom: 4px; line-height:1.3; }
-  .session-question + .session-source + .session-title { font-size: 13.5px; }
   .session-body { font-size: 12.5px; color: var(--encre-douce); line-height:1.5; }
   .deploiement { background: var(--creme); border-radius: 8px; padding: 1.2rem 1.6rem; }
   .deploiement p:first-child { font-size: 10.5px; font-weight: 800; letter-spacing:0.14em; text-transform:uppercase; color: var(--trait); }
@@ -200,6 +197,15 @@
   .inscription-card p { font-size: 13.5px; line-height:1.55; color: var(--encre-douce); }
   .inscription-btn { align-self: flex-start; display:inline-block; margin-top: 0.5rem; padding: 12px 22px; border-radius: 4px; font-family: var(--sans); font-weight: 800; letter-spacing: 0.06em; font-size: 12.5px; text-transform:uppercase; background: var(--rouge); color: var(--blanc); }
   .inscription-btn:hover { background: var(--rouge-fonce); }
+  /* ===== PILOTE (encadré distinct) ===== */
+  #pilote, #inscription { scroll-margin-top: 80px; }
+  .pilote-encadre { border: 1px solid var(--filet); border-left: 4px solid var(--bleu-vitrail); border-radius: 8px; background: var(--papier); padding: 2rem 2.2rem; }
+  .pilote-ailleurs { font-size: 13px; color: var(--encre-douce); line-height: 1.55; margin-top: 0.4rem; }
+  .pilote-ailleurs a { color: var(--trait); font-weight: 700; text-decoration: underline; text-underline-offset: 2px; }
+  .pilote-note { align-self: flex-start; display: inline-flex; align-items: center; gap: 0.55rem; font-size: 13px; color: var(--encre-douce); margin-top: 0.2rem; }
+  .pilote-note-tag { font-size: 10px; font-weight: 800; letter-spacing: 0.14em; text-transform: uppercase; color: var(--bleu-vitrail); border: 1px solid var(--bleu-clair); padding: 3px 8px; border-radius: 999px; }
+  .pilote-note:hover span:last-child { color: var(--trait); text-decoration: underline; }
+  @media (max-width: 720px) { .pilote-encadre { padding: 1.4rem 1.2rem; } }
   /* ===== FOOTER ===== */
   footer { background: var(--encre); padding: 1.8rem 3rem; display:flex; align-items:center; justify-content:space-between; flex-wrap:wrap; gap:1rem; }
   .footer-logo { display:flex; align-items:center; }
@@ -244,9 +250,9 @@
       <li><a href="#voix" class="nav-optional">365 Voix</a></li>
       <li><a href="#ressources">Ressources</a></li>
       <li><a href="#qui-sommes-nous" class="nav-optional">Qui sommes-nous</a></li>
-      <li><a href="accompagnateurs.html" class="nav-ghost">Tu es accompagnateur ? →</a></li>
+      <li><a href="accompagnateurs.html" class="nav-ghost">Pédagogie du parcours →</a></li>
     </ul>
-    <a href="#inscription" class="nav-cta">Je m'inscris →</a>
+    <a href="#contact" class="nav-cta">Nous écrire →</a>
     <button class="nav-toggle" id="navToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">
       <svg width="22" height="22" viewBox="0 0 22 22" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" focusable="false">
         <line x1="2" y1="6" x2="20" y2="6" stroke="#14213D" stroke-width="2" stroke-linecap="round"/>
@@ -260,16 +266,15 @@
 <div class="hero">
   <div class="hero-inner">
     <a href="#presse" class="press-badge"><span class="press-badge-tag">Presse</span><span>Aimer en Grand dans <strong>Aleteia</strong> ↓</span></a>
-    <p class="hero-label">Aimer en Grand · 14-18 ans · Parcours Pilote UP Lausanne Nord </p>
+    <p class="hero-label">Aimer en Grand · 14-18 ans · Vie affective et relationnelle</p>
     <h1>Un parcours pour<br>vivre nos relations en grand</h1>
     <div class="hero-sub-wrap">
-      <p class="hero-sub">Un pilote aura lieu à Lausanne à partir de <strong>janvier 2027 </strong> pour parler vrai de l'amitié, du cœur, et de ce que veut dire aimer, à la lumière de la foi catholique.</p>
-      <p class="hero-sub">Avec d'autres jeunes, en lien avec l'Unité Pastorale Lausanne-Nord et son écosystème Connexus.</p>
+      <p class="hero-sub">Six temps, avec d'autres jeunes, pour parler vrai de l'amitié, du cœur, et de ce que veut dire aimer, à la lumière de la foi catholique.</p>
     </div>
     <div class="hero-actions">
-      <a href="#inscription" class="btn-primary">Je m'inscris →</a>
-      <a href="#parcours" class="btn-outline-light">Voir le programme ↓</a>
+      <a href="#parcours" class="btn-outline-light">Découvrir le parcours ↓</a>
     </div>
+    <a href="#pilote" class="pilote-note"><span class="pilote-note-tag">Premier pilote</span><span>Lausanne, dès janvier 2027 ↓</span></a>
   </div>
   <div class="hero-dessin">
     <div class="hero-scene" role="img" aria-label="Six jeunes dessinés à l'encre bleue, serrés les uns contre les autres, devant une rosace de vitrail à peine esquissée">
@@ -317,32 +322,32 @@
     <p class="section-body">Aimer en Grand n'est pas un cours de catéchisme, ni une liste de ce qu'il faudrait penser sur tel ou tel sujet. C'est une rencontre : un chemin vécu à plusieurs, où l'on part de ce qu'on vit vraiment pour explorer le projet lumineux de Dieu pour les relations.</p>
     <p class="section-body">Ce parcours vise à partir de l'expérience vécue, à la reconnaître, l'éclairer, et à donner des outils pour permettre de faire des choix librement. Il est ancré dans la Théologie du Corps de Jean-Paul II.</p>
     <div class="sessions-grid">
-      <div class="session"><div class="session-num">1</div><div><p class="session-question">« À qui je peux vraiment faire confiance ? »</p><p class="session-source">Jugée « très importante » par 68 % des jeunes · enquête 365 Voix</p><p class="session-title">L'amitié : école de la relation et du don</p><p class="session-body">La confiance, le discernement, la différence entre relation et connexion.</p></div></div>
+      <div class="session"><div class="session-num">1</div><div><p class="session-title">L'amitié : école de la relation et du don</p><p class="session-body">La confiance, le discernement, la différence entre relation et connexion.</p></div></div>
       <div class="session"><div class="session-num">2</div><div><p class="session-title">Le corps : lieu de présence</p><p class="session-body">Mon corps dit quelque chose de vrai sur ma capacité à donner et à recevoir.</p></div></div>
       <div class="session"><div class="session-num">3</div><div><p class="session-title">Les émotions et la liberté intérieure</p><p class="session-body">Lire les émotions comme des signaux, les intégrer dans un mouvement vers le bien choisi.</p></div></div>
       <div class="session"><div class="session-num">4</div><div><p class="session-title">Aimer librement : altérité et complémentarité</p><p class="session-body">La différence entre désir et don, entre attraction et engagement.</p></div></div>
       <div class="session"><div class="session-num">5</div><div><p class="session-title">L'amour en vérité</p><p class="session-body">L'amour comme choix qui demande vérité, liberté et maturité.</p></div></div>
       <div class="session"><div class="session-num">6</div><div><p class="session-title">Se donner : quel est mon appel personnel?</p><p class="session-body">Pour qui et pour quoi suis-je prêt·e à m'engager ?</p></div></div>
     </div>
-    <div class="deploiement">
-      <p>Pilote UP Lausanne Nord 2026-2027</p>
-      <p></p>
-    </div>
   </div>
 </div>
 <!-- INSCRIPTION -->
 <div class="section-wrap">
-  <div class="section" id="inscription" style="padding-top:3.5rem; padding-bottom:3.5rem;">
-    <div class="inscription">
-      <img class="inscription-dessin" src="assets/saut-de-joie.png" alt="Quatre jeunes dessinés à l'encre bleue qui sautent de joie, avec des touches d'aquarelle">
-      <div class="inscription-texte">
-        <h2>Envie de rejoindre l'aventure ?</h2>
-        <p class="section-body">Rejoins le pilote de Lausanne.</p>
-        <div class="inscription-card">
-          <p class="inscription-tag">14-18 ans</p>
-          <h3>Je m'inscris au parcours</h3>
-          <p>Places limitées pour le pilote de Lausanne. Écris-nous pour les détails pratiques.</p>
-          <a href="mailto:aimerengrand@gmail.com?subject=Inscription%20au%20parcours%20-%20Lausanne" class="inscription-btn">Je m'inscris au parcours →</a>
+  <div class="section" id="pilote" style="padding-top:3.5rem; padding-bottom:3.5rem;">
+    <div class="pilote-encadre">
+      <p class="section-label">Premier pilote · Lausanne · 2026-2027</p>
+      <div class="inscription">
+        <img class="inscription-dessin" src="assets/saut-de-joie.png" alt="Quatre jeunes dessinés à l'encre bleue qui sautent de joie, avec des touches d'aquarelle">
+        <div class="inscription-texte">
+          <h2>Tu habites dans la région de Lausanne ?</h2>
+          <p class="section-body">Le premier pilote d'Aimer en Grand commence en janvier 2027, en lien avec l'Unité Pastorale Lausanne-Nord et son écosystème Connexus.</p>
+          <div class="inscription-card" id="inscription">
+            <p class="inscription-tag">14-18 ans · Lausanne</p>
+            <h3>Je m'inscris au pilote de Lausanne</h3>
+            <p>Places limitées. Écris-nous pour les détails pratiques.</p>
+            <a href="mailto:aimerengrand@gmail.com?subject=Inscription%20au%20pilote%20-%20Lausanne" class="inscription-btn">Je m'inscris au pilote →</a>
+          </div>
+          <p class="pilote-ailleurs">Tu n'es pas à Lausanne ? <a href="#contact">Écris-nous</a> pour suivre la suite du projet ou proposer le parcours près de chez toi.</p>
         </div>
       </div>
     </div>
@@ -451,7 +456,7 @@
       <p>Pourquoi « COR » ? C'est le mot latin pour dire <strong>cœur</strong>. Car le cœur est, comme l'écrit le pape François, "capable d'unifier et d'harmoniser l'histoire personnelle, qui semble fragmentée en mille morceaux mais où tout peut avoir un sens.(...) "c'est lui qui me distingue, me façonne dans mon identité spirituelle et me met en communion avec les autres." </p>
       <p>Lorsque "le cœur parle au cœur", l'échange dépasse les seules idées, et, par une présence, d'une personne à une autre, la transformation véritable peut s'opérer dans un vrai cœur à cœur.</p>
     </div>
-    <p style="font-weight:700; color:var(--nuit); font-size:13.5px; margin-bottom:1.2rem;">À l'origine du projet :</p>
+    <p style="font-weight:700; color:var(--encre); font-size:13.5px; margin-bottom:1.2rem;">À l'origine du projet :</p>
     <div class="animateurs-grid">
       <div class="animateur-item">
         <p class="animateur-item-title">Messiane Cazé</p>
